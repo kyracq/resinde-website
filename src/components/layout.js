@@ -8,9 +8,28 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { GlobalStyles } from "twin.macro"
+import { createGlobalStyle } from "styled-components"
+import "fontsource-montserrat/400.css"
+import "fontsource-montserrat/700.css"
+import "fontsource-muli"
 
 import Header from "./header"
-import "./layout.css"
+import Footer from "./footer"
+
+const Global = createGlobalStyle`
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 32px;
+  }
+  header {
+    font-family: "Montserrat";
+  }
+  body {
+    font-family: "Muli";
+  }
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +44,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalStyles />
+      <Global />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
@@ -34,13 +55,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <Footer />
       </div>
     </>
   )

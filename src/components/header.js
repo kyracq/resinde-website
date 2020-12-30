@@ -1,35 +1,58 @@
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import tw, { styled } from "twin.macro"
 import PropTypes from "prop-types"
 import React from "react"
+import Img from "gatsby-image"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const StyledNav = tw.nav`
+  flex justify-between
+`
+const StyledLink = styled(props => <Link {...props} />)`
+  ${tw`mr-8 hover:text-purple-900 hover:border-b-2`}
+`
+
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    query LogoQuery {
+      file(relativePath: { eq: "resinde-logo-square.png" }) {
+        childImageSharp {
+          # Specify the image processing specifications right in the query.
+          fixed(width: 100, height: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <header>
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
+        }}
+      >
+        <StyledNav>
+          <div>
+            <Link to="/">
+              <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
+            </Link>
+          </div>
+          <div>
+            <StyledLink to="/about">About</StyledLink>
+            <StyledLink to="/work">Work</StyledLink>
+            <StyledLink to="/team">Our Team</StyledLink>
+            <StyledLink to="/for-students">For Students</StyledLink>
+            <StyledLink to="/contact">Contact Us</StyledLink>
+          </div>
+        </StyledNav>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
