@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { styled } from "twin.macro"
 
 const CursorDiv = styled.div`
-  opacity: ${props => (props.hidden ? 0 : 1)};
   width: 40px;
   height: 40px;
   border: 2px solid black;
@@ -12,7 +11,22 @@ const CursorDiv = styled.div`
   z-index: 9999;
   pointer-events: none;
   transition: all 150ms ease;
-  transition-property: opacity;
+  transition-property: opacity, background-color, transform;
+
+  ${props => (props.hidden ? `opacity: 0;` : null)}
+  ${props =>
+    props.clicked
+      ? `background-color: black;
+     transform: translate(-50%, -50%) scale(0.9);
+    `
+      : null}
+      ${props =>
+    props.linkHovered
+      ? `background-color: black;
+         transform: translate(-50%, -50%) scale(1.25);
+        `
+      : null}
+  background-color: ${props => (props.clicked ? `black;` : `none;`)};
 `
 
 const isMobile = () => {
