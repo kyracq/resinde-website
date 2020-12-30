@@ -16,6 +16,7 @@ import "fontsource-muli"
 
 import Header from "./header"
 import Footer from "./footer"
+import Cursor from "./cursor"
 
 const Global = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
@@ -28,6 +29,10 @@ const Global = createGlobalStyle`
   }
   body {
     font-family: "Muli";
+  }
+  html,
+  body {
+    cursor: none;
   }
 `
 
@@ -46,6 +51,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Global />
+      <Cursor />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
