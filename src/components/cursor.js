@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from "react"
 import { styled } from "twin.macro"
 
-const CursorDiv = styled.div`
+const FollowDiv = styled.div`
   width: 40px;
   height: 40px;
   border: 2px solid black;
   border-radius: 100%;
   position: fixed;
-  transform: translate(-50%, -50%);
   z-index: 9999;
   pointer-events: none;
-  transition: all 150ms ease;
-  transition-property: opacity, background-color, transform;
+  opacity: ${props => (props.hidden ? 0 : 1)};
+  transform: ${props => {
+    if (props.linkHovered) return `translate(-50%, -50%) scale(1.25)`
+    else if (props.clicked) return `translate(-50%, -50%) scale(0.9)`
+    else return `translate(-50%, -50%)`
+  }};
+  transition: all 200ms ease-out;
+`
 
-  ${props => (props.hidden ? `opacity: 0;` : null)}
-  ${props =>
-    props.clicked
-      ? `background-color: black;
-     transform: translate(-50%, -50%) scale(0.9);
-    `
-      : null}
-      ${props =>
-    props.linkHovered
-      ? `background-color: black;
-         transform: translate(-50%, -50%) scale(1.25);
-        `
-      : null}
-  background-color: ${props => (props.clicked ? `black;` : `none;`)};
+const CursorDiv = styled.div`
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 100%;
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: ${props => (props.hidden ? 0 : 1)};
 `
 
 const isMobile = () => {
@@ -92,15 +93,24 @@ const Cursor = () => {
   }
 
   return (
-    <CursorDiv
-      clicked={clicked}
-      linkHovered={linkHovered}
-      hidden={hidden}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-      }}
-    />
+    <div>
+      <FollowDiv
+        clicked={clicked}
+        linkHovered={linkHovered}
+        hidden={hidden}
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+        }}
+      />
+      <CursorDiv
+        hidden={hidden}
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+        }}
+      />
+    </div>
   )
 }
 

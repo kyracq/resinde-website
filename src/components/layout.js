@@ -30,8 +30,7 @@ const Global = createGlobalStyle`
   body {
     font-family: "Muli";
   }
-  html,
-  body {
+  * {
     cursor: none;
   }
 `
