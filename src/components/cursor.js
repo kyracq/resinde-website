@@ -39,35 +39,41 @@ const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [clicked, setClicked] = useState(false)
   const [linkHovered, setLinkHovered] = useState(false)
-  const [hidden, setHidden] = useState(false)
+  const [hidden, setHidden] = useState(true)
 
   useEffect(() => {
+    const addEventListeners = () => {
+      document.addEventListener("mousemove", event => {
+        if (hidden) {
+          setHidden(false)
+        }
+        setPosition({ x: event.clientX, y: event.clientY })
+      })
+      document.addEventListener("mouseenter", onMouseEnter)
+      document.addEventListener("mouseleave", onMouseLeave)
+      document.addEventListener("mousedown", onMouseDown)
+      document.addEventListener("mouseup", onMouseUp)
+    }
+
+    const removeEventListeners = () => {
+      document.removeEventListener("mousemove", event => {
+        if (hidden) {
+          setHidden(false)
+        }
+        setPosition({ x: event.clientX, y: event.clientY })
+      })
+      document.removeEventListener("mouseenter", onMouseEnter)
+      document.removeEventListener("mouseleave", onMouseLeave)
+      document.removeEventListener("mousedown", onMouseDown)
+      document.removeEventListener("mouseup", onMouseUp)
+    }
+
     addEventListeners()
     handleLinkHoverEvents()
     return () => removeEventListeners()
-  }, [])
+  }, [hidden])
 
   if (typeof navigator !== "undefined" && isMobile()) return null
-
-  const addEventListeners = () => {
-    document.addEventListener("mousemove", onMouseMove)
-    document.addEventListener("mouseenter", onMouseEnter)
-    document.addEventListener("mouseleave", onMouseLeave)
-    document.addEventListener("mousedown", onMouseDown)
-    document.addEventListener("mouseup", onMouseUp)
-  }
-
-  const removeEventListeners = () => {
-    document.removeEventListener("mousemove", onMouseMove)
-    document.removeEventListener("mouseenter", onMouseEnter)
-    document.removeEventListener("mouseleave", onMouseLeave)
-    document.removeEventListener("mousedown", onMouseDown)
-    document.removeEventListener("mouseup", onMouseUp)
-  }
-
-  const onMouseMove = event => {
-    setPosition({ x: event.clientX, y: event.clientY })
-  }
 
   const onMouseDown = () => {
     setClicked(true)

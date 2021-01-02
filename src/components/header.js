@@ -9,7 +9,7 @@ const StyledNav = tw.nav`
   flex justify-between
 `
 const StyledLink = styled(props => <Link {...props} />)`
-  ${tw`mr-8 hover:text-purple-900 hover:border-b-2`}
+  ${tw`mr-8 hover:text-purple hover:border-b-2 border-purple`}
 `
 
 const Header = ({ siteTitle }) => {
