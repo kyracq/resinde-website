@@ -4,21 +4,21 @@ import tw, { styled } from "twin.macro"
 import PropTypes from "prop-types"
 import React from "react"
 import Img from "gatsby-image"
+import NavLink from "./navlink"
 
 const StyledNav = tw.nav`
-  flex justify-between
+  flex justify-between items-center text-lg
 `
-const StyledLink = styled(props => <Link {...props} />)`
-  ${tw`mr-8 hover:text-purple hover:border-b-2 border-purple`}
+const ActionLink = styled(props => <Link {...props} />)`
+  ${tw`bg-magenta text-white rounded-lg p-2 hover:bg-opacity-75 transition-colors font-bold`}
 `
-
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
     query LogoQuery {
       file(relativePath: { eq: "resinde-logo-square.png" }) {
         childImageSharp {
           # Specify the image processing specifications right in the query.
-          fixed(width: 100, height: 100) {
+          fixed(width: 70, height: 70) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -42,11 +42,19 @@ const Header = ({ siteTitle }) => {
             </Link>
           </div>
           <div>
-            <StyledLink to="/about">About</StyledLink>
-            <StyledLink to="/work">Work</StyledLink>
-            <StyledLink to="/team">Our Team</StyledLink>
-            <StyledLink to="/for-students">For Students</StyledLink>
-            <StyledLink to="/contact">Contact Us</StyledLink>
+            <NavLink to="/about" magenta>
+              About
+            </NavLink>
+            <NavLink to="/work" purple>
+              Work
+            </NavLink>
+            <NavLink to="/team" blue>
+              Our Team
+            </NavLink>
+            <NavLink to="/for-students" yellow>
+              For Students
+            </NavLink>
+            <ActionLink to="/contact">Contact Us</ActionLink>
           </div>
         </StyledNav>
       </div>
