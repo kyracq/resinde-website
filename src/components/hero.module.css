@@ -1,0 +1,46 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: -155px;
+    height: 100px;
+    padding: 0;
+    text-align: left;
+    color: black;
+  }
+  
+  .h1 {
+    font-size: 64px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
+
+  button {
+    background: black;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+  }
+
+  .arrow {
+    border: solid rgb(62, 19, 182);
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
