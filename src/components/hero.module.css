@@ -16,6 +16,10 @@ html {
     color: black;
   }
   
+  .content {
+    margin-bottom: 60px;
+  }
+
   .h1 {
     font-size: 64px;
     font-weight: bold;
@@ -23,24 +27,17 @@ html {
   
   p {
     font-size: 18px;
-    margin-bottom: 60px;
-  }
-
-  button {
-    background: black;
-    color: white;
-    border: 0;
-    border-radius: 6px;
-    font-size: 12px;
-    cursor: pointer;
-    width: 50px;
-    height: 30px;
   }
 
   .arrow {
-    border: solid rgb(62, 19, 182);
-    border-width: 0 6px 6px 0;
     display: inline-block;
-    padding: 3px;
+    border-right: 6px solid black;
+    border-bottom: 6px solid black;
+    width: 40px; height: 40px;
     transform: rotate(45deg);
+  }
+
+  div.arrow:hover {
+    border-right: 6px solid #7D71F2;
+    border-bottom: 6px solid #7D71F2;
   }
