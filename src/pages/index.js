@@ -2,13 +2,15 @@ import React from "react"
 
 import AboutSection from "../components/about-section"
 import SEO from "../components/seo"
+import HeroSection from "../components/hero"
 
 const IndexPage = () => (
   <div>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <HeroSection goTo="#about-us" />
+    <section id="about-us">
+      <h1>About Us!</h1>
+    </section>
     <AboutSection />
   </div>
 )
