@@ -7,7 +7,7 @@ const StyledH1 = tw.h1`
   text-white text-xl items-center
 `
 
-const AboutSection = () => {
+const AboutSection = props => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "blue-blob.png" }) {
@@ -25,12 +25,14 @@ const AboutSection = () => {
   }
 
   return (
-    <BackgroundImage
-      fluid={data.placeholderImage.childImageSharp.fluid}
-      role=""
-    >
-      <StyledH1>About Us</StyledH1>
-    </BackgroundImage>
+    <section id={props.id}>
+      <BackgroundImage
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        role=""
+      >
+        <StyledH1>About Us</StyledH1>
+      </BackgroundImage>
+    </section>
   )
 }
 

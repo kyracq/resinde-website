@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import tw, { styled } from "twin.macro"
 
 const FollowDiv = styled.div`
-  ${tw`border-blue border-2`}
+  ${tw`border-magenta border-2`}
   width: 40px;
   height: 40px;
   border-radius: 100%;

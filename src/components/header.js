@@ -42,16 +42,16 @@ const Header = ({ siteTitle }) => {
             </Link>
           </div>
           <div>
-            <NavLink to="/about" magenta>
+            <NavLink to="/about" magenta="true">
               About
             </NavLink>
-            <NavLink to="/work" purple>
+            <NavLink to="/work" purple="true">
               Work
             </NavLink>
-            <NavLink to="/team" blue>
+            <NavLink to="/team" blue="true">
               Our Team
             </NavLink>
-            <NavLink to="/for-students" yellow>
+            <NavLink to="/for-students" yellow="true">
               For Students
             </NavLink>
             <ActionLink to="/contact">Contact Us</ActionLink>

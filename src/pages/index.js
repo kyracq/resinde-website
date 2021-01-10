@@ -8,10 +8,7 @@ const IndexPage = () => (
   <div>
     <SEO title="Home" />
     <HeroSection goTo="#about-us" />
-    <section id="about-us">
-      <h1>About Us!</h1>
-    </section>
-    <AboutSection />
+    <AboutSection id="about-us" />
   </div>
 )
 
