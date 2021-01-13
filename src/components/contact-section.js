@@ -5,8 +5,8 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute`}
-  top: 40%;
+  ${tw`text-white text-7xl items-center absolute text-center`}
+  top: 30%;
   left: 100px;
 `
 
@@ -14,26 +14,28 @@ const StyledP = styled.p`
   ${tw`mb-8`}
 `
 
-const ButtonDiv = styled.div`
-  ${tw`text-center`}
-`
-
 const StyledDiv = styled.div`
   ${tw`flex`}
 `
 
 const SectionText = styled.div`
-  ${tw`self-center flex-grow ml-8`}
+  ${tw`self-center flex-grow mr-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border-blue rounded-full text-blue py-2 px-8 uppercase border`}
+  ${tw`border-purple rounded-full text-purple py-2 px-8 uppercase border`}
+  top: 70%;
+  right: 80px;
 `
 
-const AboutSection = props => {
+const ButtonDiv = styled.div`
+  ${tw`text-center`}
+`
+
+const ContactSection = props => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "blue-blob.png" }) {
+      placeholderImage: file(relativePath: { eq: "purple-blob.png" }) {
         childImageSharp {
           fixed(width: 500) {
             ...GatsbyImageSharpFixed
@@ -49,10 +51,6 @@ const AboutSection = props => {
 
   return (
     <StyledDiv>
-      <div id={props.id} style={{ position: "relative" }}>
-        <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-        <StyledH1>About Us</StyledH1>
-      </div>
       <SectionText>
         <StyledP>
           A group at Princeton University focused on Research, Innovation, and
@@ -61,11 +59,15 @@ const AboutSection = props => {
           implementation.
         </StyledP>
         <ButtonDiv>
-          <StyledButton to="/about">learn more</StyledButton>
+          <StyledButton to="/contact">learn more</StyledButton>
         </ButtonDiv>
       </SectionText>
+      <div id={props.id} style={{ position: "relative" }}>
+        <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+        <StyledH1>Contact Us</StyledH1>
+      </div>
     </StyledDiv>
   )
 }
 
-export default AboutSection
+export default ContactSection
