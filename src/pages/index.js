@@ -1,6 +1,6 @@
 import React from "react"
 
-import Image from "../components/image"
+import AboutSection from "../components/about-section"
 import SEO from "../components/seo"
 import HeroSection from "../components/hero"
 
@@ -8,9 +8,7 @@ const IndexPage = () => (
   <div>
     <SEO title="Home" />
     <HeroSection goTo="#about-us" />
-    <section id="about-us">
-      <h1>About Us!</h1>
-    </section>
+    <AboutSection id="about-us" />
   </div>
 )
 
