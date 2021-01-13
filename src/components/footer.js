@@ -16,7 +16,7 @@ const StyledLink = styled(props => <Link {...props} />)`
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      file:file(relativePath: { eq: "resinde-splash-transparent.png" }) {
+      file: file(relativePath: { eq: "resinde-splash-transparent.png" }) {
         childImageSharp {
           # Specify the image processing specifications right in the query.
           fixed(width: 250, height: 110) {
@@ -24,49 +24,55 @@ const Footer = () => {
           }
         }
       }
-      facebook:file(relativePath: { eq: "facebook.png" }) {
+      facebook: file(relativePath: { eq: "facebook.png" }) {
         publicURL
       }
-      linkedin:file(relativePath: { eq: "linkedin.png" }) {
+      linkedin: file(relativePath: { eq: "linkedin.png" }) {
         publicURL
       }
-      favorite:file(relativePath: { eq: "favorite.png" }) {
+      favorite: file(relativePath: { eq: "favorite.png" }) {
         publicURL
       }
     }
-  `)  
+  `)
 
   return (
     <footer>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
-        <StyledNav>
-          <div>
-            <Link to="/">
-              <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe" />
-            </Link>
-          </div>
-          <div>
-            <p> Made with </p> <a href="https://resinde.com" target="_blank" rel="noopener noreferrer">
-              <img src={data.favorite.publicURL} alt="love!" />
-            </a> <p> by ResInDe </p>
-          </div>
-          <div>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src={data.facebook.publicURL} alt="facebook!" />
-            </a>
-            <a href="https://www.linkedin.com/company/princetonresinde/about/" target="_blank" rel="noopener noreferrer">
-              <img src={data.linkedin.publicURL} alt="linkedin!" />
-            </a>
-            <p>© {new Date().getFullYear()} ResInDe. All rights reserved.</p>
-          </div>
-        </StyledNav>
-      </div>
+      <StyledNav>
+        <div>
+          <Link to="/">
+            <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe" />
+          </Link>
+        </div>
+        <div>
+          <p> Made with </p>{" "}
+          <a
+            href="https://resinde.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={data.favorite.publicURL} alt="love!" />
+          </a>{" "}
+          <p> by ResInDe </p>
+        </div>
+        <div>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={data.facebook.publicURL} alt="facebook!" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/princetonresinde/about/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={data.linkedin.publicURL} alt="linkedin!" />
+          </a>
+          <p>© {new Date().getFullYear()} ResInDe. All rights reserved.</p>
+        </div>
+      </StyledNav>
     </footer>
   )
 }
