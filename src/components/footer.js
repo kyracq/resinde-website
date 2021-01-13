@@ -8,9 +8,6 @@ import Img from "gatsby-image"
 const StyledNav = tw.nav`
   flex justify-between
 `
-const StyledLink = styled(props => <Link {...props} />)`
-  ${tw`mr-8 hover:text-purple-900 hover:border-b-2`}
-`
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
