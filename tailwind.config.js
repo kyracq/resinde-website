@@ -18,6 +18,9 @@ module.exports = {
         DEFAULT: "ffcf2e",
       },
     },
+    fontFamily: {
+      sans: ['Montserrat']
+    }
     extend: {},
   },
   variants: {

@@ -1,5 +1,6 @@
 import React from "react"
 import heroStyles from "./hero.module.css"
+import tw from "twin.macro"
 
 const HeroSection = (props) => (
     <section className={heroStyles.hero}>
