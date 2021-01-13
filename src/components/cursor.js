@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { styled } from "twin.macro"
+import tw, { styled } from "twin.macro"
 
 const FollowDiv = styled.div`
+  ${tw`border-magenta border-2`}
   width: 40px;
   height: 40px;
-  border: 2px solid black;
   border-radius: 100%;
   position: fixed;
   z-index: 9999;
@@ -19,9 +19,9 @@ const FollowDiv = styled.div`
 `
 
 const CursorDiv = styled.div`
-  width: 10px;
-  height: 10px;
-  background-color: black;
+  ${tw`bg-blue`}
+  width: 14px;
+  height: 14px;
   border-radius: 100%;
   position: fixed;
   z-index: 9999;

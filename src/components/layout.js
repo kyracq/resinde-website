@@ -24,6 +24,12 @@ const Global = createGlobalStyle`
     font-weight: 700;
     font-size: 32px;
   }
+  h1 {
+    font-size: 64px;
+  }
+  p {
+    font-size: 18px;
+  }
   header {
     font-family: "Montserrat";
   }
@@ -32,6 +38,7 @@ const Global = createGlobalStyle`
   }
   * {
     cursor: none;
+    scroll-behavior: smooth;
   }
 `
 
