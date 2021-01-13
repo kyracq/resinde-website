@@ -1,5 +1,4 @@
 import React from "react"
-import heroStyles from "./hero.module.css"
 import { Link } from "gatsby"
 import tw, { styled } from "twin.macro"
 
