@@ -9,6 +9,44 @@ import NavLink from "./navlink"
 const StyledNav = tw.nav`
   flex justify-between items-center text-lg
 `
+const MobileNav = tw.div`
+  sm:hidden
+`
+const DesktopNav = tw.div`
+  hidden sm:block
+`
+const Hamburger = styled.div`
+  background-color: #111;
+  width: 30px;
+  height: 3px;
+  transition: all 0.3s linear;
+  align-self: center;
+  position: relative;
+  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+
+  ::before,
+  ::after {
+    width: 30px;
+    height: 3px;
+    background-color: #111;
+    content: "";
+    position: absolute;
+    transition: all 0.3s linear;
+  }
+
+  ::before {
+    transform: ${props =>
+      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
+    top: -10px;
+  }
+
+  ::after {
+    opacity: ${props => (props.open ? "0" : "1")};
+    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
+    top: 10px;
+  }
+`
+
 const ActionLink = styled(props => <Link {...props} />)`
   ${tw`bg-magenta text-white rounded-lg p-2 hover:bg-opacity-75 transition-colors font-bold`}
 `
@@ -41,7 +79,10 @@ const Header = ({ siteTitle }) => {
               <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
             </Link>
           </div>
-          <div>
+          <MobileNav>
+            <Hamburger />
+          </MobileNav>
+          <DesktopNav>
             <NavLink to="/about" magenta="true">
               About
             </NavLink>
@@ -55,7 +96,7 @@ const Header = ({ siteTitle }) => {
               For Students
             </NavLink>
             <ActionLink to="/contact">Contact Us</ActionLink>
-          </div>
+          </DesktopNav>
         </StyledNav>
       </div>
     </header>
