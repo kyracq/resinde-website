@@ -66,39 +66,31 @@ const Header = ({ siteTitle }) => {
 
   return (
     <header>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
-        <StyledNav>
-          <div>
-            <Link to="/">
-              <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
-            </Link>
-          </div>
-          <MobileNav>
-            <Hamburger />
-          </MobileNav>
-          <DesktopNav>
-            <NavLink to="/about" magenta="true">
-              About
-            </NavLink>
-            <NavLink to="/work" purple="true">
-              Work
-            </NavLink>
-            <NavLink to="/team" blue="true">
-              Our Team
-            </NavLink>
-            <NavLink to="/for-students" yellow="true">
-              For Students
-            </NavLink>
-            <ActionLink to="/contact">Contact Us</ActionLink>
-          </DesktopNav>
-        </StyledNav>
-      </div>
+      <StyledNav>
+        <div>
+          <Link to="/">
+            <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
+          </Link>
+        </div>
+        <MobileNav>
+          <Hamburger />
+        </MobileNav>
+        <DesktopNav>
+          <NavLink to="/about" magenta="true">
+            About
+          </NavLink>
+          <NavLink to="/work" purple="true">
+            Work
+          </NavLink>
+          <NavLink to="/team" blue="true">
+            Our Team
+          </NavLink>
+          <NavLink to="/for-students" yellow="true">
+            For Students
+          </NavLink>
+          <ActionLink to="/contact">Contact Us</ActionLink>
+        </DesktopNav>
+      </StyledNav>
     </header>
   )
 }
