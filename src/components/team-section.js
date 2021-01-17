@@ -11,7 +11,7 @@ const StyledH1 = styled.h1`
 `
 
 const StyledP = styled.p`
-  ${tw`mb-8`}
+  ${tw`mb-8 px-20`}
 `
 
 const ButtonDiv = styled.div`

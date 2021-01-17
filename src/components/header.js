@@ -6,6 +6,10 @@ import React from "react"
 import Img from "gatsby-image"
 import NavLink from "./navlink"
 
+const StyledHeader = tw.header`
+  px-20 pt-8
+`
+
 const StyledNav = tw.nav`
   flex justify-between items-center text-lg
 `
@@ -65,7 +69,7 @@ const Header = ({ siteTitle }) => {
   `)
 
   return (
-    <header>
+    <StyledHeader>
       <StyledNav>
         <div>
           <Link to="/">
@@ -91,7 +95,7 @@ const Header = ({ siteTitle }) => {
           <ActionLink to="/contact">Contact Us</ActionLink>
         </DesktopNav>
       </StyledNav>
-    </header>
+    </StyledHeader>
   )
 }
 

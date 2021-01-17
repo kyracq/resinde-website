@@ -11,7 +11,7 @@ const StyledH1 = styled.h1`
 `
 
 const StyledP = styled.p`
-  ${tw`mb-8`}
+  ${tw`mb-8 px-20`}
 `
 
 const ButtonDiv = styled.div`
@@ -28,6 +28,10 @@ const SectionText = styled.div`
 
 const StyledButton = styled(props => <Link {...props} />)`
   ${tw`border-blue rounded-full text-blue py-2 px-8 uppercase border`}
+`
+
+const StyledList = tw.ul`
+  list-disc list-inside
 `
 
 const AboutSection = props => {
@@ -55,10 +59,18 @@ const AboutSection = props => {
       </div>
       <SectionText>
         <StyledP>
-          A group at Princeton University focused on Research, Innovation, and
-          Design. As a team of designers and developers, our mission is to drive
-          impactful user experience solutions through user research and digital
-          implementation.
+          Princeton ResInDe (short for Research, Innovation, and Design) is
+          founded on the core design principles of empathy and human-centered
+          design. Our team understands the value of problem-solving and
+          innovating with intention, and our mission is to provide impactful
+          user experience solutions to the Princeton student and local community
+          through user research and digital implementation. We specialize in
+          these areas:
+          <StyledList>
+            <li>User Research</li>
+            <li>Product Strategy</li>
+            <li>UI/UX Design</li>
+          </StyledList>
         </StyledP>
         <ButtonDiv>
           <StyledButton to="/about">learn more</StyledButton>

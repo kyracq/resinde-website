@@ -1,16 +1,12 @@
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
 import PropTypes from "prop-types"
 import React from "react"
 import Img from "gatsby-image"
 
 const StyledNav = tw.nav`
   flex justify-between
-`
-
-const StyledLink = styled(props => <Link {...props} />)`
-  ${tw`mr-8 hover:text-purple hover:border-b-2 border-purple`}
 `
 
 const Footer = () => {

@@ -11,7 +11,7 @@ const StyledH1 = styled.h1`
 `
 
 const StyledP = styled.p`
-  ${tw`mb-8`}
+  ${tw`mb-8 px-20 text-center`}
 `
 
 const StyledDiv = styled.div`
@@ -53,13 +53,10 @@ const ContactSection = props => {
     <StyledDiv>
       <SectionText>
         <StyledP>
-          A group at Princeton University focused on Research, Innovation, and
-          Design. As a team of designers and developers, our mission is to drive
-          impactful user experience solutions through user research and digital
-          implementation.
+          Want to partner together? Curious to join? Contact us!
         </StyledP>
         <ButtonDiv>
-          <StyledButton to="/contact">learn more</StyledButton>
+          <StyledButton to="/contact">Contact Us</StyledButton>
         </ButtonDiv>
       </SectionText>
       <div id={props.id} style={{ position: "relative" }}>
