@@ -4,6 +4,7 @@ import tw from "twin.macro"
 import PropTypes from "prop-types"
 import React from "react"
 import Img from "gatsby-image"
+import { Icon } from './icons';
 
 const StyledNav = tw.nav`
   flex justify-between
@@ -41,15 +42,7 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <p> Made with </p>{" "}
-          <a
-            href="https://resinde.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={data.favorite.publicURL} alt="love!" />
-          </a>{" "}
-          <p> by ResInDe </p>
+          <p> Made with ❤ by ResInDe </p>
         </div>
         <div>
           <a
