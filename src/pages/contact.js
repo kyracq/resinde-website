@@ -9,7 +9,7 @@ const StyledTextarea = styled.textarea`
   ${tw`rounded-xl my-5 px-6 py-6 block w-full`}
 `
 const StyledButton = styled.button`
-  ${tw`rounded-xl p-4 bg-purple hover:bg-magenta`}
+  ${tw`rounded-xl p-2 bg-blue text-white hover:bg-magenta`}
 `
 const ContactPage = () => (
   <div>
@@ -23,7 +23,7 @@ const ContactPage = () => (
         <StyledInput style={{ border: `3px solid #f02e65`}} placeholder="Email Address" required></StyledInput>
       </div>
       <div>
-        <StyledTextarea style={{ border: `3px solid #0148e8`}} rows="5" placeholder="Message" required></StyledTextarea>
+        <StyledTextarea style={{ border: `3px solid #ffcf2e`}} rows="5" placeholder="Message" required></StyledTextarea>
       </div>
       <div>
         <StyledButton>SUBMIT</StyledButton>
