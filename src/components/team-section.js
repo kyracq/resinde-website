@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 const StyledH1 = styled.h1`
   ${tw`text-white text-7xl items-center absolute`}
   top: 40%;
-  left: 100px;
+  left: 80px;
 `
 
 const StyledP = styled.p`
@@ -27,17 +27,13 @@ const SectionText = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border-blue rounded-full text-blue py-2 px-8 uppercase border`}
+  ${tw`border-magenta rounded-full text-magenta py-2 px-8 uppercase border`}
 `
 
-const StyledList = tw.ul`
-  list-disc list-inside
-`
-
-const AboutSection = props => {
+const TeamSection = props => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "blue-blob.png" }) {
+      placeholderImage: file(relativePath: { eq: "pink-blob.png" }) {
         childImageSharp {
           fixed(width: 500) {
             ...GatsbyImageSharpFixed
@@ -55,29 +51,21 @@ const AboutSection = props => {
     <StyledDiv>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-        <StyledH1>About Us</StyledH1>
+        <StyledH1>Our Team</StyledH1>
       </div>
       <SectionText>
         <StyledP>
-          Princeton ResInDe (short for Research, Innovation, and Design) is
-          founded on the core design principles of empathy and human-centered
-          design. Our team understands the value of problem-solving and
-          innovating with intention, and our mission is to provide impactful
-          user experience solutions to the Princeton student and local community
-          through user research and digital implementation. We specialize in
-          these areas:
-          <StyledList>
-            <li>User Research</li>
-            <li>Product Strategy</li>
-            <li>UI/UX Design</li>
-          </StyledList>
+          A group at Princeton University focused on Research, Innovation, and
+          Design. As a team of designers and developers, our mission is to drive
+          impactful user experience solutions through user research and digital
+          implementation.
         </StyledP>
         <ButtonDiv>
-          <StyledButton to="/about">learn more</StyledButton>
+          <StyledButton to="/team">learn more</StyledButton>
         </ButtonDiv>
       </SectionText>
     </StyledDiv>
   )
 }
 
-export default AboutSection
+export default TeamSection

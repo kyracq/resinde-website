@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import tw, { styled } from "twin.macro"
 
 const HeroContainer = tw.div`
-  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32
+  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 px-20
 `
 
 const HeroContent = tw.div`
@@ -11,7 +11,7 @@ const HeroContent = tw.div`
 `
 
 const HeroArrow = styled(props => <Link {...props} />)`
-${tw`inline w-12 h-12 border-r-6 border-b-6 border-solid border-black transform rotate-45`}
+  ${tw`inline w-12 h-12 border-r-6 border-b-6 border-solid border-black transform rotate-45`}
 
   &:hover {
     ${tw`border-r-6 border-b-6 border-solid border-purple`}
@@ -23,10 +23,12 @@ const HeroSection = props => (
     <HeroContent>
       <h1>We are ResInDe.</h1>
       <p>
-        A group at Princeton University focused on Research, Innovation, and
-        Design. As a team of designers and developers, our mission is to drive
-        impactful user experience solutions through user research and digital
-        implementation.
+        Princeton ResInDe aims to offer a space for designers and design
+        thinkers to convene and practice together, creating real impact on
+        projects and businesses. We emphasize the importance and power of human
+        centered design in creating impactful solutions by providing hands-on
+        projects for students to practice this approach while creating real
+        impact on users.
       </p>
     </HeroContent>
     <HeroArrow to={props.goTo} />
