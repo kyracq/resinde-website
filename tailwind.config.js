@@ -24,19 +24,9 @@ module.exports = {
         DEFAULT: "#000000",
       },
     },
-    fontFamily: {
-      'display': 'Montserrat, Arial, sans-serif',
-      'body': 'Open Sans, Arial, sans-serif',
-    },
     borderWidth: {
+      '2': '2px',
       '6': '6px',
-    },
-    borderRadius: {
-      'none': '0',
-      'sm': '25rem',
-      DEFAULT: '50rem',
-      'lg': '9999px',
-      'full': '9999px',
     },
     extend: {},
   },
