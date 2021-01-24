@@ -12,9 +12,15 @@ const StyledH1 = styled.h1`
   left: 70px;
 `
 
+const StyledH12 = styled.h1`
+  ${tw`text-white text-7xl absolute`}
+  top: 30%;
+  left: 20px;
+`
+
 const StyledH1Workshops = styled.h1`
   ${tw`text-white text-7xl absolute`}
-  top: 48%;
+  top: 60%;
   left: 300px;
 `
 
@@ -43,6 +49,14 @@ const StyledList = tw.ul`
 
 const NumberedList = tw.ul`
   list-decimal list-inside
+`
+
+const ButtonDiv = styled.div`
+  ${tw`text-center`}
+`
+
+const StyledButton = styled(props => <Link {...props} />)`
+  ${tw`border-blue rounded-full text-blue py-2 px-8 uppercase border`}
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
@@ -80,7 +94,7 @@ const ForStudentsPage = () => {
       }
       blueBlob: file(relativePath: { eq: "blue-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 800) {
+          fixed(width: 600) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -123,7 +137,7 @@ const ForStudentsPage = () => {
       <StyledDiv>
         <div style={{ position: "relative" }}>
           <Img fixed={data.blueBlob.childImageSharp.fixed} />
-          <StyledH1>What it's like being on the ResInDe team</StyledH1>
+          <StyledH12>What it's like being on the ResInDe team</StyledH12>
         </div>
         <SectionText>
           <StyledP>
@@ -160,6 +174,11 @@ const ForStudentsPage = () => {
               </li>
             </NumberedList>
           </StyledP>
+          <ButtonDiv>
+            <StyledButton to="https://forms.gle/6YrcssGhsisKTE9m7">
+              apply today
+            </StyledButton>
+          </ButtonDiv>
         </SectionText>
       </StyledDiv>
       <StyledDiv>
@@ -188,12 +207,12 @@ const ForStudentsPage = () => {
                 </StyledLink>
               </li>
             </StyledList>
-            <h2>Upcoming Workshops</h2>
+            <h2>Upcoming Events</h2>
           </div>
         </SectionText>
         <div style={{ position: "relative" }}>
           <Img fixed={data.purpleBlob.childImageSharp.fixed} />
-          <StyledH1Workshops>Our Workshops</StyledH1Workshops>
+          <StyledH1Workshops>ResInDe Events</StyledH1Workshops>
         </div>
       </StyledDiv>
     </div>

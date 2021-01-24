@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Img from "gatsby-image"
 import NavLink from "./navlink"
+import MobileNav from "./mobile-nav"
 
 const StyledHeader = tw.header`
   px-20 pt-8
@@ -13,42 +14,8 @@ const StyledHeader = tw.header`
 const StyledNav = tw.nav`
   flex justify-between items-center text-lg
 `
-const MobileNav = tw.div`
-  sm:hidden
-`
 const DesktopNav = tw.div`
   hidden sm:block
-`
-const Hamburger = styled.div`
-  background-color: #111;
-  width: 30px;
-  height: 3px;
-  transition: all 0.3s linear;
-  align-self: center;
-  position: relative;
-  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
-
-  ::before,
-  ::after {
-    width: 30px;
-    height: 3px;
-    background-color: #111;
-    content: "";
-    position: absolute;
-    transition: all 0.3s linear;
-  }
-
-  ::before {
-    transform: ${props =>
-      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
-    top: -10px;
-  }
-
-  ::after {
-    opacity: ${props => (props.open ? "0" : "1")};
-    transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
-    top: 10px;
-  }
 `
 
 const ActionLink = styled(props => <Link {...props} />)`
@@ -76,9 +43,7 @@ const Header = ({ siteTitle }) => {
             <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
           </Link>
         </div>
-        <MobileNav>
-          <Hamburger />
-        </MobileNav>
+        <MobileNav />
         <DesktopNav>
           <NavLink to="/about" magenta="true">
             About
