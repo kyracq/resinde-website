@@ -26,6 +26,9 @@
 1.  **Start the server**
 
     ```shell
+    # install the gatsby CLI
+    npm install -g gatsby-cli
+
     gatsby develop
     ```
 The site is now running at `http://localhost:8000`!
