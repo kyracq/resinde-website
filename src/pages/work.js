@@ -39,11 +39,14 @@ const StyledLink = styled(props => <Link {...props} />)`
   }
 `
 
+const StyledHeaderDiv = tw.div`
+  mt-16
+`
+
 const PageContainer = styled.div`
   ${tw`flex flex-col space-y-10`}
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-top: 2rem;
+  margin-left: 8.75%;
+  margin-right: 8.75%;
 `
 
 const Filters = styled.div`
@@ -59,7 +62,9 @@ const fillerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Don
 const WorkPage = () => (
   <PageContainer>
     <SEO title="Work" />
-    <h1>Our Work</h1>
+    <StyledHeaderDiv>
+      <h1>Our Work</h1>
+    </StyledHeaderDiv>
     <Filters>
       <StyledLink to="/work" magenta="true">All</StyledLink>
       <StyledLink to="/work" purple="true">Projects</StyledLink>
