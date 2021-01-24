@@ -24,10 +24,6 @@ module.exports = {
         DEFAULT: "#000000",
       },
     },
-    borderWidth: {
-      '2': '2px',
-      '6': '6px',
-    },
     extend: {},
   },
   variants: {
