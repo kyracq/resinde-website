@@ -6,8 +6,10 @@ const HeroContainer = tw.div`
   flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 px-20
 `
 
-const HeroContent = tw.div`
-  text-left text-black
+const HeroContent = styled.div`
+  ${tw`text-left text-black`}
+  margin-left: 4rem;
+  margin-right: 4rem;
 `
 
 const HeroArrow = styled(props => <Link {...props} />)`
