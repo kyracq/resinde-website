@@ -5,6 +5,40 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Item from "../components/item"
 
+const StyledLink = styled(props => <Link {...props} />)`
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  &:before {
+    ${props => {
+      if (props.magenta) return tw`bg-magenta`
+      else if (props.purple) return tw`bg-purple`
+      else if (props.blue) return tw`bg-blue`
+      else return tw`bg-yellow`
+    }}
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transition-duration: 0.5s;
+  }
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+  &:hover {
+    ${props => {
+      if (props.magenta) return tw`text-magenta`
+      else if (props.purple) return tw`text-purple`
+      else if (props.blue) return tw`text-blue`
+      else return tw`text-yellow`
+    }}
+  }
+`
+
 const PageContainer = styled.div`
   ${tw`flex flex-col space-y-10`}
   margin-left: 10%;
@@ -27,9 +61,9 @@ const WorkPage = () => (
     <SEO title="Work" />
     <h1>Our Work</h1>
     <Filters>
-      <Link>All</Link>
-      <Link>Projects</Link>
-      <Link>Case Studies</Link>
+      <StyledLink to="/work" magenta="true">All</StyledLink>
+      <StyledLink to="/work" purple="true">Projects</StyledLink>
+      <StyledLink to="/work" blue="true">Case Studies</StyledLink>
     </Filters>
     <Projects>
       <Item title="Project 1" copy={fillerText} image=""></Item>
