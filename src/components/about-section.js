@@ -14,16 +14,16 @@ const StyledP = styled.p`
   ${tw`mb-8 px-20`}
 `
 
-const ButtonDiv = styled.div`
-  ${tw`text-center`}
-`
-
 const StyledDiv = styled.div`
   ${tw`flex`}
 `
 
 const SectionText = styled.div`
   ${tw`self-center flex-grow ml-8`}
+`
+
+const ButtonDiv = styled.div`
+  ${tw`text-center`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
