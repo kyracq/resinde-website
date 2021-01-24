@@ -27,7 +27,7 @@ const ButtonDiv = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border-blue rounded-full text-blue py-2 px-8 uppercase border`}
+  ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase`}
 `
 
 const StyledList = tw.ul`

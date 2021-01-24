@@ -23,7 +23,7 @@ const SectionText = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border-white rounded-full text-white py-2 px-8 uppercase border absolute`}
+  ${tw`border border-white rounded-full text-white py-2 px-8 uppercase absolute`}
   top: 300px;
   right: 30px;
 `

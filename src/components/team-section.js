@@ -27,7 +27,7 @@ const SectionText = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border-magenta rounded-full text-magenta py-2 px-8 uppercase border`}
+  ${tw`border border-magenta rounded-full text-magenta py-2 px-8 uppercase`}
 `
 
 const TeamSection = props => {
