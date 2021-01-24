@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import tw, { styled } from "twin.macro"
-import { Link } from "gatsby"
+import StyledLink from "./styled-link"
 
 const ItemContainer = styled.div`
   ${tw`space-y-4`}
@@ -14,6 +14,13 @@ const Image = styled.div`
   height: 70%;
   background-color: black;
   border-radius: 25px;
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+  &:hover {
+    ${tw`bg-magenta`}
+  }
 `
 
 const ItemDetails = styled.div`
@@ -24,7 +31,7 @@ const Item = (props) => (
   <ItemContainer>
       <Image />
       <ItemDetails>
-        <Link to=""><h3>{props.title}</h3></Link>
+      <h3><StyledLink to="/" magenta="true">{props.title}</StyledLink></h3>
         <p>{props.copy}</p>
       </ItemDetails>
   </ItemContainer>
