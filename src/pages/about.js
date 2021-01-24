@@ -96,10 +96,18 @@ const AboutPage = () => {
       <StyledDiv>
         <SectionText>
           <LogosDiv>
-            <a href="https://www.tigerapps.org/" target="_blank">
+            <a
+              href="https://www.tigerapps.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Img fixed={data.usgLogo.childImageSharp.fixed} />
             </a>
-            <a href="https://just.cs.princeton.edu/" target="_blank">
+            <a
+              href="https://just.cs.princeton.edu/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <svg
                 width="354"
                 height="174"
