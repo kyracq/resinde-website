@@ -7,7 +7,7 @@ const WorkPage = () => (
   <div>
     <SEO title="Work" />
     <h1>Hi from the work page</h1>
-    <Item />
+    <Item title="Project 1" copy="This website was one of our projects." />
   </div>
 )
 

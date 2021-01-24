@@ -1,14 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
-import tw from "twin.macro";
+import tw, { styled } from "twin.macro";
 
-const Item = ({ title, copy, image }) => (
-    <div>
-        <img src={image} alt={title} width=/> 
-        <h3>{title}</h3>
-        <p>{copy}</p>
-    </div>
+const Image = styled.div`
+  ${tw`w-96 h-48 bg-black`}
+  borderRadius: 100;
+`
+
+const Item = (props) => (
+  <div>
+      <Image />
+      <h3>{props.title}</h3>
+      <p>{props.copy}</p>
+  </div>
 );
 
 Item.propTypes = {
