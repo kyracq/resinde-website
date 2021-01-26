@@ -10,11 +10,7 @@ import HeroSection from "../components/hero"
 const IndexPage = () => (
   <div>
     <SEO title="Home" />
-    <HeroSection goTo="#about-us" />
-    <AboutSection id="about-us" />
-    <ProjectsSection />
-    <TeamSection />
-    <ContactSection />
+    <HeroSection />
   </div>
 )
 

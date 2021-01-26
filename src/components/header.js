@@ -8,7 +8,7 @@ import NavLink from "./navlink"
 import MobileNav from "./mobile-nav"
 
 const StyledHeader = tw.header`
-  px-20 pt-8
+  pt-8 mx-4
 `
 
 const StyledNav = tw.nav`
@@ -16,10 +16,6 @@ const StyledNav = tw.nav`
 `
 const DesktopNav = tw.div`
   hidden sm:block
-`
-
-const ActionLink = styled(props => <Link {...props} />)`
-  ${tw`bg-magenta text-white rounded-lg p-2 hover:bg-opacity-75 transition-colors font-bold`}
 `
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
@@ -43,22 +39,7 @@ const Header = ({ siteTitle }) => {
             <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
           </Link>
         </div>
-        <MobileNav />
-        <DesktopNav>
-          <NavLink to="/about" magenta="true">
-            About
-          </NavLink>
-          <NavLink to="/work" purple="true">
-            Work
-          </NavLink>
-          <NavLink to="/team" blue="true">
-            Our Team
-          </NavLink>
-          <NavLink to="/for-students" yellow="true">
-            For Students
-          </NavLink>
-          <ActionLink to="/contact">Contact Us</ActionLink>
-        </DesktopNav>
+        Princeton ResInDe
       </StyledNav>
     </StyledHeader>
   )

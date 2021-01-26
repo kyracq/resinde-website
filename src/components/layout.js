@@ -15,7 +15,6 @@ import "fontsource-montserrat/700.css"
 import "fontsource-muli"
 
 import Header from "./header"
-import Footer from "./footer"
 import Cursor from "./cursor"
 
 const Global = createGlobalStyle`
@@ -62,7 +61,6 @@ const Layout = ({ children }) => {
       <div>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>
-        <Footer />
       </div>
     </>
   )
