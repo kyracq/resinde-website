@@ -91,7 +91,7 @@ const MobileNav = props => {
   const navLinks = [
     { pageName: "About", pageUrl: "/about" },
     { pageName: "Work", pageUrl: "/work" },
-    { pageName: "Our Team", pageUrl: "/team" },
+    { pageName: "Team", pageUrl: "/team" },
     { pageName: "For Students", pageUrl: "/for-students" },
     { pageName: "Contact Us", pageUrl: "/contact" },
   ]

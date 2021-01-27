@@ -8,7 +8,7 @@ import NavLink from "./navlink"
 import MobileNav from "./mobile-nav"
 
 const StyledHeader = tw.header`
-  px-20 pt-8
+  pt-8 sm:px-20 px-8
 `
 
 const StyledNav = tw.nav`
