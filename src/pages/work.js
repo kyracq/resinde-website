@@ -1,6 +1,7 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
 import StyledLink from "../components/styled-link"
+import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Item from "../components/item"
@@ -23,9 +24,15 @@ const Projects = styled.div`
   ${tw`grid grid-cols-2 gap-x-6 gap-y-6`}
 `
 
-const fillerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis libero ac luctus accumsan."
+const isPurple = (type) => {
+  if (type === "Project") return "true";
+}
 
-const WorkPage = () => (
+const isBlue = (type) => {
+  if (type === 'Case Study') return "true";
+}
+
+const WorkPage = ({data}) => (
   <PageContainer>
     <SEO title="Work" />
     <StyledHeaderDiv>
@@ -37,13 +44,43 @@ const WorkPage = () => (
       <StyledLink to="/work" blue="true">Case Studies</StyledLink>
     </Filters>
     <Projects>
-      <Item title="Project 1" copy={fillerText} image=""></Item>
-      <Item title="Project 2" copy={fillerText} image=""></Item>
-      <Item title="Project 3" copy={fillerText} image=""></Item>
-      <Item title="Case Study 1" copy={fillerText} image=""></Item>
-      <Item title="Case Study 2" copy={fillerText} image=""></Item>
+      {data.allMarkdownRemark.edges.map(({node}) => (
+        <Item
+          key={node.id}
+          link={node.fields.slug}
+          title={node.frontmatter.title}
+          excerpt={node.excerpt}
+          image=""
+          purple={isPurple(node.frontmatter.type)}
+          blue={isBlue(node.frontmatter.type)}
+          />
+      ))}
     </Projects>
   </PageContainer>
 )
 
 export default WorkPage
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "Project"} } }
+      ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+            type
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
