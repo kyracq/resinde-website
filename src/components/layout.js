@@ -42,6 +42,11 @@ const Global = createGlobalStyle`
   }
 `
 
+const isMobile = () => {
+  const ua = navigator.userAgent
+  return /Android|Mobi/i.test(ua)
+}
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -53,11 +58,18 @@ const Layout = ({ children }) => {
     }
   `)
 
+  let cursor
+  if (typeof navigator !== "undefined" && isMobile()) {
+    cursor = null
+  } else {
+    cursor = <Cursor />
+  }
+
   return (
     <>
       <GlobalStyles />
       <Global />
-      <Cursor />
+      {cursor}
 
       <div>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />

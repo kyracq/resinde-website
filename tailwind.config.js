@@ -25,6 +25,9 @@ module.exports = {
       },
     },
     extend: {
+      borderWidth: {
+        6: "6px",
+      },
     },
   },
   variants: {

@@ -30,11 +30,6 @@ const CursorDiv = styled.div`
   opacity: ${props => (props.hidden ? 0 : 1)};
 `
 
-const isMobile = () => {
-  const ua = navigator.userAgent
-  return /Android|Mobi/i.test(ua)
-}
-
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [clicked, setClicked] = useState(false)
@@ -72,8 +67,6 @@ const Cursor = () => {
     handleLinkHoverEvents()
     return () => removeEventListeners()
   }, [hidden])
-
-  if (typeof navigator !== "undefined" && isMobile()) return null
 
   const onMouseDown = () => {
     setClicked(true)
