@@ -1,13 +1,26 @@
 import React from "react"
 import { graphql } from "gatsby"
+import tw, { styled } from "twin.macro"
+
+const StyledHeaderDiv = tw.h1`
+  mt-16
+`
+
+const PageContainer = styled.div`
+  ${tw`flex flex-col`}
+  margin-left: 8.75%;
+  margin-right: 8.75%;
+`
 
 const ProjectPage = ({data}) => {
   const page = data.markdownRemark
   return (
-      <div>
+    <PageContainer>
+      <StyledHeaderDiv>
         <h1>{page.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: page.html }} />
-      </div>
+      </StyledHeaderDiv>
+      <div dangerouslySetInnerHTML={{ __html: page.html }} />
+    </PageContainer>
   )
 }
 

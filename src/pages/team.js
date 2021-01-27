@@ -35,12 +35,12 @@ const TeamPage = () => (
       </p>
     </StyledHeaderDiv>
     <People>
-      <Item title={fillerName} copy={fillerTitle} image=""></Item>
-      <Item title={fillerName} copy={fillerTitle} image=""></Item>
-      <Item title={fillerName} copy={fillerTitle} image=""></Item>
-      <Item title={fillerName} copy={fillerTitle} image=""></Item>
-      <Item title={fillerName} copy={fillerTitle} image=""></Item>
-      <Item title={fillerName} copy={fillerTitle} image=""></Item>
+      <Item title={fillerName} excerpt={fillerTitle}></Item>
+      <Item title={fillerName} excerpt={fillerTitle}></Item>
+      <Item title={fillerName} excerpt={fillerTitle}></Item>
+      <Item title={fillerName} excerpt={fillerTitle}></Item>
+      <Item title={fillerName} excerpt={fillerTitle}></Item>
+      <Item title={fillerName} excerpt={fillerTitle}></Item>
     </People>
   </PageContainer>
 )
