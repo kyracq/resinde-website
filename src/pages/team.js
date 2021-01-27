@@ -18,9 +18,21 @@ const People = styled.div`
   ${tw`grid grid-cols-3 gap-x-6`}
 `
 
-const fillerTitle = "Team member"
-const fillerName = "First Last '00"
-
+let Members = [
+  'Ashley	To \'22',
+  'Jacqueline	Xu \'22',
+  'Kyra	Acquah \'22',
+  'Joanna	Kuo \'22',
+  'Manasseh	Alexander \'21',
+  'Simanga Ndhlovu \'22',
+  'Thanya Begum \'23',
+  'Iroha Shirai \'23',
+  'Begum Ortaoglu \'22',
+  'Megan Specht \'23',
+  'Sophie	Torres \'21',
+  'Ameya Vaidya \'24',
+  'Howard	Yen \'23',
+]
 
 const TeamPage = () => (
   <PageContainer>
@@ -35,12 +47,15 @@ const TeamPage = () => (
       </p>
     </StyledHeaderDiv>
     <People>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
+      {Members.map((value, index) => {
+        return <Item key={index}
+          title={value}
+          excerpt="Team Member"
+          src="https://source.unsplash.com/random"
+          blue="true"
+        />
+      })}
+
     </People>
   </PageContainer>
 )
