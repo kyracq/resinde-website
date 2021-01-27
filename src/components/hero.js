@@ -3,17 +3,19 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 
 const HeroContainer = tw.div`
-  flex flex-wrap justify-center items-center px-32 mt-32
+  flex flex-wrap justify-center items-center p-0 sm:px-32 mt-32 px-0
 `
 
 const StyledA = tw.a`
   flex space-x-4 text-left
 `
 
+const StyledH1 = tw.h1`
+  sm:text-7xl text-5xl
+`
+
 const HeroContent = styled.div`
-  ${tw`text-left text-black space-y-4`}
-  margin-left: 4rem;
-  margin-right: 4rem;
+  ${tw`text-left text-black space-y-4 mx-16 sm:m-0`}
 `
 
 const HeroSection = props => {
@@ -22,7 +24,7 @@ const HeroSection = props => {
       <HeroContainer>
         <HeroContent>
           <div>
-            <h1>Site under construction.</h1>
+            <StyledH1>Site under construction.</StyledH1>
             <p>Check back soon.</p>
           </div>
           <StyledA href="mailto:princetonresinde@gmail.com">
