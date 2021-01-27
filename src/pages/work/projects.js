@@ -2,9 +2,9 @@ import React from "react"
 import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
 
-import StyledLink from "../components/styled-link"
-import SEO from "../components/seo"
-import Item from "../components/item"
+import StyledLink from "../../components/styled-link"
+import SEO from "../../components/seo"
+import Item from "../../components/item"
 
 const StyledHeaderDiv = tw.div`
   mt-16
@@ -39,7 +39,7 @@ const WorkPage = ({data}) => (
       <h1>Our Work</h1>
     </StyledHeaderDiv>
     <Filters>
-      <StyledLink to="/work" magenta="true">All</StyledLink>
+    <StyledLink to="/work" magenta="true">All</StyledLink>
       <StyledLink to="/work/projects" purple="true">Projects</StyledLink>
       <StyledLink to="/work/case-studies" blue="true">Case Studies</StyledLink>
     </Filters>
@@ -50,8 +50,8 @@ const WorkPage = ({data}) => (
           link={node.fields.slug}
           title={node.frontmatter.title}
           excerpt={node.excerpt}
-          src={node.frontmatter.featureImage}
-          altText={node.frontmatter.featureImageAlt}
+          src="https://source.unsplash.com/random"
+          altText=""
           purple={isPurple(node.frontmatter.type)}
           blue={isBlue(node.frontmatter.type)}
           />
@@ -66,7 +66,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {}
+      filter: { frontmatter: { type: { eq: "Project"} } }
       ) {
       edges {
         node {
@@ -75,7 +75,6 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             type
-            featureImage
           }
           fields {
             slug
