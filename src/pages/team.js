@@ -23,7 +23,6 @@ let Members = [
   ['Kyra Acquah \'22', 'Director of Development', 'imglink'],
   ['Joanna Kuo \'22', 'Director of Development', 'imglink'],
   ['Manasseh Alexander \'21', 'Director of Design', 'imglink'],
-  ['Simanga Ndhlovu \'22', 'Director of Design', 'imglink'],
   ['Thanya Begum \'23', 'Outreach/Marketing Officer', 'imglink'],
   ['Iroha Shirai \'23', 'Outreach/Marketing Officer', 'imglink'],
   ['Begum Ortaoglu \'22', 'Team Member', 'imglink'],
