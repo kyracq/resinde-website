@@ -52,7 +52,7 @@ const Header = ({ siteTitle }) => {
             Work
           </NavLink>
           <NavLink to="/team" blue="true">
-            Our Team
+            Team
           </NavLink>
           <NavLink to="/for-students" yellow="true">
             For Students
