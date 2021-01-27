@@ -35,9 +35,9 @@ const ItemDetails = styled.div`
 const Item = (props) => {
   return (
     <ItemContainer key={props.key}>
-      <ImageContainer purple={props.purple} blue={props.blue} alt={props.altText}>
+      <ImageContainer purple={props.purple} blue={props.blue} >
         <Link to={props.link}>
-          <img src={props.image} />
+          <img src="" alt={props.altText} />
         </Link>
       </ImageContainer>
       <ItemDetails>

@@ -31,10 +31,10 @@ const Global = createGlobalStyle`
     font-size: 18px;
   }
   header {
-    font-family: "Montserrat";
+    font-family: "Montserrat", sans-serif;
   }
   body {
-    font-family: "Muli";
+    font-family: "Muli", sans-serif;
   }
   * {
     cursor: none;
