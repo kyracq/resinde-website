@@ -21,7 +21,7 @@ const ContainerDiv = styled.div`
 `
 
 const StyledDiv = styled.div`
-  ${tw`sm:hidden`}
+  ${tw`md:hidden`}
   height: 32px;
   width: 32px;
   display: flex;

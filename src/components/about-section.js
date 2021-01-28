@@ -5,9 +5,8 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute`}
+  ${tw`text-white text-7xl items-center absolute md:pl-20 pl-8`}
   top: 40%;
-  left: 100px;
 `
 
 const StyledP = styled.p`
@@ -37,7 +36,7 @@ const StyledList = tw.ul`
 const AboutSection = props => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "blue-blob.png" }) {
+      blob: file(relativePath: { eq: "blue-blob.png" }) {
         childImageSharp {
           fixed(width: 500) {
             ...GatsbyImageSharpFixed
@@ -47,14 +46,14 @@ const AboutSection = props => {
     }
   `)
 
-  if (!data?.placeholderImage?.childImageSharp?.fixed) {
+  if (!data?.blob?.childImageSharp?.fixed) {
     return <div>Picture not found</div>
   }
 
   return (
     <StyledDiv>
       <div id={props.id} style={{ position: "relative" }}>
-        <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+        <Img fixed={data.blob.childImageSharp.fixed} />
         <StyledH1>About Us</StyledH1>
       </div>
       <SectionText>

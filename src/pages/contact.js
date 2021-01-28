@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   ${tw`rounded-xl p-2 bg-blue text-white hover:bg-magenta transition-colors`}
 `
 const Wrapper = styled.div`
-  ${tw`sm:px-32 mt-16 px-8`}
+  ${tw`md:px-32 mt-16 px-8`}
   height: 1300px;
 `
 

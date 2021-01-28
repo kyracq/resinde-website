@@ -10,7 +10,7 @@ const StyledH1 = styled.h1`
   left: 100px;
 `
 
-const StyledP = styled.p`
+const StyledTextDiv = styled.p`
   ${tw`mb-8 px-20 flex flex-col items-center`}
 `
 
@@ -23,9 +23,7 @@ const SectionText = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-white rounded-full text-white py-2 px-8 uppercase absolute`}
-  top: 300px;
-  right: 30px;
+  ${tw`border border-yellow rounded-full text-yellow py-2 px-8 uppercase hover:bg-yellow hover:text-white transition`}
 `
 
 const StyledA = styled.a`
@@ -59,7 +57,7 @@ const ProjectsSection = props => {
   return (
     <StyledDiv>
       <SectionText>
-        <StyledP>
+        <StyledTextDiv>
           <Img fixed={data.projectsImage.childImageSharp.fixed} />
           <br />
           <div>
@@ -76,12 +74,12 @@ const ProjectsSection = props => {
             </StyledA>
             .
           </div>
-        </StyledP>
+          <StyledButton to="/work">learn more</StyledButton>
+        </StyledTextDiv>
       </SectionText>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.placeholderImage.childImageSharp.fixed} />
         <StyledH1>Current Projects</StyledH1>
-        <StyledButton to="/work">learn more</StyledButton>
       </div>
     </StyledDiv>
   )

@@ -3,13 +3,11 @@ import { Link } from "gatsby"
 import tw, { styled } from "twin.macro"
 
 const HeroContainer = tw.div`
-  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 px-20
+  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 md:px-20 px-8
 `
 
 const HeroContent = styled.div`
   ${tw`text-left text-black`}
-  margin-left: 4rem;
-  margin-right: 4rem;
 `
 
 const HeroArrow = styled(props => <Link {...props} />)`

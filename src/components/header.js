@@ -8,14 +8,14 @@ import NavLink from "./navlink"
 import MobileNav from "./mobile-nav"
 
 const StyledHeader = tw.header`
-  pt-8 sm:px-20 px-8
+  pt-8 md:px-20 px-8
 `
 
 const StyledNav = tw.nav`
   flex justify-between items-center text-lg
 `
 const DesktopNav = tw.div`
-  hidden sm:block
+  hidden md:block
 `
 
 const ActionLink = styled(props => <Link {...props} />)`
