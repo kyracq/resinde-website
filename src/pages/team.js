@@ -17,10 +17,20 @@ const PageContainer = styled.div`
 const People = styled.div`
   ${tw`grid grid-cols-3 gap-x-6`}
 `
-
-const fillerTitle = "Team member"
-const fillerName = "First Last '00"
-
+let Members = [
+  ['Ashley	To \'22', 'Co-Founder', 'imglink'],
+  ['Jacqueline Xu \'22', 'Co-Founder', 'imglink'],
+  ['Kyra Acquah \'22', 'Director of Development', 'imglink'],
+  ['Joanna Kuo \'22', 'Director of Development', 'imglink'],
+  ['Manasseh Alexander \'21', 'Director of Design', 'imglink'],
+  ['Thanya Begum \'23', 'Outreach/Marketing Officer', 'imglink'],
+  ['Iroha Shirai \'23', 'Outreach/Marketing Officer', 'imglink'],
+  ['Begum Ortaoglu \'22', 'Team Member', 'imglink'],
+  ['Megan Specht \'23', 'Team Member', 'imglink'],
+  ['Sophie Torres \'21', 'Team Member', 'imglink'],
+  ['Ameya Vaidya \'24', 'Team Member', 'imglink'],
+  ['Howard Yen \'23', 'Team Member', 'imglink']
+] 
 
 const TeamPage = () => (
   <PageContainer>
@@ -35,12 +45,15 @@ const TeamPage = () => (
       </p>
     </StyledHeaderDiv>
     <People>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
-      <Item title={fillerName} excerpt={fillerTitle}></Item>
+      {Members.map((member, index) => {
+        return <Item key={index}
+          title={member[0]}
+          excerpt={member[1]}
+          src={"https://source.unsplash.com/random"}
+          blue="true"
+        />
+      })}
+
     </People>
   </PageContainer>
 )

@@ -66,7 +66,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {}
+      filter: { frontmatter: { type: { in: ["Project", "Case Study"]} } }
       ) {
       edges {
         node {

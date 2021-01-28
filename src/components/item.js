@@ -37,8 +37,8 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 25px;
+  object-fit: cover;
   transition: all 0.3s ease-out;
-
   &:hover {
     transform: scale(1.1);
   }
@@ -49,7 +49,7 @@ const Item = (props) => {
     <ItemContainer key={props.key}>
       <ImageContainer purple={props.purple} blue={props.blue} >
         <Link to={props.link}>
-          <Image magenta="true" src={props.src} alt={props.altText} />
+          <Image src={props.src} alt={props.altText} />
         </Link>
       </ImageContainer>
       <ItemDetails>
