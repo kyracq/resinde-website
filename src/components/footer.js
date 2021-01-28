@@ -6,16 +6,11 @@ import React from "react"
 import Img from "gatsby-image"
 
 const StyledNav = tw.nav`
-  flex justify-between
+  flex justify-between items-end
 `
 const SocialContainer = tw.nav`
   flex space-x-4 
 `
-
-const ToBottom = tw.nav`
-  flex justify-end
-`
-
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
