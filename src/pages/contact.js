@@ -11,11 +11,11 @@ const StyledTextarea = styled.textarea`
   ${tw`rounded-xl my-5 px-6 py-6 block w-full outline-none`}
 `
 const StyledButton = styled.button`
-
-  ${tw`border border-white rounded-full text-white py-2 px-8 uppercase hover:bg-white hover:text-purple hover:border-purple`}
+  ${tw`border border-white rounded-full text-white py-2 px-8
+  uppercase hover:bg-white hover:text-purple hover:border-purple`}
 `
 const Wrapper = styled.div`
-  ${tw`md:px-32 mt-16 px-8`}
+  ${tw`mobile:px-8 px-20 mt-16`}
   height: 1300px;
 `
 const StyledForm = styled.form`
@@ -70,7 +70,7 @@ const ContactPage = () => {
               ></StyledTextarea>
             </div>
             <div>
-              <StyledButton>SUBMIT</StyledButton>
+              <StyledButton>submit</StyledButton>
             </div>
           </StyledForm>
           <WhiteText>
@@ -78,7 +78,7 @@ const ContactPage = () => {
             what's going on in ResInDe!
           </WhiteText>
           <div>
-            <StyledButton>SUBSCRIBE</StyledButton>
+            <StyledButton>subscribe</StyledButton>
           </div>
         </Wrapper>
       </BackgroundImage>

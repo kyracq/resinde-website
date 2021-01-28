@@ -25,7 +25,7 @@ const StyledH1Workshops = styled.h1`
 `
 
 const StyledHeader = styled.h1`
-  ${tw`pl-20 mt-16`}
+  ${tw`mobile:pl-8 pl-20 mt-16`}
 `
 
 const StyledP = styled.p`

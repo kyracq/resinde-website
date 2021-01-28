@@ -21,10 +21,9 @@ const ContainerDiv = styled.div`
 `
 
 const StyledDiv = styled.div`
-  ${tw`md:hidden`}
+  ${tw`hidden mobile:flex`}
   height: 32px;
   width: 32px;
-  display: flex;
   padding: 4px;
   flex-direction: column;
   justify-content: center;

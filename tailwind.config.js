@@ -24,6 +24,9 @@ module.exports = {
         DEFAULT: "#000000",
       },
     },
+    screens: {
+      mobile: { max: "767px" },
+    },
     extend: {
       borderWidth: {
         6: "6px",

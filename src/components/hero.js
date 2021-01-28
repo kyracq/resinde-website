@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import tw, { styled } from "twin.macro"
 
 const HeroContainer = tw.div`
-  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 md:px-20 px-8
+  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 mobile:px-8 px-20
 `
 
 const HeroContent = styled.div`

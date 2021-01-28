@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const StyledHeaderDiv = styled.div`
-  ${tw`md:px-32 mt-16 px-8`}
+  ${tw`mobile:px-8 px-20 mt-16`}
 `
 const StyledDiv = styled.div`
   ${tw`flex`}
