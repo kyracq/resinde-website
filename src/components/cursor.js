@@ -89,6 +89,10 @@ const Cursor = () => {
       el.addEventListener("mouseover", () => setLinkHovered(true))
       el.addEventListener("mouseout", () => setLinkHovered(false))
     })
+    document.querySelectorAll("button").forEach(el => {
+      el.addEventListener("mouseover", () => setLinkHovered(true))
+      el.addEventListener("mouseout", () => setLinkHovered(false))
+    })
   }
 
   return (

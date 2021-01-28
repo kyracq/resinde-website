@@ -13,6 +13,7 @@ const StyledTextarea = styled.textarea`
 const StyledButton = styled.button`
   ${tw`border border-white rounded-full text-white py-2 px-8
   uppercase hover:bg-white hover:text-purple hover:border-purple`}
+  cursor: none;
 `
 const Wrapper = styled.div`
   ${tw`mobile:px-8 px-20 mt-16`}
