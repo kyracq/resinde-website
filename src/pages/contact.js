@@ -11,18 +11,18 @@ const StyledTextarea = styled.textarea`
   ${tw`rounded-xl my-5 px-6 py-6 block w-full outline-none`}
 `
 const StyledButton = styled.button`
-  ${tw`rounded-xl p-2 bg-blue text-white hover:bg-magenta transition-colors`}
+
+  ${tw`border border-white rounded-full text-white py-2 px-8 uppercase hover:bg-white hover:text-purple hover:border-purple`}
 `
 const Wrapper = styled.div`
   ${tw`md:px-32 mt-16 px-8`}
   height: 1300px;
 `
-
 const StyledForm = styled.form`
   ${tw`text-right`}
 `
 const WhiteText = styled.div`
-  ${tw`text-white mb-4`}
+  ${tw`text-white text-3xl font-bold mb-4 py-5 max-w-lg`}
 `
 
 const ContactPage = () => {
@@ -56,14 +56,14 @@ const ContactPage = () => {
             </div>
             <div>
               <StyledInput
-                style={{ border: `3px solid #f02e65` }}
+                style={{ border: `3px solid #7d71f2` }}
                 placeholder="Email Address"
                 required
               ></StyledInput>
             </div>
             <div>
               <StyledTextarea
-                style={{ border: `3px solid #ffcf2e` }}
+                style={{ border: `3px solid #7d71f2` }}
                 rows="5"
                 placeholder="Message"
                 required
@@ -78,7 +78,7 @@ const ContactPage = () => {
             what's going on in ResInDe!
           </WhiteText>
           <div>
-            <StyledButton>Join the Newsletter!</StyledButton>
+            <StyledButton>SUBSCRIBE</StyledButton>
           </div>
         </Wrapper>
       </BackgroundImage>
