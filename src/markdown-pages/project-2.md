@@ -2,7 +2,7 @@
 title: "Project 2"
 date: "2021-01-27"
 type: "Project"
-featureImage: "https://source.unsplash.com/random"
+featureImage: "../images/princeton-courses.png"
 featureImageAlt: ""
 ---
 

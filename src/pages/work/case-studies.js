@@ -1,5 +1,8 @@
+// Only difference between this file and work.js is
+// filter: { frontmatter: { type: { eq: "Case Study"} } }
+
 import React from "react"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
 import { graphql } from "gatsby"
 
 import StyledLink from "../../components/styled-link"
@@ -42,8 +45,8 @@ const WorkPage = ({data}) => (
           link={node.fields.slug}
           title={node.frontmatter.title}
           excerpt={node.excerpt}
-          src="https://source.unsplash.com/random"
-          altText=""
+          src={node.frontmatter.featureImage.publicURL}
+          altText={node.frontmatter.featureImageAlt}
           purple={isPurple(node.frontmatter.type)}
           blue={isBlue(node.frontmatter.type)}
           />
@@ -67,6 +70,9 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             type
+            featureImage {
+              publicURL
+            }
           }
           fields {
             slug

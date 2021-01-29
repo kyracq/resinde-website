@@ -1,5 +1,7 @@
+// Please cascade any changes to this file to projects.js and case-studies.js
+
 import React from "react"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
 import { graphql } from "gatsby"
 
 import StyledLink from "../components/styled-link"
@@ -42,7 +44,7 @@ const WorkPage = ({data}) => (
           link={node.fields.slug}
           title={node.frontmatter.title}
           excerpt={node.excerpt}
-          src={node.frontmatter.featureImage}
+          src={node.frontmatter.featureImage.publicURL}
           altText={node.frontmatter.featureImageAlt}
           purple={isPurple(node.frontmatter.type)}
           blue={isBlue(node.frontmatter.type)}
@@ -67,7 +69,9 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             type
-            featureImage
+            featureImage {
+              publicURL
+            }
           }
           fields {
             slug

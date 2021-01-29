@@ -1,5 +1,6 @@
 import React from "react"
 import tw from "twin.macro"
+import person from "../images/headshots/howard.png"
 
 import SEO from "../components/seo"
 import Item from "../components/item"
@@ -47,7 +48,7 @@ const TeamPage = () => (
         return <Item key={index}
           title={member[0]}
           excerpt={member[1]}
-          src="/src/images/headshots/jackie.jpg"
+          src={person}
           blue="true"
         />
       })}
