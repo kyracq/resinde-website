@@ -1,5 +1,5 @@
 import React from "react"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
 
 import SEO from "../components/seo"
 import Item from "../components/item"
@@ -8,14 +8,12 @@ const StyledHeaderDiv = tw.div`
   mt-16
 `
 
-const PageContainer = styled.div`
-  ${tw`flex flex-col space-y-14`}
-  margin-left: 8.75%;
-  margin-right: 8.75%;
+const PageContainer = tw.div`
+  space-y-14 mobile:px-8 xl:px-14 px-20 
 `
 
-const People = styled.div`
-  ${tw`grid grid-cols-3 gap-x-6`}
+const People = tw.div`
+  grid grid-cols-3 xl:grid-cols-2 sm:grid-cols-1 gap-x-6
 `
 let Members = [
   ['Ashley	To \'22', 'Co-Founder', 'imglink'],
@@ -49,7 +47,7 @@ const TeamPage = () => (
         return <Item key={index}
           title={member[0]}
           excerpt={member[1]}
-          src={"https://source.unsplash.com/random"}
+          src="/src/images/headshots/jackie.jpg"
           blue="true"
         />
       })}
