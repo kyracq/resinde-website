@@ -49,7 +49,7 @@ export default TeamPage
 export const query = graphql`
   query {
     allMarkdownRemark(
-      sort: {fields: frontmatter___order, order: ASC},
+      sort: {fields: fileAbsolutePath, order: ASC},
       filter: {fileAbsolutePath: {regex: "/(members)/"  }}) {
       edges {
         node {

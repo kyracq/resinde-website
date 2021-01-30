@@ -1,7 +1,6 @@
 ---
-name: "Begum Ortaoglu '22"
+name: "Megan Specht '23"
 role: "Team Member"
-photo: "../../images/headshots/"
+photo: "../../images/headshots/megan.JPG"
 photoAlt: ""
-order: "09"
 ---

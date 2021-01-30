@@ -1,7 +1,6 @@
 ---
-name: "Megan Specht '23"
+name: "Sophie Torres '21"
 role: "Team Member"
-photo: "../../images/headshots/megan.JPG"
+photo: "../../images/headshots/"
 photoAlt: ""
-order: "10"
 ---

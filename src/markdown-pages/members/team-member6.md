@@ -1,7 +1,6 @@
 ---
-name: "Howard Yen '23"
+name: "Barak Nehoran"
 role: "Team Member"
-photo: "../../images/headshots/howard.png"
+photo: "../../images/headshots/barak.jpg"
 photoAlt: ""
-order: "13"
 ---

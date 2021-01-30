@@ -3,10 +3,13 @@ import SEO from "../components/seo"
 import tw, { styled } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import pinkblob from "../images/about-blob-1.png"
+import yellowblob from "../images/about-blob-2.png"
 
 const StyledHeaderDiv = styled.div`
-  ${tw`mobile:px-8 px-20 mt-16`}
+  ${tw`mt-16`}
 `
+
 const StyledDiv = styled.div`
   ${tw`flex`}
 `
@@ -39,6 +42,57 @@ const StyledList = tw.ul`
   list-disc list-inside
 `
 
+const PageContainer = tw.div`
+  space-y-56 mobile:px-8 xl:px-14 px-20 
+`
+
+const PinkBlob = styled.img`
+  position: absolute;
+  top: 330px;
+  z-index: -1;
+`
+
+const YellowBlob = styled.img`
+  position: absolute;
+  top: 1000px;
+  right: 0;
+  z-index: -1;
+`
+
+const Section = styled.div`
+  ${tw`space-y-3`}
+  height: ${props => props.height};
+  text-align: ${props => props.align};
+  color: white;
+`
+const Container = styled.div`
+  ${tw`flex flex-row space-x-6`}
+  ${props => {
+      if (props.align === "right") return tw`justify-end`
+      else return tw`justify-start`
+    }}
+`
+const Card = styled.div`
+  width: ${props => props.width};
+  height: ${props => props.height};
+  background-color: ${props => props.bg};
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 130px;
+`
+
+const Service = (props) => (
+  <Card width="100%" height="300px" bg="black">
+    <h3>{props.name}</h3>
+  </Card>
+)
+
+const Supporter = (props) => (
+  <Card width="150px" height="150px" bg="lightgray">
+    <img src={props.src} alt={props.alt} />
+  </Card>
+)
+
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -69,16 +123,36 @@ const AboutPage = () => {
   return (
     <div>
       <SEO title="About" />
-      <StyledHeaderDiv>
-        <h1>About Us</h1>
-        <p>
-          A group at Princeton University focused on Research, Innovation, and
-          Design. As a team of designers and developers, our mission is to drive
-          impactful user experience solutions through user research and digital
-          implementation.
-        </p>
-      </StyledHeaderDiv>
-      <StyledDiv>
+      <PinkBlob src={pinkblob} alt=""/>
+      <YellowBlob src={yellowblob} alt=""/>
+      <PageContainer>
+        <StyledHeaderDiv>
+          <h1>About Us</h1>
+          <p>
+            A group at Princeton University focused on Research, Innovation, and
+            Design. As a team of designers and developers, our mission is to drive
+            impactful user experience solutions through user research and digital
+            implementation.
+          </p>
+        </StyledHeaderDiv>
+        <Section align="left" height="400px">
+          <h1>Services</h1>
+          <Container>
+            <Service name="User Research"/>
+            <Service name="Product Strategy"/>
+            <Service name="UI/UX Design"/>
+          </Container>
+        </Section>
+        <Section align="right" height="500px">
+          <h1>Supporters</h1>
+          <Container align="right">
+            <Supporter />
+            <Supporter />
+          </Container>
+        </Section>
+      </PageContainer>
+
+      {/* <StyledDiv>
         <div style={{ position: "relative" }}>
           <Img fixed={data.pinkBlob.childImageSharp.fixed} />
           <Header1>Services</Header1>
@@ -132,7 +206,7 @@ const AboutPage = () => {
           <Img fixed={data.yellowBlob.childImageSharp.fixed} />
           <Header2>Supporters</Header2>
         </div>
-      </StyledDiv>
+      </StyledDiv> */}
     </div>
   )
 }
