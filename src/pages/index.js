@@ -9,7 +9,7 @@ import HeroSection from "../components/hero"
 import tw, { styled } from "twin.macro"
 
 const StyledDiv = tw.div`
-  flex flex-col space-y-20
+  flex flex-col space-y-32
 `
 
 const IndexPage = () => (

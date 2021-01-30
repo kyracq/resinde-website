@@ -5,13 +5,12 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute`}
+  ${tw`text-white text-7xl items-center absolute text-right px-20`}
   top: 130px;
-  left: 100px;
 `
 
 const StyledTextDiv = styled.p`
-  ${tw`mb-8 px-20 flex flex-col items-center`}
+  ${tw`mb-8 px-20 flex flex-col items-center space-y-4`}
 `
 
 const StyledDiv = styled.div`

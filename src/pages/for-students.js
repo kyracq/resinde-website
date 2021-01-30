@@ -7,9 +7,8 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl absolute`}
+  ${tw`text-white text-7xl absolute text-right px-20`}
   top: 30%;
-  left: 70px;
 `
 
 const StyledH12 = styled.h1`
@@ -19,9 +18,8 @@ const StyledH12 = styled.h1`
 `
 
 const StyledH1Workshops = styled.h1`
-  ${tw`text-white text-7xl absolute`}
+  ${tw`text-white text-7xl absolute px-20 text-right`}
   top: 60%;
-  left: 200px;
 `
 
 const StyledHeader = styled.h1`
@@ -207,7 +205,20 @@ const ForStudentsPage = () => {
                 </StyledLink>
               </li>
             </StyledList>
+            <br />
             <h2>Upcoming Events</h2>
+            <StyledList>
+              <li>
+                <StyledLink to="https://www.facebook.com/events/1620119328184917">
+                  ResInDe Open House: Feb. 5th @ 5PM EST
+                </StyledLink>
+              </li>
+              <li>
+                <StyledLink to="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
+                  Application Deadline: Feb. 10th @ 11:59 PM EST
+                </StyledLink>
+              </li>
+            </StyledList>
           </div>
         </SectionText>
         <div style={{ position: "relative" }}>

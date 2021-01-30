@@ -20,12 +20,14 @@ const StyledDiv = styled.div`
     transform: translateY(20px);
     transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
       transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: ${props => props.delay};
   }
   &.fadeup-enter-active {
     opacity: 1;
     transform: translateY(0px);
     transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
       transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: ${props => props.delay};
   }
 `
 
@@ -57,9 +59,7 @@ const HeroSection = props => {
           {isMounted &&
             items.map((item, i) => (
               <CSSTransition key={i} classNames="fadeup" timeout={1000}>
-                <StyledDiv style={{ transitionDelay: `${i + 1}00ms` }}>
-                  {item}
-                </StyledDiv>
+                <StyledDiv delay={`${i + 1}00ms`}>{item}</StyledDiv>
               </CSSTransition>
             ))}
         </TransitionGroup>
@@ -67,8 +67,8 @@ const HeroSection = props => {
       <HeroArrow>
         <TransitionGroup component={null}>
           {isMounted && (
-            <CSSTransition classNames="fadeup" timeout={1000}>
-              <StyledDiv style={{ transitionDelay: `${3}00ms` }}>
+            <CSSTransition classNames="fadeup" timeout={500}>
+              <StyledDiv delay={`${3}00ms`}>
                 <Link to={props.goTo}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
