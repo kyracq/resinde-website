@@ -1,5 +1,5 @@
 ---
-name: "Begum Ortaoglu '22"
+name: "Barak Nehoran"
 role: "Team Member"
 photo: "../../images/headshots/"
 photoAlt: ""

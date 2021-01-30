@@ -1,7 +1,7 @@
 ---
-name: "Howard Yen '23"
+name: "Ameya Vaidya '24"
 role: "Team Member"
-photo: "../../images/headshots/howard.png"
+photo: "../../images/headshots/"
 photoAlt: ""
 order: "12"
 ---
