@@ -69,7 +69,10 @@ export default WorkPage
 
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(projects)/" } }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/(projects)/" } }
+    ) {
       edges {
         node {
           id
