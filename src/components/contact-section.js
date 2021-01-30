@@ -23,7 +23,7 @@ const SectionText = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-purple rounded-full text-purple py-2 px-8 uppercase`}
+  ${tw`border border-purple rounded-full text-purple py-2 px-8 uppercase hover:bg-purple hover:text-white transition`}
   top: 70%;
   right: 80px;
 `

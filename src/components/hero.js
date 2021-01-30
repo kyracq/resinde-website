@@ -31,7 +31,7 @@ const HeroSection = props => (
         impact on users.
       </p>
     </HeroContent>
-    <HeroArrow to={props.goTo} />
+    <HeroArrow to={props.goTo}/>
   </HeroContainer>
 )
 

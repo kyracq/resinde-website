@@ -26,7 +26,7 @@ const ButtonDiv = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase`}
+  ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase hover:bg-blue hover:text-white transition`}
 `
 
 const StyledList = tw.ul`
@@ -50,7 +50,7 @@ const AboutSection = props => {
     return <div>Picture not found</div>
   }
 
-  return (
+  return ( 
     <StyledDiv>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.blob.childImageSharp.fixed} />
