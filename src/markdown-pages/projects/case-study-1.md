@@ -2,7 +2,7 @@
 title: "Case Study 1"
 date: "2021-02-24"
 type: "Case Study"
-featureImage: "../images/princeton-courses.png"
+featureImage: "../../images/princeton-courses.png"
 featureImageAlt: ""
 ---
 

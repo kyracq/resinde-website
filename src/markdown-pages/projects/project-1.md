@@ -2,7 +2,7 @@
 title: "Project 1"
 date: "2021-01-24"
 type: "Project"
-featureImage: "../images/princeton-courses.png"
+featureImage: "../../images/princeton-courses.png"
 featureImageAlt: ""
 ---
 

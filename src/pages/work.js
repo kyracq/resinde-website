@@ -43,7 +43,7 @@ const WorkPage = ({data}) => (
           key={node.id}
           link={node.fields.slug}
           title={node.frontmatter.title}
-          excerpt={node.excerpt}
+          subtitle={node.excerpt}
           src={node.frontmatter.featureImage.publicURL}
           altText={node.frontmatter.featureImageAlt}
           purple={isPurple(node.frontmatter.type)}
@@ -60,7 +60,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { type: { in: ["Project", "Case Study"]} } }
+      filter: {fileAbsolutePath: {regex: "/(projects)/"  }}
       ) {
       edges {
         node {
@@ -72,6 +72,7 @@ export const query = graphql`
             featureImage {
               publicURL
             }
+            featureImageAlt
           }
           fields {
             slug
