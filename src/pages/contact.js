@@ -12,7 +12,7 @@ const StyledTextarea = styled.textarea`
 `
 const StyledButton = styled.button`
   ${tw`border border-white rounded-full text-white py-2 px-8
-  uppercase hover:bg-white hover:text-purple hover:border-purple`}
+  uppercase hover:bg-white hover:text-purple transition`}
   cursor: none;
 `
 const Wrapper = styled.div`
@@ -75,7 +75,7 @@ const ContactPage = () => {
             </div>
           </StyledForm>
           <WhiteText>
-            Join out mailing list for monthly updates about opportunities and
+            Join our mailing list for monthly updates about opportunities and
             what's going on in ResInDe!
           </WhiteText>
           <div>

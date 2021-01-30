@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import tw, { styled } from "twin.macro"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 const HeroContainer = tw.div`
   flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 mobile:px-8 px-20
