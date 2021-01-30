@@ -20,36 +20,47 @@ const Projects = tw.div`
   grid grid-cols-2 mobile:grid-cols-1 gap-x-6 gap-y-6
 `
 
-const isPurple = (type) => {
-  if (type === "Project") return "true";
+const isPurple = type => {
+  if (type === "Project") return "true"
 }
 
-const isBlue = (type) => {
-  if (type === 'Case Study') return "true";
+const isBlue = type => {
+  if (type === "Case Study") return "true"
 }
 
-const WorkPage = ({data}) => (
+const WorkPage = ({ data }) => (
   <PageContainer>
     <SEO title="Work" />
     <h1>Our Work</h1>
     <Filters>
-      <StyledLink to="/work" magenta="true">All</StyledLink>
-      <StyledLink to="/work/projects" purple="true">Projects</StyledLink>
-      <StyledLink to="/work/case-studies" blue="true">Case Studies</StyledLink>
+      <StyledLink to="/work" magenta="true">
+        All
+      </StyledLink>
+      <StyledLink to="/work/projects" purple="true">
+        Projects
+      </StyledLink>
+      <StyledLink to="/work/case-studies" blue="true">
+        Case Studies
+      </StyledLink>
     </Filters>
     <Projects>
-      {data.allMarkdownRemark.edges.map(({node}) => (
-        <Item
-          key={node.id}
-          link={node.fields.slug}
-          title={node.frontmatter.title}
-          subtitle={node.excerpt}
-          src={node.frontmatter.featureImage.publicURL}
-          altText={node.frontmatter.featureImageAlt}
-          purple={isPurple(node.frontmatter.type)}
-          blue={isBlue(node.frontmatter.type)}
-          />
-      ))}
+      {data.allMarkdownRemark.edges.map(({ node }) => {
+        if (node.frontmatter.featureImage) {
+          return (
+            <Item
+              key={node.id}
+              link={node.fields.slug}
+              title={node.frontmatter.title}
+              subtitle={node.excerpt}
+              src={node.frontmatter.featureImage.publicURL}
+              altText={node.frontmatter.featureImageAlt}
+              purple={isPurple(node.frontmatter.type)}
+              blue={isBlue(node.frontmatter.type)}
+            />
+          )
+        }
+        return null
+      })}
     </Projects>
   </PageContainer>
 )
@@ -58,10 +69,7 @@ export default WorkPage
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {fileAbsolutePath: {regex: "/(projects)/"  }}
-      ) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(projects)/" } }) {
       edges {
         node {
           id
