@@ -64,7 +64,7 @@ const Item = (props) => {
             {props.title}
           </StyledLink>
         </h3>
-        <p>{props.excerpt}</p>
+        <p>{props.subtitle}</p>
       </ItemDetails>
     </ItemContainer>
   )

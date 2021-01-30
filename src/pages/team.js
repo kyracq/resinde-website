@@ -1,5 +1,6 @@
 import React from "react"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
+import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Item from "../components/item"
@@ -8,31 +9,15 @@ const StyledHeaderDiv = tw.div`
   mt-16
 `
 
-const PageContainer = styled.div`
-  ${tw`flex flex-col space-y-14`}
-  margin-left: 8.75%;
-  margin-right: 8.75%;
+const PageContainer = tw.div`
+  space-y-14 mobile:px-8 xl:px-14 px-20 
 `
 
-const People = styled.div`
-  ${tw`grid grid-cols-3 gap-x-6`}
+const People = tw.div`
+  grid grid-cols-3 xl:grid-cols-2 sm:grid-cols-1 gap-x-6
 `
-let Members = [
-  ['Ashley	To \'22', 'Co-Founder', 'imglink'],
-  ['Jacqueline Xu \'22', 'Co-Founder', 'imglink'],
-  ['Kyra Acquah \'22', 'Director of Development', 'imglink'],
-  ['Joanna Kuo \'22', 'Director of Development', 'imglink'],
-  ['Manasseh Alexander \'21', 'Director of Design', 'imglink'],
-  ['Thanya Begum \'23', 'Outreach/Marketing Officer', 'imglink'],
-  ['Iroha Shirai \'23', 'Outreach/Marketing Officer', 'imglink'],
-  ['Begum Ortaoglu \'22', 'Team Member', 'imglink'],
-  ['Megan Specht \'23', 'Team Member', 'imglink'],
-  ['Sophie Torres \'21', 'Team Member', 'imglink'],
-  ['Ameya Vaidya \'24', 'Team Member', 'imglink'],
-  ['Howard Yen \'23', 'Team Member', 'imglink']
-] 
 
-const TeamPage = () => (
+const TeamPage = ({data}) => (
   <PageContainer>
     <SEO title="Our Team" />
     <StyledHeaderDiv>
@@ -45,17 +30,40 @@ const TeamPage = () => (
       </p>
     </StyledHeaderDiv>
     <People>
-      {Members.map((member, index) => {
-        return <Item key={index}
-          title={member[0]}
-          excerpt={member[1]}
-          src={"https://source.unsplash.com/random"}
-          blue="true"
-        />
-      })}
-
+    {data.allMarkdownRemark.edges.map(({node}) => (
+      <Item
+        key={node.id}
+        title={node.frontmatter.name}
+        subtitle={node.frontmatter.role}
+        src={node.frontmatter.photo ? node.frontmatter.photo.publicURL : ""}
+        altText={node.frontmatter.photoAlt}
+        blue="true"
+      />
+    ))}
     </People>
   </PageContainer>
 )
 
 export default TeamPage
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      sort: {fields: fileAbsolutePath, order: ASC},
+      filter: {fileAbsolutePath: {regex: "/(members)/"  }}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            name
+            role
+            photo {
+              publicURL
+            }
+            photoAlt
+          }
+        }
+      }
+    }
+  }
+`

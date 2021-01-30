@@ -1,61 +1,66 @@
+// Please cascade any changes to this file to projects.js and case-studies.js
+
 import React from "react"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
 import { graphql } from "gatsby"
 
 import StyledLink from "../components/styled-link"
 import SEO from "../components/seo"
 import Item from "../components/item"
 
-const StyledHeaderDiv = tw.div`
-  mt-16
+const PageContainer = tw.div`
+  space-y-10 mobile:px-8 xl:px-14 px-20 pt-16
 `
 
-const PageContainer = styled.div`
-  ${tw`flex flex-col space-y-10`}
-  margin-left: 8.75%;
-  margin-right: 8.75%;
+const Filters = tw.div`
+  flex flex-row space-x-8 font-bold
 `
 
-const Filters = styled.div`
-  ${tw`flex flex-row space-x-8 font-bold`}
+const Projects = tw.div`
+  grid grid-cols-2 mobile:grid-cols-1 gap-x-6 gap-y-6
 `
 
-const Projects = styled.div`
-  ${tw`grid grid-cols-2 gap-x-6 gap-y-6`}
-`
-
-const isPurple = (type) => {
-  if (type === "Project") return "true";
+const isPurple = type => {
+  if (type === "Project") return "true"
 }
 
-const isBlue = (type) => {
-  if (type === 'Case Study') return "true";
+const isBlue = type => {
+  if (type === "Case Study") return "true"
 }
 
-const WorkPage = ({data}) => (
+const WorkPage = ({ data }) => (
   <PageContainer>
     <SEO title="Work" />
-    <StyledHeaderDiv>
-      <h1>Our Work</h1>
-    </StyledHeaderDiv>
+    <h1>Our Work</h1>
     <Filters>
-      <StyledLink to="/work" magenta="true">All</StyledLink>
-      <StyledLink to="/work/projects" purple="true">Projects</StyledLink>
-      <StyledLink to="/work/case-studies" blue="true">Case Studies</StyledLink>
+      <StyledLink to="/work" magenta="true">
+        All
+      </StyledLink>
+      <StyledLink to="/work/projects" purple="true">
+        Projects
+      </StyledLink>
+      <StyledLink to="/work/case-studies" blue="true">
+        Case Studies
+      </StyledLink>
     </Filters>
     <Projects>
-      {data.allMarkdownRemark.edges.map(({node}) => (
-        <Item
-          key={node.id}
-          link={node.fields.slug}
-          title={node.frontmatter.title}
-          excerpt={node.excerpt}
-          src={node.frontmatter.featureImage}
-          altText={node.frontmatter.featureImageAlt}
-          purple={isPurple(node.frontmatter.type)}
-          blue={isBlue(node.frontmatter.type)}
-          />
-      ))}
+      {data.allMarkdownRemark.edges.map(({ node }) => {
+        if (node.frontmatter.featureImage) {
+          return (
+            <Item
+              key={node.id}
+              link={node.fields.slug}
+              title={node.frontmatter.title}
+              subtitle={node.excerpt}
+              src={node.frontmatter.featureImage.publicURL}
+              altText={node.frontmatter.featureImageAlt}
+              purple={isPurple(node.frontmatter.type)}
+              blue={isBlue(node.frontmatter.type)}
+            />
+          )
+        }
+        return null
+      })}
     </Projects>
   </PageContainer>
 )
@@ -66,8 +71,8 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { type: { in: ["Project", "Case Study"]} } }
-      ) {
+      filter: { fileAbsolutePath: { regex: "/(projects)/" } }
+    ) {
       edges {
         node {
           id
@@ -75,7 +80,10 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             type
-            featureImage
+            featureImage {
+              publicURL
+            }
+            featureImageAlt
           }
           fields {
             slug

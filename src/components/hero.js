@@ -12,10 +12,10 @@ const HeroContent = styled.div`
 `
 
 const HeroArrow = styled(props => <Link {...props} />)`
-  ${tw`inline w-12 h-12 border-r-6 border-b-6 border-solid border-black transform rotate-45`}
+  ${tw`inline w-12 h-12 border-r-8 border-b-8 border-solid border-black transform rotate-45`}
 
   &:hover {
-    ${tw`border-r-6 border-b-6 border-solid border-purple`}
+    ${tw`border-r-8 border-b-8 border-solid border-purple`}
   }
 `
 
@@ -32,7 +32,7 @@ const HeroSection = props => (
         impact on users.
       </p>
     </HeroContent>
-    <HeroArrow to={props.goTo} />
+    <HeroArrow to={props.goTo}/>
   </HeroContainer>
 )
 
