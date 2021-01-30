@@ -56,7 +56,7 @@ const ButtonDiv = styled.div`
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase`}
+  ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase hover:bg-blue hover:text-white transition`}
 `
 
 const StyledLink = styled(props => <Link {...props} />)`
