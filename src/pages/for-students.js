@@ -21,7 +21,7 @@ const StyledH12 = styled.h1`
 const StyledH1Workshops = styled.h1`
   ${tw`text-white text-7xl absolute`}
   top: 60%;
-  left: 300px;
+  left: 200px;
 `
 
 const StyledHeader = styled.h1`
@@ -101,7 +101,7 @@ const ForStudentsPage = () => {
       }
       purpleBlob: file(relativePath: { eq: "purple-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 800) {
+          fixed(width: 600) {
             ...GatsbyImageSharpFixed
           }
         }

@@ -6,15 +6,22 @@ import TeamSection from "../components/team-section"
 import ContactSection from "../components/contact-section"
 import SEO from "../components/seo"
 import HeroSection from "../components/hero"
+import tw, { styled } from "twin.macro"
+
+const StyledDiv = tw.div`
+  flex flex-col space-y-20
+`
 
 const IndexPage = () => (
   <div>
     <SEO title="Home" />
     <HeroSection goTo="#about-us" />
-    <AboutSection id="about-us" />
-    <ProjectsSection />
-    <TeamSection />
-    <ContactSection />
+    <StyledDiv>
+      <AboutSection id="about-us" />
+      <ProjectsSection />
+      <TeamSection />
+      <ContactSection />
+    </StyledDiv>
   </div>
 )
 
