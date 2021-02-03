@@ -3,98 +3,61 @@ import SEO from "../components/seo"
 import tw, { styled } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import justlogo from "../images/just-logo.svg"
 
-const MagentaBlob = styled(Img)`
-  top: 460px;
-  left: -200px;
-  z-index: -1;
-  @media (max-width: 639px) {
-    left: -60px;
+const StyledHeaderDiv = styled.div`
+  ${tw`sm:px-32 mt-16 px-8`}
+`
+const StyledDiv = styled.div`
+  ${tw`flex`}
+`
+
+const Header1 = styled.h1`
+  ${tw`text-white text-7xl absolute`}
+  top: 300px;
+  left: 70px;
+`
+
+const Header2 = styled.h1`
+  ${tw`text-white text-7xl absolute`}
+  top: 200px;
+  left: 70px;
+`
+
+const StyledTextDiv = styled.div`
+  ${tw`mb-8 px-20`}
+`
+
+const SectionText = styled.div`
+  ${tw`self-center flex-grow mr-8`}
+  div {
+    ${tw`px-20`}
   }
 `
 
-const YellowBlob = styled(Img)`
-  ${tw`right-0`}
-  top: 1000px;
-  z-index: -1;
-  @media (max-width: 1023px) {
-    top: 1450px;
-  }
-  @media (max-width: 639px) {
-    top: 1500px;
-  }
+const StyledList = tw.ul`
+  list-disc list-inside
 `
 
-const StyledHeaderDiv = tw.div`
-  mt-16 mobile:px-8 px-32
-`
-
-const PageContainer = tw.div`
-  space-y-48 px-20 
-  xl:px-14
-  lg:space-y-36
-  mobile:space-y-32 mobile:px-8 
-`
-
-const Section = styled.div`
-  ${tw`space-y-3 text-white mobile:px-8 px-32`}
-  min-height: ${props => props.height};
-  text-align: ${props => props.align};
-`
-const FlexContainer = styled.div`
-  ${tw`flex flex-row space-x-6 items-center`}
-  ${props => {
-    if (props.align === "right") return tw`justify-end lg:items-end`
-    else return tw`justify-start lg:flex-col lg:space-x-0 lg:space-y-6`
-  }}
-`
-const Card = styled.div`
-  ${tw`w-full text-center border-yellow border-4 bg-white text-magenta`}
-  height: 300px;
-  border-radius: 25px;
-  padding-top: 130px;
-  p {
-    ${tw`text-2xl`}
-  }
-`
-
-const Service = props => (
-  <Card>
-    <p>{props.name}</p>
-  </Card>
-)
-
-const StyledH1 = tw.h1`
-  uppercase
+const NumberedList = tw.ul`
+  list-decimal list-inside
 `
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      magentaBlob: file(relativePath: { eq: "pink-blob-2.png" }) {
+      pinkBlob: file(relativePath: { eq: "pink-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 1000) {
+          fixed(width: 500) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      yellowBlob: file(relativePath: { eq: "yellow-blob-3.png" }) {
+      yellowBlob: file(relativePath: { eq: "yellow-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 548) {
+          fixed(width: 500) {
             ...GatsbyImageSharpFixed
           }
         }
-      }
-      usgLogo: file(relativePath: { eq: "usg-logo.png" }) {
-        childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      justLogo: file(relativePath: { eq: "just-logo.svg" }) {
-        publicURL
       }
     }
   `)
@@ -102,60 +65,72 @@ const AboutPage = () => {
   return (
     <div>
       <SEO title="About" />
-      <MagentaBlob
-        fixed={data.magentaBlob.childImageSharp.fixed}
-        style={{
-          position: "absolute",
-        }}
-      />
-      <YellowBlob
-        fixed={data.yellowBlob.childImageSharp.fixed}
-        style={{
-          position: "absolute",
-        }}
-      />
-      <PageContainer>
-        <StyledHeaderDiv>
-          <h1>About Us</h1>
-          <p>
-            A group at Princeton University focused on Research, Innovation, and
-            Design. As a team of designers and developers, our mission is to
-            drive impactful user experience solutions through user research and
-            digital implementation.
-          </p>
-        </StyledHeaderDiv>
-        <Section align="left" height="500px">
-          <StyledH1>Services</StyledH1>
-          <FlexContainer>
-            <Service name="User Research" />
-            <Service name="Product Strategy" />
-            <Service name="UI/UX Design" />
-          </FlexContainer>
-        </Section>
-        <Section align="right" height="500px">
-          <h1>Supporters</h1>
-          <FlexContainer align="right">
-            <a
-              href="https://www.tigerapps.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Img fixed={data.usgLogo.childImageSharp.fixed} />
-            </a>
-            <a
-              href="https://just.cs.princeton.edu/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                width="225px"
-                src={justlogo}
-                alt="Logo that says JUST in white letters, except the u is gold and has an underline."
-              />
-            </a>
-          </FlexContainer>
-        </Section>
-      </PageContainer>
+      <StyledHeaderDiv>
+        <h1>About Us</h1>
+        <p>
+          A group at Princeton University focused on Research, Innovation, and
+          Design. As a team of designers and developers, our mission is to drive
+          impactful user experience solutions through user research and digital
+          implementation.
+        </p>
+      </StyledHeaderDiv>
+      <StyledDiv>
+        <div style={{ position: "relative" }}>
+          <Img fixed={data.pinkBlob.childImageSharp.fixed} />
+          <Header1>Services</Header1>
+        </div>
+        <SectionText>
+          <StyledTextDiv>
+            <StyledList>
+              <li>User Research</li>
+              <li>Product Strategy</li>
+              <li>UI/UX Design</li>
+            </StyledList>
+          </StyledTextDiv>
+        </SectionText>
+      </StyledDiv>
+      <StyledDiv>
+        <SectionText>
+          <StyledTextDiv>
+            Princeton ResInDe focuses on building projects with real impact on
+            our community. As a team member, you’ll be working with a team to
+            complete a project ranging from conducting user research, building
+            prototypes, developing product strategies, and software development.
+            In addition to projects, you’ll take part in teamwide events such
+            as:
+            <StyledList>
+              <li>
+                Project syncs where each team shares their work with other teams
+              </li>
+              <li>
+                Brainstorming events where the team brainstorms potential
+                problems on and off campus to address
+              </li>
+              <li>Fun, social events!</li>
+            </StyledList>
+            <br />
+            Princeton ResInDe is founded to bring value to you in several ways:
+            <NumberedList>
+              <li>
+                To immerse yourself in the world of practical and design
+                thinking.
+              </li>
+              <li>
+                To work on meaningful projects that generate a lasting impact on
+                local communities.
+              </li>
+              <li>
+                To amp up your resume and portfolio. To join a community of
+                designers, entrepreneurs, and innovative thinkers.
+              </li>
+            </NumberedList>
+          </StyledTextDiv>
+        </SectionText>
+        <div style={{ position: "relative" }}>
+          <Img fixed={data.yellowBlob.childImageSharp.fixed} />
+          <Header2>Supporters</Header2>
+        </div>
+      </StyledDiv>
     </div>
   )
 }
