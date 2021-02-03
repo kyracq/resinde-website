@@ -5,9 +5,8 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute`}
+  ${tw`text-white text-7xl items-center absolute uppercase pl-20`}
   top: 40%;
-  left: 80px;
 `
 
 const StyledP = styled.p`

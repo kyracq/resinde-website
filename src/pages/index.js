@@ -6,7 +6,7 @@ import TeamSection from "../components/team-section"
 import ContactSection from "../components/contact-section"
 import SEO from "../components/seo"
 import HeroSection from "../components/hero"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
 
 const StyledDiv = tw.div`
   flex flex-col space-y-32
