@@ -22,7 +22,7 @@ const StyledH1Workshops = styled.h1`
 `
 
 const StyledHeader = styled.h1`
-  ${tw`mobile:pl-8 pl-48 mt-16`}
+  ${tw`mobile:pl-8 pl-48 mt-48`}
 `
 
 const StyledPLeft = styled.p`

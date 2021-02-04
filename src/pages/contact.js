@@ -16,14 +16,14 @@ const StyledButton = styled.button`
   cursor: none;
 `
 const Wrapper = styled.div`
-  ${tw`mobile:px-8 px-48 mt-16`}
+  ${tw`mobile:px-8 px-48 mt-48`}
   height: 1300px;
 `
 const StyledForm = styled.form`
   ${tw`text-right`}
 `
 const WhiteText = styled.div`
-  ${tw`text-white text-3xl font-bold mb-4 py-5 max-w-lg`}
+  ${tw`text-white text-2xl font-bold mb-4 py-5 max-w-lg`}
 `
 
 const ContactPage = () => {

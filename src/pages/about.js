@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import ReactTooltip from "react-tooltip"
 
 const PageWrapper = tw.div`
-  space-y-32
+  space-y-32 mt-48
 `
 
 const CircleLogo = styled(Img)`
