@@ -5,10 +5,10 @@ import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 const StyledInput = styled.input`
-  ${tw`rounded-xl my-7 px-6 py-2 block w-full outline-none`}
+  ${tw`rounded-xl my-7 px-6 py-2 block w-full outline-none border-purple border-2`}
 `
 const StyledTextarea = styled.textarea`
-  ${tw`rounded-xl my-5 px-6 py-6 block w-full outline-none`}
+  ${tw`rounded-xl my-5 px-6 py-6 block w-full outline-none border-purple border-2`}
 `
 const StyledButton = styled.button`
   ${tw`border border-white rounded-full text-white py-2 px-8
@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   cursor: none;
 `
 const Wrapper = styled.div`
-  ${tw`mobile:px-8 px-20 mt-16`}
+  ${tw`mobile:px-8 px-48 mt-16`}
   height: 1300px;
 `
 const StyledForm = styled.form`
@@ -32,7 +32,7 @@ const ContactPage = () => {
       query {
         bgBlob: file(relativePath: { eq: "purple-blob-3.png" }) {
           childImageSharp {
-            fluid {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -49,22 +49,13 @@ const ContactPage = () => {
           <h1>Contact Us</h1>
           <StyledForm action="/contact-form" method="post">
             <div>
-              <StyledInput
-                style={{ border: `3px solid #7d71f2` }}
-                placeholder="Name"
-                required
-              ></StyledInput>
+              <StyledInput placeholder="Name" required></StyledInput>
             </div>
             <div>
-              <StyledInput
-                style={{ border: `3px solid #7d71f2` }}
-                placeholder="Email Address"
-                required
-              ></StyledInput>
+              <StyledInput placeholder="Email Address" required></StyledInput>
             </div>
             <div>
               <StyledTextarea
-                style={{ border: `3px solid #7d71f2` }}
                 rows="5"
                 placeholder="Message"
                 required

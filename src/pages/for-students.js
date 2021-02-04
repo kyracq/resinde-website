@@ -7,26 +7,29 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl absolute text-right px-20`}
-  top: 30%;
+  ${tw`text-white text-7xl absolute text-right pr-48`}
+  top: 260px;
 `
 
 const StyledH12 = styled.h1`
-  ${tw`text-white text-7xl absolute px-20`}
-  top: 30%;
+  ${tw`text-white text-7xl absolute px-48`}
+  top: 260px;
 `
 
 const StyledH1Workshops = styled.h1`
-  ${tw`text-white text-7xl absolute px-20 text-right`}
-  top: 20%;
+  ${tw`text-white text-7xl absolute px-48 text-right`}
+  top: 220px;
 `
 
 const StyledHeader = styled.h1`
-  ${tw`mobile:pl-8 pl-20 mt-16`}
+  ${tw`mobile:pl-8 pl-48 mt-16`}
 `
 
-const StyledP = styled.p`
-  ${tw`mb-8 px-20`}
+const StyledPLeft = styled.p`
+  ${tw`mobile:pl-8 pl-48`}
+`
+const StyledPRight = styled.p`
+  ${tw`mobile:pr-8 pr-48`}
 `
 
 const StyledDiv = styled.div`
@@ -38,10 +41,7 @@ const Sections = styled.div`
 `
 
 const SectionText = styled.div`
-  ${tw`self-center flex-grow mr-8`}
-  div {
-    ${tw`px-20`}
-  }
+  ${tw`self-center flex-grow`}
 `
 
 const StyledList = tw.ul`
@@ -53,7 +53,7 @@ const NumberedList = tw.ul`
 `
 
 const ButtonDiv = styled.div`
-  ${tw`text-center`}
+  ${tw`text-center mt-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -88,21 +88,21 @@ const ForStudentsPage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "yellow-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 500) {
+          fixed(width: 1000) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       blueBlob: file(relativePath: { eq: "blue-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 600) {
+          fixed(width: 1000) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       purpleBlob: file(relativePath: { eq: "purple-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 600) {
+          fixed(width: 1000) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -121,7 +121,7 @@ const ForStudentsPage = () => {
       <Sections>
         <StyledDiv>
           <SectionText>
-            <StyledP>
+            <StyledPLeft>
               What is HCD? Human Centered Design (HCD) is an emerging practice
               and is becoming an increasingly valued and sought-after skill in
               all industries. It is a framework for problem solving with the
@@ -129,9 +129,9 @@ const ForStudentsPage = () => {
               clear academic path for design, it houses designers from far and
               wide who practice their craft independently and we’re excited to
               provide a hub for designers of all backgrounds to work together.
-            </StyledP>
+            </StyledPLeft>
           </SectionText>
-          <div style={{ position: "relative" }}>
+          <div style={{ position: "relative", width: "800px" }}>
             <Img fixed={data.placeholderImage.childImageSharp.fixed} />
             <StyledH1>Human Centered Design</StyledH1>
           </div>
@@ -142,7 +142,7 @@ const ForStudentsPage = () => {
             <StyledH12>Work on the ResInDe Team</StyledH12>
           </div>
           <SectionText>
-            <StyledP>
+            <StyledPRight>
               Princeton ResInDe focuses on building projects with real impact on
               our community. As a team member, you’ll be working with a team to
               complete a project ranging from conducting user research, building
@@ -177,55 +177,57 @@ const ForStudentsPage = () => {
                   designers, entrepreneurs, and innovative thinkers.
                 </li>
               </NumberedList>
-            </StyledP>
-            <ButtonDiv>
-              <StyledButton to="https://forms.gle/6YrcssGhsisKTE9m7">
-                apply today
-              </StyledButton>
-            </ButtonDiv>
+              <ButtonDiv>
+                <StyledButton to="https://forms.gle/6YrcssGhsisKTE9m7">
+                  apply today
+                </StyledButton>
+              </ButtonDiv>
+            </StyledPRight>
           </SectionText>
         </StyledDiv>
         <StyledDiv>
           <SectionText>
-            <div>
-              <h2>Upcoming Events</h2>
-              <StyledList>
-                <li>
-                  <StyledLink to="https://www.facebook.com/events/1620119328184917">
-                    ResInDe Open House: Feb. 5th @ 5PM EST
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
-                    Application Deadline: Feb. 10th @ 11:59 PM EST
-                  </StyledLink>
-                </li>
-              </StyledList>
-              <br />
-              <h2>Past Workshops</h2>
-              <StyledList>
-                <li>
-                  <StyledLink to="https://drive.google.com/drive/u/2/folders/1eDNLrpn7Jz1cWsiQolwJ0Yk22FM-jTey">
-                    Visual Design
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="https://drive.google.com/drive/u/2/folders/19h6dT3UTpupxzF5vaFHIO5VjZvpPHqSL">
-                    Design Thinking
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="https://drive.google.com/drive/u/2/folders/1iA-D3wU1KtkYDbZOXE2BjctJFlPUH3u8">
-                    Figma
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="https://drive.google.com/drive/u/2/folders/10dBm7SI-da4mufos9JzC8FmbxNOToLUl">
-                    React + Backend
-                  </StyledLink>
-                </li>
-              </StyledList>
-            </div>
+            <StyledPLeft>
+              <div>
+                <h2>Upcoming Events</h2>
+                <StyledList>
+                  <li>
+                    <StyledLink to="https://www.facebook.com/events/1620119328184917">
+                      ResInDe Open House: Feb. 5th @ 5PM EST
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
+                      Application Deadline: Feb. 10th @ 11:59 PM EST
+                    </StyledLink>
+                  </li>
+                </StyledList>
+                <br />
+                <h2>Past Workshops</h2>
+                <StyledList>
+                  <li>
+                    <StyledLink to="https://drive.google.com/drive/u/2/folders/1eDNLrpn7Jz1cWsiQolwJ0Yk22FM-jTey">
+                      Visual Design
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to="https://drive.google.com/drive/u/2/folders/19h6dT3UTpupxzF5vaFHIO5VjZvpPHqSL">
+                      Design Thinking
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to="https://drive.google.com/drive/u/2/folders/1iA-D3wU1KtkYDbZOXE2BjctJFlPUH3u8">
+                      Figma
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to="https://drive.google.com/drive/u/2/folders/10dBm7SI-da4mufos9JzC8FmbxNOToLUl">
+                      React + Backend
+                    </StyledLink>
+                  </li>
+                </StyledList>
+              </div>
+            </StyledPLeft>
           </SectionText>
           <div style={{ position: "relative" }}>
             <Img fixed={data.purpleBlob.childImageSharp.fixed} />

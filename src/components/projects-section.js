@@ -5,12 +5,12 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute text-right px-20 uppercase`}
-  top: 130px;
+  ${tw`text-white text-7xl items-center absolute text-right px-48`}
+  top: 260px;
 `
 
 const StyledTextDiv = styled.p`
-  ${tw`mb-8 px-20 flex flex-col items-center space-y-4`}
+  ${tw`mb-8 pl-48 flex flex-col items-center space-y-4`}
 `
 
 const StyledDiv = styled.div`
@@ -32,16 +32,9 @@ const StyledA = styled.a`
 const ProjectsSection = props => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "yellow-blob.png" }) {
+      blob: file(relativePath: { eq: "yellow-blob.png" }) {
         childImageSharp {
-          fixed(width: 500) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      projectsImage: file(relativePath: { eq: "princeton-courses.png" }) {
-        childImageSharp {
-          fixed(width: 500) {
+          fixed(width: 800) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -49,7 +42,7 @@ const ProjectsSection = props => {
     }
   `)
 
-  if (!data?.placeholderImage?.childImageSharp?.fixed) {
+  if (!data?.blob?.childImageSharp?.fixed) {
     return <div>Picture not found</div>
   }
 
@@ -57,8 +50,6 @@ const ProjectsSection = props => {
     <StyledDiv>
       <SectionText>
         <StyledTextDiv>
-          <Img fixed={data.projectsImage.childImageSharp.fixed} />
-          <br />
           <div>
             ResInDe is currently working with{" "}
             <StyledA target="_blank" href="https://www.tigerapps.org/">
@@ -77,7 +68,7 @@ const ProjectsSection = props => {
         </StyledTextDiv>
       </SectionText>
       <div id={props.id} style={{ position: "relative" }}>
-        <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+        <Img fixed={data.blob.childImageSharp.fixed} />
         <StyledH1>Current Projects</StyledH1>
       </div>
     </StyledDiv>

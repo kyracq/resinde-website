@@ -6,11 +6,11 @@ import React from "react"
 import Img from "gatsby-image"
 
 const StyledFooter = tw.footer`
-  flex justify-between items-end p-2
+  flex justify-between mobile:items-center mobile:space-y-8 items-end p-2 mobile:flex-col
 `
 
 const SocialContainer = tw.div`
-  flex space-x-4 justify-end mr-4
+  flex space-x-4 mobile:justify-center justify-end mr-4
 `
 
 const StyledDiv = styled.div`

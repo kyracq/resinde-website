@@ -59,7 +59,7 @@ const SectionText = styled.div`
 `
 
 const StyledList = tw.ul`
-  list-disc list-inside text-lg self-center right-48 absolute
+  list-disc list-inside text-lg self-center mobile:static right-48 absolute
 `
 
 const AboutPage = () => {
@@ -139,7 +139,7 @@ const AboutPage = () => {
               >
                 <Img fixed={data.usgLogo.childImageSharp.fixed} />
               </a>
-              <ReactTooltip id="tiger-apps" place="top" effect="solid">
+              <ReactTooltip id="tiger-apps" place="top">
                 ResInDe is working with USG Tiger Apps on a refresh of TigerBook
                 and Princeton Courses.
               </ReactTooltip>
@@ -148,6 +148,8 @@ const AboutPage = () => {
                 href="https://just.cs.princeton.edu/"
                 target="_blank"
                 rel="noreferrer"
+                data-tip
+                data-for="just"
               >
                 <img
                   width="225px"
@@ -155,20 +157,34 @@ const AboutPage = () => {
                   alt="Logo that says JUST in white letters, except the u is gold and has an underline."
                 />
               </a>
+              <ReactTooltip id="just" place="top">
+                Technology for a Just Society (JuST)
+              </ReactTooltip>
               <a
                 href="https://www.princetoncoscouncil.com/"
                 target="_blank"
                 rel="noreferrer"
+                data-tip
+                data-for="cos-council"
               >
                 <CircleLogo fixed={data.cosCouncilLogo.childImageSharp.fixed} />
               </a>
+              <ReactTooltip id="cos-council" place="top">
+                ResInDe has partnered with Princeton COS Council on a workshop
+                series.
+              </ReactTooltip>
               <a
                 href="https://www.tigerlaunch.com/"
                 target="_blank"
                 rel="noreferrer"
+                data-tip
+                data-for="tiger-launch"
               >
                 <Img fixed={data.tigerLaunchLogo.childImageSharp.fixed} />
               </a>
+              <ReactTooltip id="tiger-launch" place="top">
+                Tiger Launch
+              </ReactTooltip>
             </StyledLogosDiv>
           </SectionText>
           <div style={{ position: "relative", width: "800px" }}>
