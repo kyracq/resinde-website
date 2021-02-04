@@ -17,7 +17,8 @@ const IndexPage = () => (
     <SEO title="Home" />
     <HeroSection goTo="#about-us" />
     <StyledDiv>
-      <AboutSection id="about-us" />
+      <div style={{ height: "48px" }} id="about-us"></div>
+      <AboutSection />
       <ProjectsSection />
       <TeamSection />
       <ContactSection />

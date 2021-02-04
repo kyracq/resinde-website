@@ -9,11 +9,11 @@ import SEO from "../components/seo"
 import Item from "../components/item"
 
 const PageContainer = tw.div`
-  space-y-10 mobile:px-8 xl:px-14 px-20 pt-16
+  space-y-10 mobile:px-8 px-48 pt-16 mt-32
 `
 
 const Filters = tw.div`
-  flex flex-row space-x-8 font-bold
+  flex flex-row space-x-8 font-bold hidden
 `
 
 const Projects = tw.div`

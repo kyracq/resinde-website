@@ -48,7 +48,7 @@ const TeamSection = props => {
 
   return (
     <StyledDiv>
-      <div id={props.id} style={{ position: "relative" }}>
+      <div style={{ position: "relative" }}>
         <Img fixed={data.placeholderImage.childImageSharp.fixed} />
         <StyledH1>Our Team</StyledH1>
       </div>
