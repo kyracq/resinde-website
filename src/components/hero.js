@@ -4,7 +4,7 @@ import tw, { styled } from "twin.macro"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 const HeroContainer = tw.div`
-  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 mobile:px-8 px-20
+  flex flex-col -mt-28 min-h-screen max-w-max justify-center items-center p-0 space-y-32 mobile:px-8 px-48
 `
 
 const HeroContent = styled.div`
@@ -12,7 +12,7 @@ const HeroContent = styled.div`
 `
 
 const HeroArrow = styled(props => <Link {...props} />)`
-  ${tw`hover:text-purple transition animate-bounce`}
+  ${tw`hover:text-purple transition mobile:hidden animate-bounce`}
 `
 const StyledDiv = styled.div`
   &.fadeup-enter {

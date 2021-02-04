@@ -2,93 +2,103 @@ import React from "react"
 import SEO from "../components/seo"
 import tw, { styled } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
+import justLogo from "../images/just-logo.svg"
 import Img from "gatsby-image"
-import justlogo from "../images/just-logo.svg"
+import ReactTooltip from "react-tooltip"
+
+const PageWrapper = tw.div`
+  space-y-32 mt-48
+`
+
+const CircleLogo = styled(Img)`
+  ${tw`rounded-full`}
+`
 
 const MagentaBlob = styled(Img)`
-  top: 330px;
+  left: -200px;
   z-index: -1;
-  @media (max-width: 639px) { 
+  @media (max-width: 639px) {
     left: -60px;
   }
 `
 
 const YellowBlob = styled(Img)`
-  ${tw`right-0`}
-  top: 1000px;
   z-index: -1;
-  @media (max-width: 1023px) { 
-    top: 1450px;
-  }
-  @media (max-width: 639px) { 
-    top: 1500px;
+  @media (max-width: 639px) {
+    left: -60px;
   }
 `
 
-const StyledHeaderDiv = tw.div`
-  mt-16
+const StyledHeaderDiv = styled.div`
+  ${tw`mobile:px-8 px-48 mt-16`}
+`
+const StyledDiv = styled.div`
+  ${tw`flex`}
 `
 
-const PageContainer = tw.div`
-  space-y-48 px-20 
-  xl:px-14
-  lg:space-y-36
-  mobile:space-y-32 mobile:px-8 
+const Header1 = styled.h1`
+  ${tw`text-white text-7xl absolute pl-48`}
+  top: 300px;
 `
 
-const Section = styled.div`
-  ${tw`space-y-3 text-white`}
-  min-height: ${props => props.height};
-  text-align: ${props => props.align};
-`
-const FlexContainer = styled.div`
-  ${tw`flex flex-row space-x-6 items-center`}
-  ${props => {
-      if (props.align === "right") return (
-        tw`justify-end lg:items-end`
-      )
-      else return tw`justify-start lg:flex-col lg:space-x-0 lg:space-y-6`
-    }}
-`
-const Card = styled.div`
-  ${tw`w-full text-center bg-black text-white`}
-  height: 300px;
-  border-radius: 25px;
-  padding-top: 130px;
+const Header2 = styled.h1`
+  ${tw`text-white text-7xl absolute right-48`}
+  top: 300px;
 `
 
-const Service = (props) => (
-  <Card>
-    <h3>{props.name}</h3>
-  </Card>
-)
+const StyledLogosDiv = styled.div`
+  ${tw`grid grid-cols-2 justify-items-center gap-y-16`}
+  span {
+    visibility: hidden;
+    padding: 5px 0;
+  }
+`
+
+const SectionText = styled.div`
+  ${tw`self-center flex-grow`}
+`
+
+const StyledList = tw.ul`
+  list-disc list-inside text-lg self-center mobile:static right-48 absolute
+`
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      magentaBlob: file(relativePath: { eq: "pink-blob-2.png" }) {
+      pinkBlob: file(relativePath: { eq: "pink-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 542) {
+          fixed(width: 1000) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      yellowBlob: file(relativePath: { eq: "yellow-blob-3.png" }) {
+      yellowBlob: file(relativePath: { eq: "yellow-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 548) {
+          fixed(width: 1000) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       usgLogo: file(relativePath: { eq: "usg-logo.png" }) {
         childImageSharp {
-          fixed(width: 100) {
+          fixed(width: 130) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      justLogo: file(relativePath: { eq: "just-logo.svg" }) {
-        publicURL
+      cosCouncilLogo: file(relativePath: { eq: "cos-council-logo.jpg" }) {
+        childImageSharp {
+          fixed(width: 130) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      tigerLaunchLogo: file(relativePath: { eq: "tiger-launch-logo.png" }) {
+        childImageSharp {
+          fixed(width: 130) {
+            ...GatsbyImageSharpFixed
+          }
+        }
       }
     }
   `)
@@ -96,46 +106,93 @@ const AboutPage = () => {
   return (
     <div>
       <SEO title="About" />
-      <MagentaBlob fixed={data.magentaBlob.childImageSharp.fixed} style={{
-        position: 'absolute'
-      }}/>
-      <YellowBlob fixed={data.yellowBlob.childImageSharp.fixed} style={{
-        position: 'absolute'
-      }} />
-      <PageContainer>
+      <PageWrapper>
         <StyledHeaderDiv>
           <h1>About Us</h1>
           <p>
             A group at Princeton University focused on Research, Innovation, and
-            Design. As a team of designers and developers, our mission is to drive
-            impactful user experience solutions through user research and digital
-            implementation.
+            Design. As a team of designers and developers, our mission is to
+            drive impactful user experience solutions through user research and
+            digital implementation.
           </p>
         </StyledHeaderDiv>
-        <Section align="left" height="500px">
-          <h1>Services</h1>
-          <FlexContainer>
-            <Service name="User Research"/>
-            <Service name="Product Strategy"/>
-            <Service name="UI/UX Design"/>
-          </FlexContainer>
-        </Section>
-        <Section align="right" height="500px">
-          <h1>Supporters</h1>
-          <FlexContainer align="right">
-            <a href="https://www.tigerapps.org/" target="_blank" rel="noreferrer">
-              <Img fixed={data.usgLogo.childImageSharp.fixed} />
-            </a>
-            <a href="https://just.cs.princeton.edu/" target="_blank" rel="noreferrer">
-              <img
-                width="225px"
-                src={justlogo}
-                alt="Logo that says JUST in white letters, except the u is gold and has an underline."
-              />
-            </a>
-          </FlexContainer>
-        </Section>
-      </PageContainer>
+        <StyledDiv>
+          <div style={{ position: "relative", width: "800px" }}>
+            <MagentaBlob fixed={data.pinkBlob.childImageSharp.fixed} />
+            <Header1>Services</Header1>
+          </div>
+          <StyledList>
+            <li>User Research</li>
+            <li>Product Strategy</li>
+            <li>UI/UX Design</li>
+          </StyledList>
+        </StyledDiv>
+        <StyledDiv>
+          <SectionText>
+            <StyledLogosDiv>
+              <a
+                href="https://www.tigerapps.org/"
+                target="_blank"
+                rel="noreferrer"
+                data-tip
+                data-for="tiger-apps"
+              >
+                <Img fixed={data.usgLogo.childImageSharp.fixed} />
+              </a>
+              <ReactTooltip id="tiger-apps" place="top">
+                ResInDe is working with USG Tiger Apps on a refresh of TigerBook
+                and Princeton Courses.
+              </ReactTooltip>
+
+              <a
+                href="https://just.cs.princeton.edu/"
+                target="_blank"
+                rel="noreferrer"
+                data-tip
+                data-for="just"
+              >
+                <img
+                  width="225px"
+                  src={justLogo}
+                  alt="Logo that says JUST in white letters, except the u is gold and has an underline."
+                />
+              </a>
+              <ReactTooltip id="just" place="top">
+                Technology for a Just Society (JuST)
+              </ReactTooltip>
+              <a
+                href="https://www.princetoncoscouncil.com/"
+                target="_blank"
+                rel="noreferrer"
+                data-tip
+                data-for="cos-council"
+              >
+                <CircleLogo fixed={data.cosCouncilLogo.childImageSharp.fixed} />
+              </a>
+              <ReactTooltip id="cos-council" place="top">
+                ResInDe has partnered with Princeton COS Council on a workshop
+                series.
+              </ReactTooltip>
+              <a
+                href="https://www.tigerlaunch.com/"
+                target="_blank"
+                rel="noreferrer"
+                data-tip
+                data-for="tiger-launch"
+              >
+                <Img fixed={data.tigerLaunchLogo.childImageSharp.fixed} />
+              </a>
+              <ReactTooltip id="tiger-launch" place="top">
+                Tiger Launch
+              </ReactTooltip>
+            </StyledLogosDiv>
+          </SectionText>
+          <div style={{ position: "relative", width: "800px" }}>
+            <YellowBlob fixed={data.yellowBlob.childImageSharp.fixed} />
+            <Header2>Partners</Header2>
+          </div>
+        </StyledDiv>
+      </PageWrapper>
     </div>
   )
 }

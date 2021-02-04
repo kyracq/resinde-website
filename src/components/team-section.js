@@ -5,17 +5,16 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute`}
-  top: 40%;
-  left: 80px;
+  ${tw`text-white text-7xl items-center absolute pl-48`}
+  top: 300px;
 `
 
-const StyledP = styled.p`
-  ${tw`mb-8 px-20`}
+const TextDiv = styled.p`
+  ${tw`pr-48 pl-8`}
 `
 
 const ButtonDiv = styled.div`
-  ${tw`text-center`}
+  ${tw`text-center mt-8`}
 `
 
 const StyledDiv = styled.div`
@@ -35,7 +34,7 @@ const TeamSection = props => {
     query {
       placeholderImage: file(relativePath: { eq: "pink-blob.png" }) {
         childImageSharp {
-          fixed(width: 500) {
+          fixed(width: 800) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -54,15 +53,17 @@ const TeamSection = props => {
         <StyledH1>Our Team</StyledH1>
       </div>
       <SectionText>
-        <StyledP>
-          A group at Princeton University focused on Research, Innovation, and
-          Design. As a team of designers and developers, our mission is to drive
-          impactful user experience solutions through user research and digital
-          implementation.
-        </StyledP>
-        <ButtonDiv>
-          <StyledButton to="/team">learn more</StyledButton>
-        </ButtonDiv>
+        <TextDiv>
+          <p>
+            A group at Princeton University focused on Research, Innovation, and
+            Design. As a team of designers and developers, our mission is to
+            drive impactful user experience solutions through user research and
+            digital implementation.
+          </p>
+          <ButtonDiv>
+            <StyledButton to="/team">learn more</StyledButton>
+          </ButtonDiv>
+        </TextDiv>
       </SectionText>
     </StyledDiv>
   )

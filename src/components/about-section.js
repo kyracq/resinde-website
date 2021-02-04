@@ -5,12 +5,12 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute mobile:pl-8 pl-20`}
+  ${tw`mobile:text-black text-white text-7xl items-center absolute mobile:pl-8 pl-48`}
   top: 40%;
 `
 
 const StyledP = styled.p`
-  ${tw`mb-8 px-20`}
+  ${tw`pr-48 pl-8`}
 `
 
 const StyledDiv = styled.div`
@@ -18,11 +18,11 @@ const StyledDiv = styled.div`
 `
 
 const SectionText = styled.div`
-  ${tw`self-center flex-grow ml-8`}
+  ${tw`self-center flex-grow`}
 `
 
 const ButtonDiv = styled.div`
-  ${tw`text-center`}
+  ${tw`text-center mt-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -39,7 +39,7 @@ const AboutSection = props => {
     query {
       blob: file(relativePath: { eq: "blue-blob.png" }) {
         childImageSharp {
-          fixed(width: 500) {
+          fixed(width: 700) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -71,10 +71,10 @@ const AboutSection = props => {
             <li>Product Strategy</li>
             <li>UI/UX Design</li>
           </StyledList>
+          <ButtonDiv>
+            <StyledButton to="/about">learn more</StyledButton>
+          </ButtonDiv>
         </StyledP>
-        <ButtonDiv>
-          <StyledButton to="/about">learn more</StyledButton>
-        </ButtonDiv>
       </SectionText>
     </StyledDiv>
   )
