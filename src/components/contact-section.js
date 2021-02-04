@@ -28,6 +28,7 @@ const StyledButton = styled(props => <Link {...props} />)`
 
 const ButtonDiv = styled.div`
   ${tw`text-center mt-8`}
+  font-size: 18px;
 `
 
 const ContactSection = props => {

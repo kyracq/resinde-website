@@ -12,7 +12,7 @@ const StyledTextarea = styled.textarea`
 `
 const StyledButton = styled.button`
   ${tw`border border-white rounded-full text-white py-2 px-8
-  uppercase hover:bg-white hover:text-purple transition`}
+  uppercase hover:bg-white hover:text-purple transition focus:outline-none`}
   cursor: none;
 `
 const Wrapper = styled.div`
@@ -47,31 +47,46 @@ const ContactPage = () => {
       <BackgroundImage Tag="section" fluid={data.bgBlob.childImageSharp.fluid}>
         <Wrapper>
           <h1>Contact Us</h1>
-          <StyledForm action="/contact-form" method="post">
+          <StyledForm name="contact" method="POST" netlify>
             <div>
-              <StyledInput placeholder="Name" required></StyledInput>
+              <StyledInput
+                placeholder="Name"
+                type="text"
+                name="name"
+                required
+              ></StyledInput>
             </div>
             <div>
-              <StyledInput placeholder="Email Address" required></StyledInput>
+              <StyledInput
+                placeholder="Email Address"
+                required
+                type="email"
+                name="email"
+              ></StyledInput>
             </div>
             <div>
               <StyledTextarea
                 rows="5"
                 placeholder="Message"
                 required
+                name="message"
               ></StyledTextarea>
             </div>
             <div>
-              <StyledButton>submit</StyledButton>
+              <StyledButton type="submit">submit</StyledButton>
             </div>
           </StyledForm>
           <WhiteText>
             Join our mailing list for monthly updates about opportunities and
             what's going on in ResInDe!
           </WhiteText>
-          <div>
+          <a
+            href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <StyledButton>subscribe</StyledButton>
-          </div>
+          </a>
         </Wrapper>
       </BackgroundImage>
     </div>

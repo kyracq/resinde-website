@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
 `
 
 const SectionText = styled.div`
-  ${tw`self-center flex-grow ml-8`}
+  ${tw`self-center flex-grow`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`

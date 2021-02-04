@@ -56,6 +56,14 @@ const ButtonDiv = styled.div`
   ${tw`text-center mt-8`}
 `
 
+const Events = tw.div`
+  flex flex-col space-y-8 pr-16 pt-8
+`
+
+const EventCard = styled.div`
+  ${tw`border-2 border-purple rounded p-8 hover:animate-pulse flex`}
+`
+
 const StyledButton = styled(props => <Link {...props} />)`
   ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase hover:bg-blue hover:text-white transition`}
 `
@@ -190,18 +198,18 @@ const ForStudentsPage = () => {
             <StyledPLeft>
               <div>
                 <h2>Upcoming Events</h2>
-                <StyledList>
-                  <li>
-                    <StyledLink to="https://www.facebook.com/events/1620119328184917">
+                <Events>
+                  <a href="https://www.facebook.com/events/1620119328184917">
+                    <EventCard>
                       ResInDe Open House: Feb. 5th @ 5PM EST
-                    </StyledLink>
-                  </li>
-                  <li>
-                    <StyledLink to="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
+                    </EventCard>
+                  </a>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
+                    <EventCard>
                       Application Deadline: Feb. 10th @ 11:59 PM EST
-                    </StyledLink>
-                  </li>
-                </StyledList>
+                    </EventCard>
+                  </a>
+                </Events>
                 <br />
                 <h2>Past Workshops</h2>
                 <StyledList>
