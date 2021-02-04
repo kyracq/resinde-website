@@ -2,14 +2,27 @@ import React from "react"
 import SEO from "../components/seo"
 import tw, { styled } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
+import justLogo from "../images/just-logo.svg"
 import Img from "gatsby-image"
+import ReactTooltip from "react-tooltip"
 
 const PageWrapper = tw.div`
   space-y-32
 `
 
+const CircleLogo = styled(Img)`
+  ${tw`rounded-full`}
+`
+
 const MagentaBlob = styled(Img)`
   left: -200px;
+  z-index: -1;
+  @media (max-width: 639px) {
+    left: -60px;
+  }
+`
+
+const YellowBlob = styled(Img)`
   z-index: -1;
   @media (max-width: 639px) {
     left: -60px;
@@ -30,26 +43,23 @@ const Header1 = styled.h1`
 
 const Header2 = styled.h1`
   ${tw`text-white text-7xl absolute right-48`}
-  top: 400px;
+  top: 300px;
 `
 
-const StyledTextDiv = styled.div`
-  ${tw`mb-8 px-20`}
-`
-
-const SectionText = styled.div`
-  ${tw`self-center flex-grow mr-8`}
-  div {
-    ${tw`px-20`}
+const StyledLogosDiv = styled.div`
+  ${tw`grid grid-cols-2 justify-items-center gap-y-16`}
+  span {
+    visibility: hidden;
+    padding: 5px 0;
   }
 `
 
-const StyledList = tw.ul`
-  list-disc list-inside
+const SectionText = styled.div`
+  ${tw`self-center flex-grow`}
 `
 
-const NumberedList = tw.ul`
-  list-decimal list-inside
+const StyledList = tw.ul`
+  list-disc list-inside text-lg self-center right-48 absolute
 `
 
 const AboutPage = () => {
@@ -65,6 +75,27 @@ const AboutPage = () => {
       yellowBlob: file(relativePath: { eq: "yellow-blob-2.png" }) {
         childImageSharp {
           fixed(width: 1000) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      usgLogo: file(relativePath: { eq: "usg-logo.png" }) {
+        childImageSharp {
+          fixed(width: 130) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      cosCouncilLogo: file(relativePath: { eq: "cos-council-logo.jpg" }) {
+        childImageSharp {
+          fixed(width: 130) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      tigerLaunchLogo: file(relativePath: { eq: "tiger-launch-logo.png" }) {
+        childImageSharp {
+          fixed(width: 130) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -90,58 +121,59 @@ const AboutPage = () => {
             <MagentaBlob fixed={data.pinkBlob.childImageSharp.fixed} />
             <Header1>Services</Header1>
           </div>
-          <SectionText>
-            <StyledTextDiv>
-              <StyledList>
-                <li>User Research</li>
-                <li>Product Strategy</li>
-                <li>UI/UX Design</li>
-              </StyledList>
-            </StyledTextDiv>
-          </SectionText>
+          <StyledList>
+            <li>User Research</li>
+            <li>Product Strategy</li>
+            <li>UI/UX Design</li>
+          </StyledList>
         </StyledDiv>
         <StyledDiv>
           <SectionText>
-            <StyledTextDiv>
-              Princeton ResInDe focuses on building projects with real impact on
-              our community. As a team member, you’ll be working with a team to
-              complete a project ranging from conducting user research, building
-              prototypes, developing product strategies, and software
-              development. In addition to projects, you’ll take part in teamwide
-              events such as:
-              <StyledList>
-                <li>
-                  Project syncs where each team shares their work with other
-                  teams
-                </li>
-                <li>
-                  Brainstorming events where the team brainstorms potential
-                  problems on and off campus to address
-                </li>
-                <li>Fun, social events!</li>
-              </StyledList>
-              <br />
-              Princeton ResInDe is founded to bring value to you in several
-              ways:
-              <NumberedList>
-                <li>
-                  To immerse yourself in the world of practical and design
-                  thinking.
-                </li>
-                <li>
-                  To work on meaningful projects that generate a lasting impact
-                  on local communities.
-                </li>
-                <li>
-                  To amp up your resume and portfolio. To join a community of
-                  designers, entrepreneurs, and innovative thinkers.
-                </li>
-              </NumberedList>
-            </StyledTextDiv>
+            <StyledLogosDiv>
+              <a
+                href="https://www.tigerapps.org/"
+                target="_blank"
+                rel="noreferrer"
+                data-tip
+                data-for="tiger-apps"
+              >
+                <Img fixed={data.usgLogo.childImageSharp.fixed} />
+              </a>
+              <ReactTooltip id="tiger-apps" place="top" effect="solid">
+                ResInDe is working with USG Tiger Apps on a refresh of TigerBook
+                and Princeton Courses.
+              </ReactTooltip>
+
+              <a
+                href="https://just.cs.princeton.edu/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  width="225px"
+                  src={justLogo}
+                  alt="Logo that says JUST in white letters, except the u is gold and has an underline."
+                />
+              </a>
+              <a
+                href="https://www.princetoncoscouncil.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <CircleLogo fixed={data.cosCouncilLogo.childImageSharp.fixed} />
+              </a>
+              <a
+                href="https://www.tigerlaunch.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Img fixed={data.tigerLaunchLogo.childImageSharp.fixed} />
+              </a>
+            </StyledLogosDiv>
           </SectionText>
-          <div style={{ position: "relative" }}>
-            <Img fixed={data.yellowBlob.childImageSharp.fixed} />
-            <Header2>Supporters</Header2>
+          <div style={{ position: "relative", width: "800px" }}>
+            <YellowBlob fixed={data.yellowBlob.childImageSharp.fixed} />
+            <Header2>Partners</Header2>
           </div>
         </StyledDiv>
       </PageWrapper>
