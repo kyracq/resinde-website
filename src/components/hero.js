@@ -12,7 +12,7 @@ const HeroContent = styled.div`
 `
 
 const HeroArrow = styled(props => <Link {...props} />)`
-  ${tw`hover:text-purple transition`}
+  ${tw`hover:text-purple transition animate-bounce`}
 `
 const StyledDiv = styled.div`
   &.fadeup-enter {

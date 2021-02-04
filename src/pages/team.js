@@ -1,5 +1,5 @@
 import React from "react"
-import tw from "twin.macro"
+import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
@@ -10,11 +10,12 @@ const StyledHeaderDiv = tw.div`
 `
 
 const PageContainer = tw.div`
-  space-y-14 mobile:px-8 xl:px-14 px-20 
+  flex flex-col space-y-14 mobile:px-8 xl:px-14 px-20 
 `
 
-const People = tw.div`
-  grid grid-cols-3 xl:grid-cols-2 sm:grid-cols-1 gap-x-6
+const People = styled.div`
+  ${tw`grid grid-cols-3 sm:grid-cols-1 mobile:grid-cols-2 gap-x-12 self-center`}
+  width: 90%;
 `
 
 const TeamPage = ({data}) => (
@@ -38,6 +39,7 @@ const TeamPage = ({data}) => (
         src={node.frontmatter.photo ? node.frontmatter.photo.publicURL : ""}
         altText={node.frontmatter.photoAlt}
         blue="true"
+        height="600px"
       />
     ))}
     </People>

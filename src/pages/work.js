@@ -17,7 +17,7 @@ const Filters = tw.div`
 `
 
 const Projects = tw.div`
-  grid grid-cols-2 mobile:grid-cols-1 gap-x-6 gap-y-6
+  grid grid-cols-2 mobile:grid-cols-1 gap-x-12 gap-y-6
 `
 
 const isPurple = type => {
@@ -56,6 +56,7 @@ const WorkPage = ({ data }) => (
               altText={node.frontmatter.featureImageAlt}
               purple={isPurple(node.frontmatter.type)}
               blue={isBlue(node.frontmatter.type)}
+              height="500px"
             />
           )
         }

@@ -3,15 +3,15 @@ import tw, { styled } from "twin.macro"
 import StyledLink from "./styled-link"
 import { Link } from "gatsby"
 
-const ItemContainer = styled.div`
+const ItemContainer = styled(props => <div {...props}></div>)`
   ${tw`space-y-4`}
   width: 100%;
-  height: 500px;
+  height: ${props => props.height};
 `
 
 const ImageContainer = styled(props => <div {...props}></div>)`
   width: 100%;
-  height: 70%;
+  height: 75%;
   background-color: black;
   border-radius: 25px;
   overflow: hidden;
@@ -43,19 +43,18 @@ const Image = styled.img`
     transform: scale(1.1);
   }
 `
-
+// Add back to prop to Links when projects released
 const Item = (props) => {
   return (
-    <ItemContainer key={props.key}>
+    <ItemContainer key={props.key} height={props.height}>
       <ImageContainer purple={props.purple} blue={props.blue} >
-        <Link to={props.link}>
+        <Link> 
           <Image src={props.src} alt={props.altText} />
         </Link>
       </ImageContainer>
       <ItemDetails>
         <h3>
           <StyledLink
-            to={props.link}
             purple={props.purple}
             blue={props.blue}
             magenta={props.magenta}
