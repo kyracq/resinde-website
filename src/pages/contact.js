@@ -62,7 +62,7 @@ const ContactPage = () => {
             Interested in working with us or joining us? Shoot us a message
             below—we're excited to share our passions with you!
           </p>
-          <StyledForm name="contact" method="POST" netlify>
+          <StyledForm name="contact" method="POST" data-netlify="true">
             <div>
               <StyledInput
                 placeholder="Name"
