@@ -167,7 +167,15 @@ const ForStudentsPage = () => {
                 thinkers.
               </li>
             </NumberedList>
-
+            <StyledP>
+              In addition to working on projects, you’ll join a community of
+              designers, entrepreneurs, and innovative thinkers that:
+            </StyledP>
+            <StyledList>
+              <li>Gets excited about innovation</li>
+              <li>Constantly brainstorms new ways to better our communities</li>
+              <li>Attends fun social events!</li>
+            </StyledList>
             <StyledP>
               If you're interested, we'd love to meet you! Come{" "}
               <StyledA
@@ -184,21 +192,12 @@ const ForStudentsPage = () => {
                 apply today
               </StyledButton>
             </ButtonDiv>
-            <StyledP>
-              In addition to working on projects, you’ll join a community of
-              designers, entrepreneurs, and innovative thinkers that:
-            </StyledP>
-            <StyledList>
-              <li>Gets excited about innovation</li>
-              <li>Constantly brainstorms new ways to better our communities</li>
-              <li>Attends fun social events!</li>
-            </StyledList>
           </SectionText>
         </StyledDiv>
         <StyledDiv>
           <SectionTextLeft>
             <StyledP>
-              ResInDe's long-term goal is to cultivate a conversation around
+              ResInDe is committed to an ongoing mission of cultivating a conversation around
               design and innovative thinking at Princeton, so we offer
               opportunities for all students to gain exposure into the design
               world. Check out our past events below, and{" "}

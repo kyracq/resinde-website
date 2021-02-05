@@ -42,7 +42,7 @@ const HeroSection = props => {
   const one = <h1>We are ResInDe.</h1>
   const two = (
     <p>
-      Princeton ResInDe aims to offer a space for designers and design thinkers
+      Princeton ResInDe offers a space for designers and design thinkers
       to convene and practice together, creating real impact on projects and
       businesses. We emphasize the importance and power of human centered design
       in creating impactful solutions by providing hands-on projects for
