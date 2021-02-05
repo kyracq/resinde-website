@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import tw, { styled } from "twin.macro"
-import SEO from "../components/seo"
+import SEO from "../../components/seo.js"
+import { navigate } from "gatsby-link"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
@@ -37,6 +38,12 @@ const Center = styled.div`
   width: 300px;
 `
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const ContactPage = () => {
   const data = useStaticQuery(
     graphql`
@@ -52,6 +59,27 @@ const ContactPage = () => {
     `
   )
 
+  const [formData, setFormData] = useState({ isValidated: false })
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...formData,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
+  }
+
+  const handleChange = e => {
+    setFormData({ [e.target.name]: e.target.value })
+  }
+
   return (
     <div>
       <SEO title="Contact Us" />
@@ -62,13 +90,20 @@ const ContactPage = () => {
             Interested in working with us or joining us? Shoot us a message
             below—we're excited to share our passions with you!
           </p>
-          <StyledForm name="contact" method="POST" data-netlify="true">
+          <StyledForm
+            name="contact"
+            method="post"
+            data-netlify="true"
+            action="/contact/thanks/"
+            onSubmit={handleSubmit}
+          >
             <div>
               <StyledInput
                 placeholder="Name"
                 type="text"
                 name="name"
                 required
+                onChange={handleChange}
               ></StyledInput>
             </div>
             <div>
@@ -77,6 +112,7 @@ const ContactPage = () => {
                 required
                 type="email"
                 name="email"
+                onChange={handleChange}
               ></StyledInput>
             </div>
             <div>
@@ -85,6 +121,7 @@ const ContactPage = () => {
                 placeholder="Message"
                 required
                 name="message"
+                onChange={handleChange}
               ></StyledTextarea>
             </div>
             <div>
