@@ -13,7 +13,11 @@ const StyledH1 = styled.h1`
 
 const StyledH12 = styled.h1`
   ${tw`text-white text-7xl absolute px-48`}
-  top: 260px;
+  top: 360px;
+`
+
+const StyledH2 = styled.h2`
+  ${tw`pt-8`}
 `
 
 const StyledH1Workshops = styled.h1`
@@ -45,23 +49,15 @@ const SectionText = styled.div`
 `
 
 const StyledList = tw.ul`
-  list-disc list-inside
+  list-disc list-inside py-8 pl-8
 `
 
 const NumberedList = tw.ul`
-  list-decimal list-inside
+  list-decimal list-inside py-8 pl-8
 `
 
 const ButtonDiv = styled.div`
   ${tw`text-center mt-8`}
-`
-
-const Events = tw.div`
-  flex flex-col space-y-8 pr-16 pt-8
-`
-
-const EventCard = styled.div`
-  ${tw`border-2 border-purple rounded p-8 hover:animate-pulse flex`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -96,7 +92,7 @@ const ForStudentsPage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "yellow-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 1000) {
+          fixed(width: 800) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -130,10 +126,10 @@ const ForStudentsPage = () => {
         <StyledDiv>
           <SectionText>
             <StyledPLeft>
-              Human-Centered Design (HCD) is an emerging practice
-              and is becoming an increasingly valued and sought-after skill in
-              all industries. In short, it is a framework for problem solving that revolves
-              around, well, humans. While Princeton doesn’t offer a
+              Human-Centered Design (HCD) is an emerging practice and is
+              becoming an increasingly valued and sought-after skill in all
+              industries. In short, it is a framework for problem solving that
+              revolves around, well, humans. While Princeton doesn’t offer a
               clear academic path for design, it houses designers from far and
               wide, and ResInDe provides the space for them to work together.
             </StyledPLeft>
@@ -161,23 +157,25 @@ const ForStudentsPage = () => {
                   To work on meaningful projects that generate a lasting impact
                   on local communities.
                 </li>
+                <li>To amp up your resume and portfolio.</li>
                 <li>
-                  To amp up your resume and portfolio.
-                </li>
-                <li>
-                  To join a community of designers, entrepreneurs, and innovative thinkers.
+                  To join a community of designers, entrepreneurs, and
+                  innovative thinkers.
                 </li>
               </NumberedList>
               <br />
-              In addition to working on projects, you’ll join a community of designers,
-              entrepreneurs, and innovative thinkers that:
+              In addition to working on projects, you’ll join a community of
+              designers, entrepreneurs, and innovative thinkers that:
               <StyledList>
                 <li>Gets excited about innovation</li>
-                <li>Constantly brainstorms new ways to better our communities</li>
+                <li>
+                  Constantly brainstorms new ways to better our communities
+                </li>
                 <li>Attends fun social events!</li>
               </StyledList>
               <br />
-              If you're interested, we'd love to meet you! Come join us at our Spring 2021 Open House.
+              If you're interested, we'd love to meet you! Come join us at our
+              Spring 2021 Open House.
               <ButtonDiv>
                 <StyledButton to="https://forms.gle/6YrcssGhsisKTE9m7">
                   apply today
@@ -189,13 +187,14 @@ const ForStudentsPage = () => {
         <StyledDiv>
           <SectionText>
             <StyledPLeft>
-              ResInDe's long-term goal is to cultivate a conversation around design and innovative
-              thinking at Princeton, so we offer opportunities for all students to gain exposure into the design world.
-              Check out our past events below, and subscribe to our newsletter to receive updates about our future
-              events!
+              ResInDe's long-term goal is to cultivate a conversation around
+              design and innovative thinking at Princeton, so we offer
+              opportunities for all students to gain exposure into the design
+              world. Check out our past events below, and subscribe to our
+              newsletter to receive updates about our future events!
               <br />
               <div>
-                <h2>Past Workshops</h2>
+                <StyledH2>Past Workshops</StyledH2>
                 <StyledList>
                   <li>
                     <StyledLink to="https://drive.google.com/drive/u/2/folders/1eDNLrpn7Jz1cWsiQolwJ0Yk22FM-jTey">
@@ -220,12 +219,12 @@ const ForStudentsPage = () => {
                 </StyledList>
               </div>
               <a
-            href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <StyledButton>subscribe to newsletter</StyledButton>
-          </a>
+                href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <StyledButton>subscribe to newsletter</StyledButton>
+              </a>
             </StyledPLeft>
           </SectionText>
           <div style={{ position: "relative" }}>

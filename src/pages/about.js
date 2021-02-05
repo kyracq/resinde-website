@@ -2,7 +2,6 @@ import React from "react"
 import SEO from "../components/seo"
 import tw, { styled } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
-import justLogo from "../images/just-logo.svg"
 import Img from "gatsby-image"
 import ReactTooltip from "react-tooltip"
 
@@ -47,11 +46,7 @@ const Header2 = styled.h1`
 `
 
 const StyledLogosDiv = styled.div`
-  ${tw`grid grid-cols-2 justify-items-center gap-y-16`}
-  span {
-    visibility: hidden;
-    padding: 5px 0;
-  }
+  ${tw`grid justify-items-center gap-y-16`}
 `
 
 const SectionText = styled.div`
@@ -59,7 +54,7 @@ const SectionText = styled.div`
 `
 
 const StyledList = tw.ul`
-  list-disc list-inside text-lg self-center mobile:static right-48 absolute
+  list-disc list-inside text-lg self-center mobile:static text-center py-8 pl-8
 `
 
 const AboutPage = () => {
@@ -74,7 +69,7 @@ const AboutPage = () => {
       }
       yellowBlob: file(relativePath: { eq: "yellow-blob-2.png" }) {
         childImageSharp {
-          fixed(width: 1000) {
+          fixed(width: 800) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -110,12 +105,13 @@ const AboutPage = () => {
         <StyledHeaderDiv>
           <h1>About Us</h1>
           <p>
-            ResInDe is Princeton University's premier student-run design consultancy. Short for
-            Research, Innovation, and Design, ResInDe is founded on the core design principles
-            of empathy and human-centered design. Our team understands the value of problem-solving
-            and innovating with intention, and our mission is to provide impactful user experience
-            solutions to the Princeton student and local community through user research and
-            digital implementation. 
+            ResInDe is Princeton University's premier student-run design
+            consultancy. Short for Research, Innovation, and Design, ResInDe is
+            founded on the core design principles of empathy and human-centered
+            design. Our team understands the value of problem-solving and
+            innovating with intention, and our mission is to provide impactful
+            user experience solutions to the Princeton student and local
+            community through user research and digital implementation.
           </p>
         </StyledHeaderDiv>
         <StyledDiv>
@@ -142,25 +138,8 @@ const AboutPage = () => {
                 <Img fixed={data.usgLogo.childImageSharp.fixed} />
               </a>
               <ReactTooltip id="tiger-apps" place="top">
-                ResInDe is working with USG Tiger Apps on a redesign of TigerBook
-                and Princeton Courses.
-              </ReactTooltip>
-
-              <a
-                href="https://just.cs.princeton.edu/"
-                target="_blank"
-                rel="noreferrer"
-                data-tip
-                data-for="just"
-              >
-                <img
-                  width="225px"
-                  src={justLogo}
-                  alt="Logo that says JUST in white letters, except the u is gold and has an underline."
-                />
-              </a>
-              <ReactTooltip id="just" place="top">
-                Technology for a Just Society (JuST)
+                ResInDe is working with USG Tiger Apps on a redesign of
+                TigerBook and Princeton Courses.
               </ReactTooltip>
               <a
                 href="https://www.princetoncoscouncil.com/"

@@ -31,7 +31,7 @@ const StyledButton = styled(props => <Link {...props} />)`
 `
 
 const StyledList = tw.ul`
-  list-disc list-inside
+  list-disc list-inside py-8 pl-8
 `
 
 const AboutSection = props => {
@@ -59,12 +59,14 @@ const AboutSection = props => {
       </div>
       <SectionText>
         <StyledP>
-          ResInDe is Princeton University's premier student-run design consultancy. Short for
-          Research, Innovation, and Design, ResInDe is founded on the core design principles
-          of empathy and human-centered design. Our team understands the value of problem-solving
-          and innovating with intention, and our mission is to provide impactful user experience
-          solutions to the Princeton student and local community through user research and
-          digital implementation. We currently specialize in the following areas:
+          ResInDe is Princeton University's premier student-run design
+          consultancy. Short for Research, Innovation, and Design, ResInDe is
+          founded on the core design principles of empathy and human-centered
+          design. Our team understands the value of problem-solving and
+          innovating with intention, and our mission is to provide impactful
+          user experience solutions to the Princeton student and local community
+          through user research and digital implementation. We currently
+          specialize in the following areas:
           <StyledList>
             <li>User Research</li>
             <li>Product Strategy</li>
