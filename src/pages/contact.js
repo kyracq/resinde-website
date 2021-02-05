@@ -80,8 +80,8 @@ const ContactPage = () => {
             </div>
           </StyledForm>
           <WhiteText>
-            Join our mailing list for monthly updates about opportunities and
-            what's going on in ResInDe!
+            Join our mailing list to be notified of all ResInDe events
+            and to receive monthly updates on the design community!
           </WhiteText>
           <a
             href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"

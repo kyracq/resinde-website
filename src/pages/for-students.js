@@ -150,24 +150,6 @@ const ForStudentsPage = () => {
           </div>
           <SectionText>
             <StyledPRight>
-              ResInDe's work focuses on projects that impact
-              our community. As a team member, you’ll be working with a team to
-              complete a long-term project from conducting user research, building
-              prototypes, developing product strategies, and software
-              development. In addition to projects, you’ll take part in teamwide
-              events such as:
-              <StyledList>
-                <li>
-                  Project syncs where each team shares their work with other
-                  teams
-                </li>
-                <li>
-                  Brainstorming events where the team brainstorms potential
-                  problems on and off campus to address
-                </li>
-                <li>Fun social events!</li>
-              </StyledList>
-              <br />
               Princeton ResInDe is founded to bring value to you in several
               ways:
               <NumberedList>
@@ -186,6 +168,16 @@ const ForStudentsPage = () => {
                   To join a community of designers, entrepreneurs, and innovative thinkers.
                 </li>
               </NumberedList>
+              <br />
+              In addition to working on projects, you’ll join a community of designers,
+              entrepreneurs, and innovative thinkers that:
+              <StyledList>
+                <li>Gets excited about innovation</li>
+                <li>Constantly brainstorms new ways to better our communities</li>
+                <li>Attends fun social events!</li>
+              </StyledList>
+              <br />
+              If you're interested, we'd love to meet you! Come join us at our Spring 2021 Open House.
               <ButtonDiv>
                 <StyledButton to="https://forms.gle/6YrcssGhsisKTE9m7">
                   apply today
@@ -197,21 +189,12 @@ const ForStudentsPage = () => {
         <StyledDiv>
           <SectionText>
             <StyledPLeft>
+              ResInDe's long-term goal is to cultivate a conversation around design and innovative
+              thinking at Princeton, so we offer opportunities for all students to gain exposure into the design world.
+              Check out our past events below, and subscribe to our newsletter to receive updates about our future
+              events!
+              <br />
               <div>
-                <h2>Upcoming Events</h2>
-                <Events>
-                  <a href="https://www.facebook.com/events/1620119328184917">
-                    <EventCard>
-                      ResInDe Open House: Feb. 5th @ 5PM EST
-                    </EventCard>
-                  </a>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
-                    <EventCard>
-                      Application Deadline: Feb. 10th @ 11:59 PM EST
-                    </EventCard>
-                  </a>
-                </Events>
-                <br />
                 <h2>Past Workshops</h2>
                 <StyledList>
                   <li>
@@ -236,6 +219,13 @@ const ForStudentsPage = () => {
                   </li>
                 </StyledList>
               </div>
+              <a
+            href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledButton>subscribe to newsletter</StyledButton>
+          </a>
             </StyledPLeft>
           </SectionText>
           <div style={{ position: "relative" }}>
