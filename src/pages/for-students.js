@@ -158,11 +158,18 @@ const ForStudentsPage = () => {
               <li>Attends fun social events!</li>
             </StyledList>
             <StyledP>
-              If you're interested, we'd love to meet you! Come join us at our
-              Spring 2021 Open House.
+              If you're interested, we'd love to meet you! Come{" "}
+              <StyledA
+                href="https://www.facebook.com/events/1620119328184917/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                join us at our Spring 2021 Open House
+              </StyledA>
+              .
             </StyledP>
             <ButtonDiv>
-              <StyledButton to="https://www.facebook.com/events/1620119328184917/">
+              <StyledButton to="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
                 apply today
               </StyledButton>
             </ButtonDiv>
