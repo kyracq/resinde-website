@@ -152,11 +152,22 @@ const ForStudentsPage = () => {
               Princeton ResInDe is founded to bring value to you in several
               ways:
             </StyledP>
-            <StyledList>
-              <li>Gets excited about innovation</li>
-              <li>Constantly brainstorms new ways to better our communities</li>
-              <li>Attends fun social events!</li>
-            </StyledList>
+            <NumberedList>
+              <li>
+                To immerse yourself in the world of practical and design
+                thinking.
+              </li>
+              <li>
+                To work on meaningful projects that generate a lasting impact on
+                local communities.
+              </li>
+              <li>To amp up your resume and portfolio.</li>
+              <li>
+                To join a community of designers, entrepreneurs, and innovative
+                thinkers.
+              </li>
+            </NumberedList>
+
             <StyledP>
               If you're interested, we'd love to meet you! Come{" "}
               <StyledA
@@ -177,21 +188,11 @@ const ForStudentsPage = () => {
               In addition to working on projects, you’ll join a community of
               designers, entrepreneurs, and innovative thinkers that:
             </StyledP>
-            <NumberedList>
-              <li>
-                To immerse yourself in the world of practical and design
-                thinking.
-              </li>
-              <li>
-                To work on meaningful projects that generate a lasting impact on
-                local communities.
-              </li>
-              <li>To amp up your resume and portfolio.</li>
-              <li>
-                To join a community of designers, entrepreneurs, and innovative
-                thinkers.
-              </li>
-            </NumberedList>
+            <StyledList>
+              <li>Gets excited about innovation</li>
+              <li>Constantly brainstorms new ways to better our communities</li>
+              <li>Attends fun social events!</li>
+            </StyledList>
           </SectionText>
         </StyledDiv>
         <StyledDiv>
