@@ -59,7 +59,9 @@ const ContactPage = () => {
     `
   )
 
-  const [formData, setFormData] = useState({ isValidated: false })
+  const [name, setName] = useState({})
+  const [email, setEmail] = useState({})
+  const [message, setMessage] = useState({})
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -69,15 +71,25 @@ const ContactPage = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
-        ...formData,
+        ...name,
+        ...email,
+        ...message,
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error))
   }
 
-  const handleChange = e => {
-    setFormData({ [e.target.name]: e.target.value })
+  const handleNameChange = e => {
+    setName({ [e.target.name]: e.target.value })
+  }
+
+  const handleEmailChange = e => {
+    setEmail({ [e.target.name]: e.target.value })
+  }
+
+  const handleMessageChange = e => {
+    setMessage({ [e.target.name]: e.target.value })
   }
 
   return (
@@ -103,7 +115,7 @@ const ContactPage = () => {
                 type="text"
                 name="name"
                 required
-                onChange={handleChange}
+                onChange={handleNameChange}
               ></StyledInput>
             </div>
             <div>
@@ -112,7 +124,7 @@ const ContactPage = () => {
                 required
                 type="email"
                 name="email"
-                onChange={handleChange}
+                onChange={handleEmailChange}
               ></StyledInput>
             </div>
             <div>
@@ -121,7 +133,7 @@ const ContactPage = () => {
                 placeholder="Message"
                 required
                 name="message"
-                onChange={handleChange}
+                onChange={handleMessageChange}
               ></StyledTextarea>
             </div>
             <div>
