@@ -130,30 +130,29 @@ const ForStudentsPage = () => {
         <StyledDiv>
           <SectionText>
             <StyledPLeft>
-              What is HCD? Human Centered Design (HCD) is an emerging practice
+              Human-Centered Design (HCD) is an emerging practice
               and is becoming an increasingly valued and sought-after skill in
-              all industries. It is a framework for problem solving with the
-              user at the core of each step. While Princeton doesn’t offer a
+              all industries. In short, it is a framework for problem solving that revolves
+              around, well, humans. While Princeton doesn’t offer a
               clear academic path for design, it houses designers from far and
-              wide who practice their craft independently and we’re excited to
-              provide a hub for designers of all backgrounds to work together.
+              wide, and ResInDe provides the space for them to work together.
             </StyledPLeft>
           </SectionText>
           <div style={{ position: "relative", width: "800px" }}>
             <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-            <StyledH1>Human Centered Design</StyledH1>
+            <StyledH1>Human-Centered Design</StyledH1>
           </div>
         </StyledDiv>
         <StyledDiv>
           <div style={{ position: "relative" }}>
             <Img fixed={data.blueBlob.childImageSharp.fixed} />
-            <StyledH12>Work on the ResInDe Team</StyledH12>
+            <StyledH12>Join Us</StyledH12>
           </div>
           <SectionText>
             <StyledPRight>
-              Princeton ResInDe focuses on building projects with real impact on
+              ResInDe's work focuses on projects that impact
               our community. As a team member, you’ll be working with a team to
-              complete a project ranging from conducting user research, building
+              complete a long-term project from conducting user research, building
               prototypes, developing product strategies, and software
               development. In addition to projects, you’ll take part in teamwide
               events such as:
@@ -166,7 +165,7 @@ const ForStudentsPage = () => {
                   Brainstorming events where the team brainstorms potential
                   problems on and off campus to address
                 </li>
-                <li>Fun, social events!</li>
+                <li>Fun social events!</li>
               </StyledList>
               <br />
               Princeton ResInDe is founded to bring value to you in several
@@ -181,8 +180,10 @@ const ForStudentsPage = () => {
                   on local communities.
                 </li>
                 <li>
-                  To amp up your resume and portfolio. To join a community of
-                  designers, entrepreneurs, and innovative thinkers.
+                  To amp up your resume and portfolio.
+                </li>
+                <li>
+                  To join a community of designers, entrepreneurs, and innovative thinkers.
                 </li>
               </NumberedList>
               <ButtonDiv>

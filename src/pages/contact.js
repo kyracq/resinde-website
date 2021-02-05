@@ -47,6 +47,9 @@ const ContactPage = () => {
       <BackgroundImage Tag="section" fluid={data.bgBlob.childImageSharp.fluid}>
         <Wrapper>
           <h1>Contact Us</h1>
+          <p>
+            Interested in working with us or joining us? Shoot us a message below—we're excited to share our passions with you!
+          </p>
           <StyledForm name="contact" method="POST" netlify>
             <div>
               <StyledInput

@@ -51,14 +51,21 @@ const ProjectsSection = props => {
       <SectionText>
         <StyledTextDiv>
           <div>
-            ResInDe is currently working with{" "}
+            ResInDe is currently partnering with{" "}
             <StyledA target="_blank" href="https://www.tigerapps.org/">
               TigerApps
             </StyledA>{" "}
-            on revamping the course selection workflow for Princeton students.
-            We're doing a redesign and combining three widely used tools,
-            Princeton Courses, Recal, and TigerPath into one concise and
-            convenient app. We are also doing a redesign of{" "}
+            to redesign the course selection experience for Princeton students—
+            through streamlining the integration of three widely used tools,{" "}
+            <StyledA target="_blank" href="https://www.princetoncourses.com">
+              Princeton Courses
+            </StyledA>{", "}
+            <StyledA target="_blank" href="https://recal.io/">
+              ReCal
+            </StyledA>{", "}and{" "}
+            <StyledA target="_blank" href="https://www.tigerpath.io/">
+              TigerPath
+            </StyledA>{" "}into one clean and concise app. We are also working on a redesign of{" "}
             <StyledA target="_blank" href="https://tigerbook.herokuapp.com/">
               Tigerbook
             </StyledA>

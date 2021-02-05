@@ -21,13 +21,7 @@ const TeamPage = ({ data }) => (
   <PageContainer>
     <SEO title="Our Team" />
     <StyledHeaderDiv>
-      <h1>Our Team</h1>
-      <p>
-        A group at Princeton University focused on Research, Innovation, and
-        Design. As a team of designers and developers, our mission is to drive
-        impactful user experience solutions through user research and digital
-        implementation.
-      </p>
+      <h1>Meet The Team</h1>
     </StyledHeaderDiv>
     <People>
       {data.allMarkdownRemark.edges.map(({ node }) => (

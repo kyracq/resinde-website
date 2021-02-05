@@ -110,10 +110,12 @@ const AboutPage = () => {
         <StyledHeaderDiv>
           <h1>About Us</h1>
           <p>
-            A group at Princeton University focused on Research, Innovation, and
-            Design. As a team of designers and developers, our mission is to
-            drive impactful user experience solutions through user research and
-            digital implementation.
+            ResInDe is Princeton University's premier student-run design consultancy. Short for
+            Research, Innovation, and Design, ResInDe is founded on the core design principles
+            of empathy and human-centered design. Our team understands the value of problem-solving
+            and innovating with intention, and our mission is to provide impactful user experience
+            solutions to the Princeton student and local community through user research and
+            digital implementation. 
           </p>
         </StyledHeaderDiv>
         <StyledDiv>
@@ -140,7 +142,7 @@ const AboutPage = () => {
                 <Img fixed={data.usgLogo.childImageSharp.fixed} />
               </a>
               <ReactTooltip id="tiger-apps" place="top">
-                ResInDe is working with USG Tiger Apps on a refresh of TigerBook
+                ResInDe is working with USG Tiger Apps on a redesign of TigerBook
                 and Princeton Courses.
               </ReactTooltip>
 

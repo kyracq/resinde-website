@@ -55,13 +55,11 @@ const TeamSection = props => {
       <SectionText>
         <TextDiv>
           <p>
-            A group at Princeton University focused on Research, Innovation, and
-            Design. As a team of designers and developers, our mission is to
-            drive impactful user experience solutions through user research and
-            digital implementation.
+            Our team is composed of designers and developers of all class years,
+            backgrounds, and interests. After all, diversity encourages creativity!
           </p>
           <ButtonDiv>
-            <StyledButton to="/team">learn more</StyledButton>
+            <StyledButton to="/team">meet the team</StyledButton>
           </ButtonDiv>
         </TextDiv>
       </SectionText>
