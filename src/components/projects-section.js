@@ -10,7 +10,7 @@ const StyledH1 = styled.h1`
 `
 
 const StyledTextDiv = styled.p`
-  ${tw`mb-8 pl-48 flex flex-col items-center space-y-4`}
+  ${tw`mb-8 pl-48 flex flex-col items-center space-y-4 text-center`}
 `
 
 const StyledDiv = styled.div`
@@ -59,13 +59,16 @@ const ProjectsSection = props => {
             through streamlining the integration of three widely used tools,{" "}
             <StyledA target="_blank" href="https://www.princetoncourses.com">
               Princeton Courses
-            </StyledA>{", "}
+            </StyledA>
+            {", "}
             <StyledA target="_blank" href="https://recal.io/">
               ReCal
-            </StyledA>{", "}and{" "}
+            </StyledA>
+            {", "}and{" "}
             <StyledA target="_blank" href="https://www.tigerpath.io/">
               TigerPath
-            </StyledA>{" "}into one clean and concise app. We are also working on a redesign of{" "}
+            </StyledA>{" "}
+            into one clean and concise app. We are also working on a redesign of{" "}
             <StyledA target="_blank" href="https://tigerbook.herokuapp.com/">
               Tigerbook
             </StyledA>

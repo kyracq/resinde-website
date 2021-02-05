@@ -54,7 +54,7 @@ const SectionText = styled.div`
 `
 
 const StyledList = tw.ul`
-  list-disc list-inside text-lg self-center mobile:static text-center py-8 pl-8
+  list-disc list-inside text-lg self-center mobile:static py-8 pl-8
 `
 
 const AboutPage = () => {

@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
 `
 
 const SectionText = styled.div`
-  ${tw`self-center flex-grow`}
+  ${tw`self-center flex-grow text-center`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -56,7 +56,8 @@ const TeamSection = props => {
         <TextDiv>
           <p>
             Our team is composed of designers and developers of all class years,
-            backgrounds, and interests. After all, diversity encourages creativity!
+            backgrounds, and interests. After all, diversity encourages
+            creativity!
           </p>
           <ButtonDiv>
             <StyledButton to="/team">meet the team</StyledButton>

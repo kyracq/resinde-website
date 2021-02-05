@@ -10,7 +10,7 @@ const StyledH1 = styled.h1`
 `
 
 const StyledP = styled.p`
-  ${tw`pr-48 pl-8`}
+  ${tw`text-center`}
 `
 
 const StyledDiv = styled.div`
@@ -18,11 +18,11 @@ const StyledDiv = styled.div`
 `
 
 const SectionText = styled.div`
-  ${tw`self-center flex-grow`}
+  ${tw`self-center flex-grow grid justify-items-center pr-48 pl-8`}
 `
 
 const ButtonDiv = styled.div`
-  ${tw`text-center mt-8`}
+  ${tw`mt-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -31,7 +31,7 @@ const StyledButton = styled(props => <Link {...props} />)`
 `
 
 const StyledList = tw.ul`
-  list-disc list-inside py-8 pl-8
+  list-disc list-inside py-8
 `
 
 const AboutSection = props => {
@@ -67,16 +67,17 @@ const AboutSection = props => {
           user experience solutions to the Princeton student and local community
           through user research and digital implementation. We currently
           specialize in the following areas:
-          <StyledList>
-            <li>User Research</li>
-            <li>Product Strategy</li>
-            <li>UI/UX Design</li>
-            <li>Web Development</li>
-          </StyledList>
-          <ButtonDiv>
-            <StyledButton to="/about">learn more</StyledButton>
-          </ButtonDiv>
         </StyledP>
+        <StyledList>
+          <li>User Research</li>
+          <li>Product Strategy</li>
+          <li>UI/UX Design</li>
+          <li>Web Development</li>
+        </StyledList>
+
+        <ButtonDiv>
+          <StyledButton to="/about">learn more</StyledButton>
+        </ButtonDiv>
       </SectionText>
     </StyledDiv>
   )
