@@ -5,12 +5,12 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute mobile:pl-8 pl-20`}
+  ${tw`mobile:text-black text-white text-7xl items-center absolute mobile:pl-8 pl-48`}
   top: 40%;
 `
 
 const StyledP = styled.p`
-  ${tw`mb-8 px-20`}
+  ${tw`text-center`}
 `
 
 const StyledDiv = styled.div`
@@ -18,11 +18,11 @@ const StyledDiv = styled.div`
 `
 
 const SectionText = styled.div`
-  ${tw`self-center flex-grow ml-8`}
+  ${tw`self-center flex-grow grid justify-items-center pr-48 pl-8`}
 `
 
 const ButtonDiv = styled.div`
-  ${tw`text-center`}
+  ${tw`mt-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -31,7 +31,7 @@ const StyledButton = styled(props => <Link {...props} />)`
 `
 
 const StyledList = tw.ul`
-  list-disc list-inside
+  list-disc list-inside py-8
 `
 
 const AboutSection = props => {
@@ -39,7 +39,7 @@ const AboutSection = props => {
     query {
       blob: file(relativePath: { eq: "blue-blob.png" }) {
         childImageSharp {
-          fixed(width: 500) {
+          fixed(width: 700) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -51,7 +51,7 @@ const AboutSection = props => {
     return <div>Picture not found</div>
   }
 
-  return ( 
+  return (
     <StyledDiv>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.blob.childImageSharp.fixed} />
@@ -59,19 +59,22 @@ const AboutSection = props => {
       </div>
       <SectionText>
         <StyledP>
-          Princeton ResInDe (short for Research, Innovation, and Design) is
+          ResInDe is Princeton University's premier student-run design
+          consultancy. Short for Research, Innovation, and Design, ResInDe is
           founded on the core design principles of empathy and human-centered
           design. Our team understands the value of problem-solving and
           innovating with intention, and our mission is to provide impactful
           user experience solutions to the Princeton student and local community
-          through user research and digital implementation. We specialize in
-          these areas:
-          <StyledList>
-            <li>User Research</li>
-            <li>Product Strategy</li>
-            <li>UI/UX Design</li>
-          </StyledList>
+          through user research and digital implementation. We currently
+          specialize in the following areas:
         </StyledP>
+        <StyledList>
+          <li>User Research</li>
+          <li>Product Strategy</li>
+          <li>UI/UX Design</li>
+          <li>Web Development</li>
+        </StyledList>
+
         <ButtonDiv>
           <StyledButton to="/about">learn more</StyledButton>
         </ButtonDiv>

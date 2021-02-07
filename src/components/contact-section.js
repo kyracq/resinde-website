@@ -5,13 +5,12 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StyledH1 = styled.h1`
-  ${tw`text-white text-7xl items-center absolute text-center`}
-  top: 30%;
-  left: 100px;
+  ${tw`text-white text-7xl items-center absolute px-48 text-right`}
+  top: 260px;
 `
 
-const StyledP = styled.p`
-  ${tw`mb-8 px-20 text-center`}
+const TextDiv = styled.div`
+  ${tw`pl-48 text-center`}
 `
 
 const StyledDiv = styled.div`
@@ -25,12 +24,11 @@ const SectionText = styled.div`
 const StyledButton = styled(props => <Link {...props} />)`
   ${tw`border border-purple rounded-full text-purple py-2 px-8 uppercase
   hover:bg-purple hover:text-white transition`}
-  top: 70%;
-  right: 80px;
 `
 
 const ButtonDiv = styled.div`
-  ${tw`text-center`}
+  ${tw`text-center mt-8`}
+  font-size: 18px;
 `
 
 const ContactSection = props => {
@@ -38,7 +36,7 @@ const ContactSection = props => {
     query {
       placeholderImage: file(relativePath: { eq: "purple-blob.png" }) {
         childImageSharp {
-          fixed(width: 500) {
+          fixed(width: 800) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -53,12 +51,12 @@ const ContactSection = props => {
   return (
     <StyledDiv>
       <SectionText>
-        <StyledP>
-          Want to partner together? Curious to join? Contact us!
-        </StyledP>
-        <ButtonDiv>
-          <StyledButton to="/contact">Contact Us</StyledButton>
-        </ButtonDiv>
+        <TextDiv>
+          <p>Want to partner together? Curious to join? Contact us!</p>
+          <ButtonDiv>
+            <StyledButton to="/contact">Contact Us</StyledButton>
+          </ButtonDiv>
+        </TextDiv>
       </SectionText>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.placeholderImage.childImageSharp.fixed} />
