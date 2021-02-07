@@ -61,6 +61,7 @@ const ContactPage = () => {
 
   const [name, setName] = useState({})
   const [email, setEmail] = useState({})
+  const [subject, setSubject] = useState({})
   const [message, setMessage] = useState({})
 
   const handleSubmit = e => {
@@ -73,6 +74,7 @@ const ContactPage = () => {
         "form-name": form.getAttribute("name"),
         ...name,
         ...email,
+        ...subject,
         ...message,
       }),
     })
@@ -86,6 +88,10 @@ const ContactPage = () => {
 
   const handleEmailChange = e => {
     setEmail({ [e.target.name]: e.target.value })
+  }
+
+  const handleSubjectChange = e => {
+    setSubject({ [e.target.name]: e.target.value })
   }
 
   const handleMessageChange = e => {
@@ -125,6 +131,15 @@ const ContactPage = () => {
                 type="email"
                 name="email"
                 onChange={handleEmailChange}
+              ></StyledInput>
+            </div>
+            <div>
+              <StyledInput
+                placeholder="Subject"
+                type="text"
+                name="subject"
+                required
+                onChange={handleSubjectChange}
               ></StyledInput>
             </div>
             <div>
