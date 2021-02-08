@@ -14,7 +14,7 @@ const PageContainer = tw.div`
 `
 
 const People = styled.div`
-  ${tw`grid grid-cols-3 sm:grid-cols-1 mobile:grid-cols-2 gap-x-12 self-center`}
+  ${tw`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 self-center`}
 `
 
 const TeamPage = ({ data }) => (
@@ -29,7 +29,7 @@ const TeamPage = ({ data }) => (
           key={node.id}
           title={node.frontmatter.name}
           subtitle={node.frontmatter.role}
-          src={node.frontmatter.photo ? node.frontmatter.photo.publicURL : ""}
+          src={node.frontmatter.photo ? node.frontmatter.photo.childImageSharp.fixed : "na"}
           altText={node.frontmatter.photoAlt}
           blue="true"
           height="600px"
@@ -54,7 +54,11 @@ export const query = graphql`
             name
             role
             photo {
-              publicURL
+              childImageSharp {
+                fixed(height: 600) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
             }
             photoAlt
           }

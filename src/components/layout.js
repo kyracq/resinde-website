@@ -28,7 +28,7 @@ const Global = createGlobalStyle`
     font-size: 64px;
   }
   h3 {
-    font-size: 28px;
+    font-size: 27px;
   }
   p {
     font-size: 18px;
