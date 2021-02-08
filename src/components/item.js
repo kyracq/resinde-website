@@ -1,7 +1,6 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
 import StyledLink from "./styled-link"
-import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 
 const ItemContainer = styled(props => <div {...props}></div>)`
@@ -20,19 +19,19 @@ const Image = styled(Img)`
 `
 
 // Add back Link around Image with to prop when projects released
-const Item = (props) => {
+const Item = props => {
   return (
     <ItemContainer key={props.key} height={props.height}>
       <Image
         fixed={props.src}
         alt={props.altText}
-        objectFit='cover'
-        objectPosition='center'
+        objectFit="cover"
+        objectPosition="center"
         style={{
-          width: '100%',
-          height: '75%',
-          borderRadius: '25px',
-          backgroundColor: 'black'
+          width: "100%",
+          height: "75%",
+          borderRadius: "25px",
+          backgroundColor: "black",
         }}
       />
       <ItemDetails>
@@ -52,4 +51,4 @@ const Item = (props) => {
   )
 }
 
-export default Item;
+export default Item
