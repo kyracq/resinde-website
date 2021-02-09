@@ -17,7 +17,7 @@ const Filters = tw.div`
 `
 
 const Projects = tw.div`
-  grid grid-cols-2 mobile:grid-cols-1 gap-x-8 gap-y-6
+  grid grid-cols-2 mobile:grid-cols-1 gap-x-12 gap-y-6
 `
 
 const isPurple = type => {
@@ -52,7 +52,7 @@ const WorkPage = ({ data }) => (
               link={node.fields.slug}
               title={node.frontmatter.title}
               subtitle={node.excerpt}
-              src={node.frontmatter.featureImage.childImageSharp.fixed}
+              src={node.frontmatter.featureImage.publicURL}
               altText={node.frontmatter.featureImageAlt}
               purple={isPurple(node.frontmatter.type)}
               blue={isBlue(node.frontmatter.type)}
@@ -82,11 +82,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             type
             featureImage {
-              childImageSharp {
-                fixed(height: 500) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
+              publicURL
             }
             featureImageAlt
           }
