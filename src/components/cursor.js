@@ -16,6 +16,7 @@ const FollowDiv = styled.div`
     else return `translate(-50%, -50%)`
   }};
   transition: all 200ms ease-out;
+  mix-blend-mode: multiply;
 `
 
 const CursorDiv = styled.div`
@@ -28,6 +29,7 @@ const CursorDiv = styled.div`
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: ${props => (props.hidden ? 0 : 1)};
+  mix-blend-mode: multiply;
 `
 
 const Cursor = () => {
