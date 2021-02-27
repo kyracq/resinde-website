@@ -30,6 +30,32 @@ const Day = (props) => {
   )
 }
 
+const ScheduleSection = () => {
+  return (
+    <div>
+    <h2>Schedule</h2>
+    <Days>
+      <Day date='Saturday, March 13 (ET)'>
+        <ul>
+          <li>10:00 AM - Coming Soon</li>
+          <li>11:30 AM - Coming Soon</li>
+          <li>2:00 PM - Coming Soon</li>
+          <li>3:30 PM - Coming Soon</li>
+        </ul>
+      </Day>
+      <Day date='Sunday, March 14 (ET)'>
+        <ul>
+          <li>10:00 AM - Coming Soon</li>
+          <li>11:30 AM - Coming Soon</li>
+          <li>2:00 PM - Coming Soon</li>
+          <li>3:30 PM - Coming Soon</li>
+        </ul>
+      </Day>
+    </Days>
+    </div> 
+  )
+}
+
 const StyledButton = styled(props => <Link {...props} />)`
   ${tw`border border-magenta rounded-full text-magenta py-2 px-8 uppercase
   hover:bg-magenta hover:text-white transition text-left`}
@@ -37,7 +63,7 @@ const StyledButton = styled(props => <Link {...props} />)`
 `
 
 const Speakers = styled.div`
-  ${tw`grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-8 self-center`}
+  ${tw`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8 self-center`}
 `
 
 const TeamPage = ({ data }) => (
@@ -51,24 +77,7 @@ const TeamPage = ({ data }) => (
     </StyledHeaderDiv>
     <div>
       <h2>Schedule</h2>
-      <Days>
-        <Day date='Saturday, March 13 (ET)'>
-          <ul>
-            <li>10:00 AM - Coming Soon</li>
-            <li>11:30 AM - Coming Soon</li>
-            <li>2:00 PM - Coming Soon</li>
-            <li>3:30 PM - Coming Soon</li>
-          </ul>
-        </Day>
-        <Day date='Sunday, March 14 (ET)'>
-          <ul>
-            <li>10:00 AM - Coming Soon</li>
-            <li>11:30 AM - Coming Soon</li>
-            <li>2:00 PM - Coming Soon</li>
-            <li>3:30 PM - Coming Soon</li>
-          </ul>
-        </Day>
-      </Days>
+      <p>Coming Soon!</p>
     </div>
     <div>
       <h2>Speakers</h2>
@@ -79,10 +88,11 @@ const TeamPage = ({ data }) => (
             key={node.id}
             title={node.frontmatter.name}
             subtitle={node.frontmatter.role}
+            blurb={node.frontmatter.bio}
             src={node.frontmatter.photo ? node.frontmatter.photo.childImageSharp.fixed : "na"}
             altText={node.frontmatter.photoAlt}
             magenta="true"
-            height="475px"
+            height="550px"
           />
         ))}
       </Speakers>
@@ -112,6 +122,7 @@ export const query = graphql`
               }
             }
             photoAlt
+            bio
           }
         }
       }
