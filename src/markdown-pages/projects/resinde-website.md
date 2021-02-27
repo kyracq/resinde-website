@@ -2,8 +2,7 @@
 title: "ResInDe Website"
 date: "2021-02-03"
 type: "Project"
-featureImage: "../../images/coming-soon.png"
-featureImageAlt: ""
+featuredImage: ../../images/coming-soon.png
 ---
 
 Creating the website you see right now from design to development.

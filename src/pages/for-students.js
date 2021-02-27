@@ -5,7 +5,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { PaddingLeft } from "../components/padding"
+import {
+  PaddingLeft,
+  SectionTextLeft,
+  SectionTextRight,
+} from "../components/padding"
 
 const StyledA = styled.a`
   ${tw`text-blue`}
@@ -44,12 +48,6 @@ const StyledDiv = styled.div`
 
 const Sections = styled.div`
   ${tw`space-y-32`}
-`
-const SectionTextLeft = styled(PaddingLeft)`
-  ${tw`self-center flex-grow grid justify-items-center space-y-8 mr-8`}
-`
-const SectionText = styled.div`
-  ${tw`self-center flex-grow grid justify-items-center pr-48 space-y-8`}
 `
 
 const StyledList = tw.ul`
@@ -150,7 +148,7 @@ const ForStudentsPage = () => {
             <Img fixed={data.blueBlob.childImageSharp.fixed} />
             <StyledH12>Join Us</StyledH12>
           </div>
-          <SectionText>
+          <SectionTextRight>
             <StyledP>
               Princeton ResInDe is founded to bring value to you in several
               ways:
@@ -195,7 +193,7 @@ const ForStudentsPage = () => {
                 apply today
               </StyledButton>
             </ButtonDiv>
-          </SectionText>
+          </SectionTextRight>
         </StyledDiv>
         <StyledDiv>
           <SectionTextLeft>

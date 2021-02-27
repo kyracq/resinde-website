@@ -1,6 +1,5 @@
 ---
 name: "Megan Specht '23"
 role: "Team Member"
-photo: "../../images/headshots/megan.JPG"
-photoAlt: ""
+featuredImage: ../../images/headshots/megan.JPG
 ---

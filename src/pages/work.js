@@ -1,15 +1,16 @@
 // Please cascade any changes to this file to projects.js and case-studies.js
 
 import React from "react"
-import tw from "twin.macro"
+import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
 
 import StyledLink from "../components/styled-link"
 import SEO from "../components/seo"
 import Item from "../components/item"
+import { Padding } from "../components/padding"
 
-const PageContainer = tw.div`
-  space-y-10 mobile:px-8 px-48 pt-16 mt-32 mobile:mt-6
+const PageContainer = styled(Padding)`
+  ${tw`space-y-10 pt-16 mt-32 mobile:mt-6`}
 `
 
 const Filters = tw.div`
@@ -44,24 +45,19 @@ const WorkPage = ({ data }) => (
       </StyledLink>
     </Filters>
     <Projects>
-      {data.allMarkdownRemark.edges.map(({ node }) => {
-        if (node.frontmatter.featureImage) {
-          return (
-            <Item
-              key={node.id}
-              link={node.fields.slug}
-              title={node.frontmatter.title}
-              subtitle={node.excerpt}
-              src={node.frontmatter.featureImage.childImageSharp.fixed}
-              altText={node.frontmatter.featureImageAlt}
-              purple={isPurple(node.frontmatter.type)}
-              blue={isBlue(node.frontmatter.type)}
-              height="500px"
-            />
-          )
-        }
-        return null
-      })}
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <Item
+          key={node.id}
+          link={node.fields.slug}
+          title={node.frontmatter.title}
+          subtitle={node.excerpt}
+          src={node.frontmatter.featuredImage.childImageSharp.fixed}
+          altText={node.frontmatter.featuredImageAlt}
+          purple={isPurple(node.frontmatter.type)}
+          blue={isBlue(node.frontmatter.type)}
+          height="500px"
+        />
+      ))}
     </Projects>
   </PageContainer>
 )
@@ -72,7 +68,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/(projects)/" } }
+      filter: { fileAbsolutePath: { regex: "/(markdown-pages/projects)/" } }
     ) {
       edges {
         node {
@@ -81,14 +77,13 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             type
-            featureImage {
+            featuredImage {
               childImageSharp {
                 fixed(height: 500) {
                   ...GatsbyImageSharpFixed
                 }
               }
             }
-            featureImageAlt
           }
           fields {
             slug

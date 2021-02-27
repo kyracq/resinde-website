@@ -1,6 +1,5 @@
 ---
 name: "Ashley To '22"
 role: "Co-Founder"
-photo: "../../images/headshots/ashley.jpeg"
-photoAlt: ""
+featuredImage: ../../images/headshots/ashley.jpeg
 ---

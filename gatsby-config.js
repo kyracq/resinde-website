@@ -3,6 +3,14 @@ module.exports = {
     title: `ResInDe`,
     description: `Princeton Research, Innovation, Design`,
     author: `ResInDe`,
+    navLinks: [
+      { name: "About", link: "/about" },
+      { name: "Work", link: "/work" },
+      { name: "Team", link: "/team" },
+      { name: "For Students", link: "/for-students" },
+      { name: "IDEA Conference", link: "/conference" },
+      { name: "Contact Us", link: "/contact-us" },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -71,12 +71,12 @@ const MenuItemDiv = styled.div`
 const LineDiv = styled.div`
   width: 90%;
   height: 1px;
-  background-color: gray;
+  background-color: #323232;
   margin: 0 auto;
   animation-delay: ${props => props.delay};
 `
 
-const MobileNav = props => {
+const MobileNav = ({ navLinks }) => {
   const [open, setOpen] = useState(false)
   const [color, setColor] = useState("black")
   const toggle = () => {
@@ -87,19 +87,11 @@ const MobileNav = props => {
     })
   }
 
-  const navLinks = [
-    { pageName: "About", pageUrl: "/about" },
-    { pageName: "Work", pageUrl: "/work" },
-    { pageName: "Team", pageUrl: "/team" },
-    { pageName: "For Students", pageUrl: "/for-students" },
-    { pageName: "Contact Us", pageUrl: "/contact" },
-  ]
-
   const menuItems = navLinks.map((value, index) => {
     return (
       <MenuItem key={index} delay={`${index * 0.1}s`}>
-        <Link onClick={toggle} to={value.pageUrl}>
-          {value.pageName}
+        <Link onClick={toggle} to={value.link}>
+          {value.name}
         </Link>
       </MenuItem>
     )

@@ -1,6 +1,5 @@
 ---
 name: "Barak Nehoran"
 role: "Team Member"
-photo: "../../images/headshots/barak.jpg"
-photoAlt: ""
+featuredImage: ../../images/headshots/barak.jpg
 ---

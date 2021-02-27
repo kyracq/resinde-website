@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import { SectionTextLeft } from "../components/padding"
 
 const StyledH1 = styled.h1`
   ${tw`text-white text-7xl items-center absolute text-right px-48`}
@@ -10,15 +11,11 @@ const StyledH1 = styled.h1`
 `
 
 const StyledTextDiv = styled.p`
-  ${tw`mb-8 pl-48 flex flex-col items-center space-y-4 text-center`}
+  ${tw`text-center`}
 `
 
 const StyledDiv = styled.div`
   ${tw`flex`}
-`
-
-const SectionText = styled.div`
-  ${tw`self-center flex-grow mr-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -48,7 +45,7 @@ const ProjectsSection = props => {
 
   return (
     <StyledDiv>
-      <SectionText>
+      <SectionTextLeft>
         <StyledTextDiv>
           <div>
             ResInDe is currently partnering with{" "}
@@ -74,9 +71,9 @@ const ProjectsSection = props => {
             </StyledA>
             .
           </div>
-          <StyledButton to="/work">learn more</StyledButton>
         </StyledTextDiv>
-      </SectionText>
+        <StyledButton to="/work">learn more</StyledButton>
+      </SectionTextLeft>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.blob.childImageSharp.fixed} />
         <StyledH1>Current Projects</StyledH1>

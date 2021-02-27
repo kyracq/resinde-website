@@ -58,10 +58,13 @@ const isMobile = () => {
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query SiteNavLinksQuery {
       site {
         siteMetadata {
-          title
+          navLinks {
+            name
+            link
+          }
         }
       }
     }
@@ -81,7 +84,7 @@ const Layout = ({ children }) => {
       {cursor}
 
       <div>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Header navLinks={data.site.siteMetadata?.navLinks} />
         <main>{children}</main>
         <Footer />
       </div>

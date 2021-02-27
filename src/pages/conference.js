@@ -21,10 +21,12 @@ const Days = tw.div`
   flex flex-row leading-loose xl:flex-col xl:space-y-3
 `
 
-const Day = (props) => {
+const Day = props => {
   return (
-    <div style = {{ 'width': '100%' }}>
-      <h4 style = {{ 'text-transform': 'uppercase', 'color': '#f02e65'}}>{props.date}</h4>
+    <div style={{ width: "100%" }}>
+      <h4 style={{ "text-transform": "uppercase", color: "#f02e65" }}>
+        {props.date}
+      </h4>
       {props.children}
     </div>
   )
@@ -33,26 +35,26 @@ const Day = (props) => {
 const ScheduleSection = () => {
   return (
     <div>
-    <h2>Schedule</h2>
-    <Days>
-      <Day date='Saturday, March 13 (ET)'>
-        <ul>
-          <li>10:00 AM - Coming Soon</li>
-          <li>11:30 AM - Coming Soon</li>
-          <li>2:00 PM - Coming Soon</li>
-          <li>3:30 PM - Coming Soon</li>
-        </ul>
-      </Day>
-      <Day date='Sunday, March 14 (ET)'>
-        <ul>
-          <li>10:00 AM - Coming Soon</li>
-          <li>11:30 AM - Coming Soon</li>
-          <li>2:00 PM - Coming Soon</li>
-          <li>3:30 PM - Coming Soon</li>
-        </ul>
-      </Day>
-    </Days>
-    </div> 
+      <h2>Schedule</h2>
+      <Days>
+        <Day date="Saturday, March 13 (ET)">
+          <ul>
+            <li>10:00 AM - Coming Soon</li>
+            <li>11:30 AM - Coming Soon</li>
+            <li>2:00 PM - Coming Soon</li>
+            <li>3:30 PM - Coming Soon</li>
+          </ul>
+        </Day>
+        <Day date="Sunday, March 14 (ET)">
+          <ul>
+            <li>10:00 AM - Coming Soon</li>
+            <li>11:30 AM - Coming Soon</li>
+            <li>2:00 PM - Coming Soon</li>
+            <li>3:30 PM - Coming Soon</li>
+          </ul>
+        </Day>
+      </Days>
+    </div>
   )
 }
 
@@ -66,12 +68,18 @@ const Speakers = styled.div`
   ${tw`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8 self-center`}
 `
 
-const TeamPage = ({ data }) => (
+const ConferencePage = ({ data }) => (
   <PageContainer>
     <SEO title="IDEA Conference" />
     <StyledHeaderDiv>
       <Heading>IDEA Conference</Heading>
-      <p>A conference on inclusion, diversity, equity, and accessibility (or IDEA for short!) from March 13 – 14, 2021 including speakers from Google, IDEO, and more! Speakers will be talking about about creating inclusive and accessible products and processes. Stay tuned as we add the full schedule here and introduce all the speakers on our Instagram!</p>
+      <p>
+        A conference on inclusion, diversity, equity, and accessibility (or IDEA
+        for short!) from March 13 – 14, 2021 including speakers from Google,
+        IDEO, and more! Speakers will be talking about about creating inclusive
+        and accessible products and processes. Stay tuned as we add the full
+        schedule here and introduce all the speakers on our Instagram!
+      </p>
       <br />
       <StyledButton to="/contact">Register</StyledButton>
     </StyledHeaderDiv>
@@ -83,18 +91,21 @@ const TeamPage = ({ data }) => (
       <h2>Speakers</h2>
       <br />
       <Speakers>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Item
-            key={node.id}
-            title={node.frontmatter.name}
-            subtitle={node.frontmatter.role}
-            blurb={node.frontmatter.bio}
-            src={node.frontmatter.photo ? node.frontmatter.photo.childImageSharp.fixed : "na"}
-            altText={node.frontmatter.photoAlt}
-            magenta="true"
-            height="550px"
-          />
-        ))}
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          console.log(node)
+          return (
+            <Item
+              key={node.id}
+              title={node.frontmatter.name}
+              subtitle={node.frontmatter.role}
+              blurb={node.frontmatter.bio}
+              src={node.frontmatter.featuredImage.childImageSharp.fixed}
+              altText={node.frontmatter.photoAlt}
+              magenta="true"
+              height="550px"
+            />
+          )
+        })}
       </Speakers>
     </div>
     <div>
@@ -104,7 +115,7 @@ const TeamPage = ({ data }) => (
   </PageContainer>
 )
 
-export default TeamPage
+export default ConferencePage
 
 export const query = graphql`
   query {
@@ -118,14 +129,13 @@ export const query = graphql`
           frontmatter {
             name
             role
-            photo {
+            featuredImage {
               childImageSharp {
                 fixed(height: 475) {
                   ...GatsbyImageSharpFixed
                 }
               }
             }
-            photoAlt
             bio
           }
         }

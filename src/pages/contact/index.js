@@ -4,6 +4,7 @@ import SEO from "../../components/seo.js"
 import { navigate } from "gatsby-link"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+import { Padding } from "../../components/padding"
 
 const StyledInput = styled.input`
   ${tw`rounded-xl my-7 px-6 py-2 block w-full outline-none border-purple border-2`}
@@ -22,8 +23,8 @@ const StyledButton = styled.button`
   uppercase hover:bg-black hover:text-white transition focus:outline-none`}
   cursor: none;
 `
-const Wrapper = styled.div`
-  ${tw`mobile:px-8 px-48 mt-48`}
+const Wrapper = styled(Padding)`
+  ${tw`mt-48`}
   height: 1100px;
 `
 const StyledForm = styled.form`
@@ -50,7 +51,7 @@ const ContactPage = () => {
       query {
         bgBlob: file(relativePath: { eq: "purple-blob-3.png" }) {
           childImageSharp {
-            fixed {
+            fixed(width: 1416) {
               ...GatsbyImageSharpFixed
             }
           }

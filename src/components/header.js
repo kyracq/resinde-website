@@ -21,7 +21,7 @@ const DesktopNav = tw.div`
 const ActionLink = styled(props => <Link {...props} />)`
   ${tw`bg-magenta text-white rounded-lg p-2 hover:bg-opacity-75 transition-colors font-bold`}
 `
-const Header = ({ siteTitle }) => {
+const Header = ({ navLinks }) => {
   const data = useStaticQuery(graphql`
     query LogoQuery {
       file(relativePath: { eq: "resinde-logo-square.png" }) {
@@ -35,6 +35,8 @@ const Header = ({ siteTitle }) => {
     }
   `)
 
+  const colors = ["magenta", "purple", "blue", "yellow"]
+
   return (
     <StyledHeader>
       <StyledNav>
@@ -43,22 +45,17 @@ const Header = ({ siteTitle }) => {
             <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
           </Link>
         </div>
-        <MobileNav />
+        <MobileNav navLinks={navLinks} />
         <DesktopNav>
-          <NavLink to="/about" magenta="true">
-            About
-          </NavLink>
-          <NavLink to="/work" purple="true">
-            Work
-          </NavLink>
-          <NavLink to="/team" blue="true">
-            Team
-          </NavLink>
-          <NavLink to="/for-students" yellow="true">
-            For Students
-          </NavLink>
-          <NavLink to="/conference" magenta="true">IDEA Conference</NavLink>
-          <ActionLink to="/contact">Contact Us</ActionLink>
+          {navLinks.map((item, index) => {
+            if (item.name === "Contact Us") {
+              return <ActionLink to="/contact">Contact Us</ActionLink>
+            } else {
+              let linkProps = { to: item.link }
+              linkProps[colors[index % colors.length]] = true
+              return <NavLink {...linkProps}>{item.name}</NavLink>
+            }
+          })}
         </DesktopNav>
       </StyledNav>
     </StyledHeader>

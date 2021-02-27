@@ -3,22 +3,15 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import { SectionTextLeft } from "../components/padding"
 
 const StyledH1 = styled.h1`
   ${tw`text-white text-7xl items-center absolute px-48 text-right`}
   top: 260px;
 `
 
-const TextDiv = styled.div`
-  ${tw`pl-48 text-center`}
-`
-
 const StyledDiv = styled.div`
   ${tw`flex`}
-`
-
-const SectionText = styled.div`
-  ${tw`self-center flex-grow mr-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -26,9 +19,8 @@ const StyledButton = styled(props => <Link {...props} />)`
   hover:bg-purple hover:text-white transition`}
 `
 
-const ButtonDiv = styled.div`
-  ${tw`text-center mt-8`}
-  font-size: 18px;
+const CenteredP = styled.p`
+  ${tw`text-center`}
 `
 
 const ContactSection = props => {
@@ -50,14 +42,12 @@ const ContactSection = props => {
 
   return (
     <StyledDiv>
-      <SectionText>
-        <TextDiv>
-          <p>Want to partner together? Curious to join? Contact us!</p>
-          <ButtonDiv>
-            <StyledButton to="/contact">Contact Us</StyledButton>
-          </ButtonDiv>
-        </TextDiv>
-      </SectionText>
+      <SectionTextLeft>
+        <CenteredP>
+          Want to partner together? Curious to join? Contact us!
+        </CenteredP>
+        <StyledButton to="/contact">Contact Us</StyledButton>
+      </SectionTextLeft>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.placeholderImage.childImageSharp.fixed} />
         <StyledH1>Contact Us</StyledH1>

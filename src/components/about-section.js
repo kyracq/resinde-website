@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import { SectionTextRight } from "../components/padding"
 
 const StyledH1 = styled.h1`
   ${tw`mobile:text-black text-white text-7xl items-center absolute mobile:pl-8 pl-48`}
@@ -15,14 +16,6 @@ const StyledP = styled.p`
 
 const StyledDiv = styled.div`
   ${tw`flex`}
-`
-
-const SectionText = styled.div`
-  ${tw`self-center flex-grow grid justify-items-center pr-48 pl-8`}
-`
-
-const ButtonDiv = styled.div`
-  ${tw`mt-8`}
 `
 
 const StyledButton = styled(props => <Link {...props} />)`
@@ -57,7 +50,7 @@ const AboutSection = props => {
         <Img fixed={data.blob.childImageSharp.fixed} />
         <StyledH1>About Us</StyledH1>
       </div>
-      <SectionText>
+      <SectionTextRight>
         <StyledP>
           ResInDe is Princeton University's premier student-run design
           consultancy. Short for Research, Innovation, and Design, ResInDe is
@@ -75,10 +68,8 @@ const AboutSection = props => {
           <li>Web Development</li>
         </StyledList>
 
-        <ButtonDiv>
-          <StyledButton to="/about">learn more</StyledButton>
-        </ButtonDiv>
-      </SectionText>
+        <StyledButton to="/about">learn more</StyledButton>
+      </SectionTextRight>
     </StyledDiv>
   )
 }
