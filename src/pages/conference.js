@@ -1,6 +1,7 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
 import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 import Item from "../components/item"
@@ -71,6 +72,7 @@ const Speakers = styled.div`
 const ConferencePage = ({ data }) => (
   <PageContainer>
     <SEO title="IDEA Conference" />
+    <img src={data.ideaLogo.publicURL} width='550px'/>
     <StyledHeaderDiv>
       <Heading>IDEA Conference</Heading>
       <p>
@@ -119,6 +121,9 @@ export default ConferencePage
 
 export const query = graphql`
   query {
+    ideaLogo: file(relativePath: { eq: "idea-logo.svg" }) {
+      publicURL
+    }
     allMarkdownRemark(
       sort: { fields: fileAbsolutePath, order: ASC }
       filter: { fileAbsolutePath: { regex: "/(speakers)/" } }
