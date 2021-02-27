@@ -97,6 +97,10 @@ const TeamPage = ({ data }) => (
         ))}
       </Speakers>
     </div>
+    <div>
+      <h2>Partners</h2>
+      <p>Coming Soon!</p>
+    </div>
   </PageContainer>
 )
 

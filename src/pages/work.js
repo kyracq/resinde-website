@@ -51,7 +51,7 @@ const WorkPage = ({ data }) => (
               key={node.id}
               link={node.fields.slug}
               title={node.frontmatter.title}
-              blurb={node.excerpt}
+              subtitle={node.excerpt}
               src={node.frontmatter.featureImage.childImageSharp.fixed}
               altText={node.frontmatter.featureImageAlt}
               purple={isPurple(node.frontmatter.type)}
