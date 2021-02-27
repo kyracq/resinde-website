@@ -81,7 +81,7 @@ const ConferencePage = ({ data }) => (
         schedule here and introduce all the speakers on our Instagram!
       </p>
       <br />
-      <StyledButton to="/contact">Register</StyledButton>
+      <StyledButton to="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">Register</StyledButton>
     </StyledHeaderDiv>
     <div>
       <h2>Schedule</h2>
@@ -100,7 +100,7 @@ const ConferencePage = ({ data }) => (
               subtitle={node.frontmatter.role}
               blurb={node.frontmatter.bio}
               src={node.frontmatter.featuredImage.childImageSharp.fixed}
-              altText={node.frontmatter.photoAlt}
+              altText={node.frontmatter.featuredImageAlt}
               magenta="true"
               height="550px"
             />
@@ -131,12 +131,12 @@ export const query = graphql`
             role
             featuredImage {
               childImageSharp {
-                fixed(height: 475) {
+                fixed(height: 450) {
                   ...GatsbyImageSharpFixed
                 }
               }
             }
-            bio
+            featuredImageAlt
           }
         }
       }
