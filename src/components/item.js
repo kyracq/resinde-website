@@ -1,5 +1,5 @@
 import React from "react"
-import tw, { styled } from "twin.macro"
+import { styled } from "twin.macro"
 import StyledLink from "./styled-link"
 import Img from "gatsby-image/withIEPolyfill"
 
