@@ -1,15 +1,15 @@
 import React from "react"
-import tw, { styled } from "twin.macro"
+import { styled } from "twin.macro"
 import StyledLink from "./styled-link"
 import Img from "gatsby-image/withIEPolyfill"
 
 const ItemContainer = styled(props => <div {...props}></div>)`
-  ${tw`space-y-4`}
   width: 100%;
   height: ${props => props.height};
 `
 
 const ItemDetails = styled.div`
+  padding-top: 10px;
   padding-left: 1%;
 `
 

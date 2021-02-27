@@ -27,8 +27,14 @@ const Global = createGlobalStyle`
   h1 {
     font-size: 64px;
   }
+  h2 {
+    font-size: 48px;
+  }
   h3 {
     font-size: 28px;
+  }
+  h4 {
+    font-size: 21px;
   }
   p {
     font-size: 18px;

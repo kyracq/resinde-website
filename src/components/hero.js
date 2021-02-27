@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import tw, { styled } from "twin.macro"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
+import StyledLink from "./styled-link"
 
 const HeroContainer = tw.div`
   flex flex-col min-h-screen max-w-max justify-center items-center p-0 space-y-32 mobile:px-8 px-48
@@ -9,6 +10,11 @@ const HeroContainer = tw.div`
 
 const HeroContent = styled.div`
   ${tw`text-left text-black`}
+`
+
+const HeroAction = styled.h3`
+  ${tw`text-magenta`}
+  font-size: 21px;
 `
 
 const HeroArrow = styled(props => <Link {...props} />)`
@@ -49,8 +55,16 @@ const HeroSection = props => {
       students to practice this approach while creating real impact on users.
     </p>
   )
+  const three = (
+    <HeroAction>
+      <br />
+      <StyledLink to='/conference' magenta='true'>
+        Attend Our IDEA Conference →
+      </StyledLink>
+    </HeroAction>
+  )
 
-  const items = [one, two]
+  const items = [one, two, three]
 
   return (
     <HeroContainer>

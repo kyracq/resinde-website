@@ -6,11 +6,15 @@ import SEO from "../components/seo"
 import Item from "../components/item"
 
 const StyledHeaderDiv = tw.div`
-  mt-16
+  mt-16 space-y-4
 `
 
-const PageContainer = tw.div`
-  flex flex-col space-y-14 mobile:px-8 px-48 mt-32
+const Heading = tw.h1`
+  leading-none
+`
+
+const PageContainer = styled.div`
+  ${tw`flex flex-col space-y-14 mobile:px-8 px-48 mt-36 mobile:mt-6`}
 `
 
 const People = styled.div`
@@ -21,7 +25,7 @@ const TeamPage = ({ data }) => (
   <PageContainer>
     <SEO title="Our Team" />
     <StyledHeaderDiv>
-      <h1>Meet The Team</h1>
+      <Heading>Meet The Team</Heading>
     </StyledHeaderDiv>
     <People>
       {data.allMarkdownRemark.edges.map(({ node }) => (
