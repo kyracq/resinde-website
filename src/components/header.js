@@ -57,6 +57,7 @@ const Header = ({ siteTitle }) => {
           <NavLink to="/for-students" yellow="true">
             For Students
           </NavLink>
+          <NavLink to="/conference" magenta="true">IDEA Conference</NavLink>
           <ActionLink to="/contact">Contact Us</ActionLink>
         </DesktopNav>
       </StyledNav>
