@@ -1,6 +1,7 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
 import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 import Item from "../components/item"
@@ -71,6 +72,7 @@ const Speakers = styled.div`
 const ConferencePage = ({ data }) => (
   <PageContainer>
     <SEO title="IDEA Conference" />
+    <img src={data.ideaLogo.publicURL} width='550px'/>
     <StyledHeaderDiv>
       <Heading>IDEA Conference</Heading>
       <p>
@@ -81,7 +83,7 @@ const ConferencePage = ({ data }) => (
         schedule here and introduce all the speakers on our Instagram!
       </p>
       <br />
-      <StyledButton to="/contact">Register</StyledButton>
+      <StyledButton to="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">Register</StyledButton>
     </StyledHeaderDiv>
     <div>
       <h2>Schedule</h2>
@@ -100,7 +102,7 @@ const ConferencePage = ({ data }) => (
               subtitle={node.frontmatter.role}
               blurb={node.frontmatter.bio}
               src={node.frontmatter.featuredImage.childImageSharp.fixed}
-              altText={node.frontmatter.photoAlt}
+              altText={node.frontmatter.featuredImageAlt}
               magenta="true"
               height="550px"
             />
@@ -119,6 +121,9 @@ export default ConferencePage
 
 export const query = graphql`
   query {
+    ideaLogo: file(relativePath: { eq: "idea-logo.svg" }) {
+      publicURL
+    }
     allMarkdownRemark(
       sort: { fields: fileAbsolutePath, order: ASC }
       filter: { fileAbsolutePath: { regex: "/(speakers)/" } }
@@ -131,12 +136,12 @@ export const query = graphql`
             role
             featuredImage {
               childImageSharp {
-                fixed(height: 475) {
+                fixed(height: 450) {
                   ...GatsbyImageSharpFixed
                 }
               }
             }
-            bio
+            featuredImageAlt
           }
         }
       }
