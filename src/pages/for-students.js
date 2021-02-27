@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import { PaddingLeft } from "../components/padding"
 
 const StyledA = styled.a`
   ${tw`text-blue`}
@@ -29,8 +30,8 @@ const StyledH1Workshops = styled.h1`
   top: 220px;
 `
 
-const StyledHeader = styled.h1`
-  ${tw`mobile:pl-8 pl-48 mt-48`}
+const StyledHeader = styled(PaddingLeft)`
+  ${tw`mt-48`}
 `
 
 const StyledP = styled.p`
@@ -44,8 +45,8 @@ const StyledDiv = styled.div`
 const Sections = styled.div`
   ${tw`space-y-32`}
 `
-const SectionTextLeft = styled.div`
-  ${tw`self-center flex-grow grid justify-items-center pl-48 space-y-8 mr-8`}
+const SectionTextLeft = styled(PaddingLeft)`
+  ${tw`self-center flex-grow grid justify-items-center space-y-8 mr-8`}
 `
 const SectionText = styled.div`
   ${tw`self-center flex-grow grid justify-items-center pr-48 space-y-8`}
@@ -124,7 +125,9 @@ const ForStudentsPage = () => {
   return (
     <div>
       <SEO title="For Students" />
-      <StyledHeader>For Students</StyledHeader>
+      <StyledHeader>
+        <h1>For Students</h1>
+      </StyledHeader>
       <Sections>
         <StyledDiv>
           <SectionTextLeft>
@@ -197,10 +200,10 @@ const ForStudentsPage = () => {
         <StyledDiv>
           <SectionTextLeft>
             <StyledP>
-              ResInDe is committed to an ongoing mission of cultivating a conversation around
-              design and innovative thinking at Princeton, so we offer
-              opportunities for all students to gain exposure into the design
-              world. Check out our past events below, and{" "}
+              ResInDe is committed to an ongoing mission of cultivating a
+              conversation around design and innovative thinking at Princeton,
+              so we offer opportunities for all students to gain exposure into
+              the design world. Check out our past events below, and{" "}
               <StyledA
                 href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"
                 target="_blank"
