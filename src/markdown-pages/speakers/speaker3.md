@@ -1,8 +1,7 @@
 ---
-name: "Zena Barakat"
-role: "Design Director @ IDEO"
-featuredImage: ../../images/speakers/zena-barakat.jpg
+name: "David Miller"
+role: "Director @ Princeton University Faith & Work Initiative"
+featuredImage: ../../images/speakers/david.jpg
 featuredImageAlt: ""
-bio: "Zena Barakat is a design director at IDEO, specialized in communications design. She helps organizations innovate by intentionally and thoughtfully designing for inclusion and responsibility. Prior to working at IDEO, she was an Emmy-nominated producer with 14 years of experience working in media, producing videos and documentaries for The New York Times, ABC News, National Public Radio, among others. She also worked at Apple as a head of video for the Apple News app."
-
+bio: "David Miller is the Director of the Princeton University Faith & Work Initiative (FWI), a Senior Professional Specialist in Ethics, and a Lecturer. In addition to his research, teaching, and programs, he also serves as an advisor to corporate CEOs and senior executives on ethics, values-based leadership, culture, and the role of faith at work. As a thought leader, many senior executives seek his counsel, and scholars, religious organizations, and the media seek his views. An article in the Wall Street Journal recently featured his work with one global client referring to him as the “on-call ethicist.”"
 ---

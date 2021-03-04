@@ -1,7 +1,6 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 
 import SEO from "../components/seo"
 import Item from "../components/item"
@@ -72,7 +71,7 @@ const Speakers = styled.div`
 const ConferencePage = ({ data }) => (
   <PageContainer>
     <SEO title="IDEA Conference" />
-    <img src={data.ideaLogo.publicURL} width='550px'/>
+    <img src={data.ideaLogo.publicURL} alt="Shapes spelling out idea." width='550px'/>
     <StyledHeaderDiv>
       <Heading>IDEA Conference</Heading>
       <p>
@@ -80,7 +79,7 @@ const ConferencePage = ({ data }) => (
         for short!) from March 13 – 14, 2021 including speakers from Google,
         IDEO, and more! Speakers will be talking about about creating inclusive
         and accessible products and processes. Stay tuned as we add the full
-        schedule here and introduce all the speakers on our Instagram!
+        schedule here and introduce all the speakers on our Instagram! <b>Open to students everywhere (register with your .edu email) and Princteon affiliates (faculty, alumni, etc.).</b>
       </p>
       <br />
       <StyledButton to="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">Register</StyledButton>
@@ -91,6 +90,7 @@ const ConferencePage = ({ data }) => (
     </div>
     <div>
       <h2>Speakers</h2>
+      <p>Stay tuned for more speakers!</p>
       <br />
       <Speakers>
         {data.allMarkdownRemark.edges.map(({ node }) => {

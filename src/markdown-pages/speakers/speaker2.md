@@ -1,7 +1,7 @@
 ---
-name: "Yicheng 'YC' Sun"
-role: "Design Lead @ IDEO"
-featuredImage: ../../images/speakers/yc-sun.png
+name: "Zena Barakat"
+role: "Design Director @ IDEO"
+featuredImage: ../../images/speakers/zena.jpg
 featuredImageAlt: ""
-bio: "Yicheng 'YC' Sun is a design lead at IDEO, with a focus on creative technology and venture design. He guides clients and teams through the product journey, from initial ideation, prototype & pilot, to market launch. He has a soft spot for healthcare technology startups and recent projects include a Parkinson’s wearable platform, oncology research community, COVID-19 telemedicine platform, and sleep digital therapeutics. YC graduated Princeton ELE'17."
+bio: "Zena Barakat is a design director at IDEO, specialized in communications design. She helps organizations innovate by intentionally and thoughtfully designing for inclusion and responsibility. Prior to working at IDEO, she was an Emmy-nominated producer with 14 years of experience working in media, producing videos and documentaries for The New York Times, ABC News, National Public Radio, among others. She also worked at Apple as a head of video for the Apple News app."
 ---

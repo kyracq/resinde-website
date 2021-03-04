@@ -1,5 +1,5 @@
 ---
 name: "Megan Specht '23"
-role: "Team Member"
+role: "Social Chair"
 featuredImage: ../../images/headshots/megan.JPG
 ---
