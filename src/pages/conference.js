@@ -10,7 +10,7 @@ const StyledHeaderDiv = tw.div`
 `
 
 const Heading = tw.h1`
-  leading-none
+  leading-none mobile:text-5xl
 `
 
 const PageContainer = styled.div`
@@ -71,7 +71,11 @@ const Speakers = styled.div`
 const ConferencePage = ({ data }) => (
   <PageContainer>
     <SEO title="IDEA Conference" />
-    <img src={data.ideaLogo.publicURL} alt="Shapes spelling out idea." width='550px'/>
+    <img
+      src={data.ideaLogo.publicURL}
+      alt="Shapes spelling out idea."
+      width="550px"
+    />
     <StyledHeaderDiv>
       <Heading>IDEA Conference</Heading>
       <p>
@@ -79,10 +83,16 @@ const ConferencePage = ({ data }) => (
         for short!) from March 13 – 14, 2021 including speakers from Google,
         IDEO, and more! Speakers will be talking about about creating inclusive
         and accessible products and processes. Stay tuned as we add the full
-        schedule here and introduce all the speakers on our Instagram! <b>Open to students everywhere (register with your .edu email) and Princteon affiliates (faculty, alumni, etc.).</b>
+        schedule here and introduce all the speakers on our Instagram!{" "}
+        <b>
+          Open to students everywhere (register with your .edu email) and
+          Princteon affiliates (faculty, alumni, etc.).
+        </b>
       </p>
       <br />
-      <StyledButton to="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">Register</StyledButton>
+      <StyledButton to="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">
+        Register
+      </StyledButton>
     </StyledHeaderDiv>
     <div>
       <h2>Schedule</h2>
