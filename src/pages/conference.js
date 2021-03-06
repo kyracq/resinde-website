@@ -1,6 +1,6 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Img from "gatsby-image/withIEPolyfill"
@@ -17,48 +17,48 @@ const PageContainer = styled.div`
   ${tw`flex flex-col space-y-10 mobile:px-8 px-48 mt-36 mobile:mt-6`}
 `
 
-const Days = tw.div`
-  flex flex-row leading-loose xl:flex-col xl:space-y-3
-`
+// const Days = tw.div`
+//   flex flex-row leading-loose xl:flex-col xl:space-y-3
+// `
 
-const Day = props => {
-  return (
-    <div style={{ width: "100%" }}>
-      <h4 style={{ "text-transform": "uppercase", color: "#f02e65" }}>
-        {props.date}
-      </h4>
-      {props.children}
-    </div>
-  )
-}
+// const Day = props => {
+//   return (
+//     <div style={{ width: "100%" }}>
+//       <h4 style={{ "text-transform": "uppercase", color: "#f02e65" }}>
+//         {props.date}
+//       </h4>
+//       {props.children}
+//     </div>
+//   )
+// }
 
-const ScheduleSection = () => {
-  return (
-    <div>
-      <h2>Schedule</h2>
-      <Days>
-        <Day date="Saturday, March 13 (ET)">
-          <ul>
-            <li>10:00 AM - Coming Soon</li>
-            <li>11:30 AM - Coming Soon</li>
-            <li>2:00 PM - Coming Soon</li>
-            <li>3:30 PM - Coming Soon</li>
-          </ul>
-        </Day>
-        <Day date="Sunday, March 14 (ET)">
-          <ul>
-            <li>10:00 AM - Coming Soon</li>
-            <li>11:30 AM - Coming Soon</li>
-            <li>2:00 PM - Coming Soon</li>
-            <li>3:30 PM - Coming Soon</li>
-          </ul>
-        </Day>
-      </Days>
-    </div>
-  )
-}
+// const ScheduleSection = () => {
+//   return (
+//     <div>
+//       <h2>Schedule</h2>
+//       <Days>
+//         <Day date="Saturday, March 13 (ET)">
+//           <ul>
+//             <li>10:00 AM - Coming Soon</li>
+//             <li>11:30 AM - Coming Soon</li>
+//             <li>2:00 PM - Coming Soon</li>
+//             <li>3:30 PM - Coming Soon</li>
+//           </ul>
+//         </Day>
+//         <Day date="Sunday, March 14 (ET)">
+//           <ul>
+//             <li>10:00 AM - Coming Soon</li>
+//             <li>11:30 AM - Coming Soon</li>
+//             <li>2:00 PM - Coming Soon</li>
+//             <li>3:30 PM - Coming Soon</li>
+//           </ul>
+//         </Day>
+//       </Days>
+//     </div>
+//   )
+// }
 
-const StyledButton = styled(props => <Link {...props} />)`
+const StyledButton = styled.a`
   ${tw`border border-magenta rounded-full text-magenta py-2 px-8 uppercase
   hover:bg-magenta hover:text-white transition text-left`}
   font-size: 18px;
@@ -86,7 +86,7 @@ const ConferencePage = ({ data }) => (
         </b>
       </p>
       <br />
-      <StyledButton to="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">
+      <StyledButton href="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">
         Register
       </StyledButton>
     </StyledHeaderDiv>
@@ -102,6 +102,7 @@ const ConferencePage = ({ data }) => (
         {data.allMarkdownRemark.edges.map(({ node }) => {
           return (
             <Img
+              key={node.frontmatter.name}
               fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
               alt={node.frontmatter.featuredImageAlt}
               objectFit="contain"
@@ -112,8 +113,8 @@ const ConferencePage = ({ data }) => (
       </Speakers>
     </div>
     <div>
-      <h2>Partners</h2>
-      <p>Coming Soon!</p>
+      <h2>Funders</h2>
+      <p>We are proudly funded by A&A and Projects Board.</p>
     </div>
   </PageContainer>
 )
