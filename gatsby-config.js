@@ -9,7 +9,7 @@ module.exports = {
       { name: "Team", link: "/team" },
       { name: "For Students", link: "/for-students" },
       { name: "IDEA Conference", link: "/conference" },
-      { name: "Contact Us", link: "/contact-us" },
+      { name: "Contact Us", link: "/contact" },
     ],
   },
   plugins: [

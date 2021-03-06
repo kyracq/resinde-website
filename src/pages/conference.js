@@ -3,7 +3,7 @@ import tw, { styled } from "twin.macro"
 import { graphql, Link } from "gatsby"
 
 import SEO from "../components/seo"
-import Item from "../components/item"
+import Img from "gatsby-image/withIEPolyfill"
 
 const StyledHeaderDiv = tw.div`
   mt-16 space-y-4
@@ -65,24 +65,20 @@ const StyledButton = styled(props => <Link {...props} />)`
 `
 
 const Speakers = styled.div`
-  ${tw`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8 self-center`}
+  ${tw`grid grid-cols-3 sm:grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-8 self-center`}
 `
 
 const ConferencePage = ({ data }) => (
   <PageContainer>
     <SEO title="IDEA Conference" />
-    <img
-      src={data.ideaLogo.publicURL}
-      alt="Shapes spelling out idea."
-      width="550px"
-    />
+    <img src={data.ideaBanner.publicURL} alt="Shapes spelling out idea." />
     <StyledHeaderDiv>
       <Heading>IDEA Conference</Heading>
       <p>
         A conference on inclusion, diversity, equity, and accessibility (or IDEA
         for short!) from March 13 – 14, 2021 including speakers from Google,
-        IDEO, and more! Speakers will be talking about about creating inclusive
-        and accessible products and processes. Stay tuned as we add the full
+        IDEO, and more! Speakers will be talking about creating inclusive and
+        accessible products and processes. Stay tuned as we add the full
         schedule here and introduce all the speakers on our Instagram!{" "}
         <b>
           Open to students everywhere (register with your .edu email) and
@@ -104,17 +100,12 @@ const ConferencePage = ({ data }) => (
       <br />
       <Speakers>
         {data.allMarkdownRemark.edges.map(({ node }) => {
-          console.log(node)
           return (
-            <Item
-              key={node.id}
-              title={node.frontmatter.name}
-              subtitle={node.frontmatter.role}
-              blurb={node.frontmatter.bio}
-              src={node.frontmatter.featuredImage.childImageSharp.fixed}
-              altText={node.frontmatter.featuredImageAlt}
-              magenta="true"
-              height="550px"
+            <Img
+              fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+              alt={node.frontmatter.featuredImageAlt}
+              objectFit="contain"
+              objectPosition="center"
             />
           )
         })}
@@ -131,7 +122,7 @@ export default ConferencePage
 
 export const query = graphql`
   query {
-    ideaLogo: file(relativePath: { eq: "idea-logo.svg" }) {
+    ideaBanner: file(relativePath: { eq: "idea-banner.svg" }) {
       publicURL
     }
     allMarkdownRemark(
@@ -146,8 +137,8 @@ export const query = graphql`
             role
             featuredImage {
               childImageSharp {
-                fixed(height: 450) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
