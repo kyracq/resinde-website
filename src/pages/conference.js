@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import Img from "gatsby-image/withIEPolyfill"
+import StyledLink from "../components/styled-link"
 
 const StyledHeaderDiv = tw.div`
   mt-16 space-y-4
@@ -11,6 +12,10 @@ const StyledHeaderDiv = tw.div`
 
 const Heading = tw.h1`
   leading-none mobile:text-5xl
+`
+
+const StyledH3 = tw.h3`
+  mt-10
 `
 
 const PageContainer = styled.div`
@@ -101,13 +106,20 @@ const ConferencePage = ({ data }) => (
       <Speakers>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           return (
-            <Img
-              key={node.frontmatter.name}
-              fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-              alt={node.frontmatter.featuredImageAlt}
-              objectFit="contain"
-              objectPosition="center"
-            />
+            <div>
+              <Img
+                key={node.frontmatter.name}
+                fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={node.frontmatter.featuredImageAlt}
+                objectFit="contain"
+                objectPosition="center"
+                style={{ height: "373px" }}
+              />
+              <StyledH3>
+                <StyledLink magenta="true">{node.frontmatter.name}</StyledLink>
+              </StyledH3>
+              <p>{node.frontmatter.role}</p>
+            </div>
           )
         })}
       </Speakers>
@@ -138,7 +150,7 @@ export const query = graphql`
             role
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxHeight: 373) {
                   ...GatsbyImageSharpFluid
                 }
               }

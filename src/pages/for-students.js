@@ -1,7 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
@@ -89,37 +89,7 @@ const StyledLink = styled(props => <Link {...props} />)`
   ${tw`text-blue`}
 `
 
-const ForStudentsPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "yellow-blob-2.png" }) {
-        childImageSharp {
-          fixed(width: 800) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      blueBlob: file(relativePath: { eq: "blue-blob-2.png" }) {
-        childImageSharp {
-          fixed(width: 1000) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      purpleBlob: file(relativePath: { eq: "purple-blob-2.png" }) {
-        childImageSharp {
-          fixed(width: 1000) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
-  if (!data?.placeholderImage?.childImageSharp?.fixed) {
-    return <div>Picture not found</div>
-  }
-
+const ForStudentsPage = ({ data }) => {
   return (
     <div>
       <SEO title="For Students" />
@@ -139,7 +109,7 @@ const ForStudentsPage = () => {
             </StyledP>
           </SectionTextLeft>
           <div style={{ position: "relative", width: "800px" }}>
-            <Img fixed={data.placeholderImage.childImageSharp.fixed} />
+            <Img fixed={data.yellowBlob.childImageSharp.fixed} />
             <StyledH1>Human-Centered Design</StyledH1>
           </div>
         </StyledDiv>
@@ -247,5 +217,31 @@ const ForStudentsPage = () => {
     </div>
   )
 }
+
+export const query = graphql`
+  query {
+    yellowBlob: file(relativePath: { eq: "yellow-blob-2.png" }) {
+      childImageSharp {
+        fixed(width: 1000) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    blueBlob: file(relativePath: { eq: "blue-blob-2.png" }) {
+      childImageSharp {
+        fixed(width: 1000) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    purpleBlob: file(relativePath: { eq: "purple-blob-2.png" }) {
+      childImageSharp {
+        fixed(width: 1000) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 export default ForStudentsPage
