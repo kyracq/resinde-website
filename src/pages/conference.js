@@ -1,9 +1,10 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
-import Item from "../components/item"
+import Img from "gatsby-image/withIEPolyfill"
+import StyledLink from "../components/styled-link"
 
 const StyledHeaderDiv = tw.div`
   mt-16 space-y-4
@@ -13,76 +14,76 @@ const Heading = tw.h1`
   leading-none mobile:text-5xl
 `
 
+const StyledH3 = tw.h3`
+  mt-10
+`
+
 const PageContainer = styled.div`
   ${tw`flex flex-col space-y-10 mobile:px-8 px-48 mt-36 mobile:mt-6`}
 `
 
-const Days = tw.div`
-  flex flex-row leading-loose xl:flex-col xl:space-y-3
-`
+// const Days = tw.div`
+//   flex flex-row leading-loose xl:flex-col xl:space-y-3
+// `
 
-const Day = props => {
-  return (
-    <div style={{ width: "100%" }}>
-      <h4 style={{ "text-transform": "uppercase", color: "#f02e65" }}>
-        {props.date}
-      </h4>
-      {props.children}
-    </div>
-  )
-}
+// const Day = props => {
+//   return (
+//     <div style={{ width: "100%" }}>
+//       <h4 style={{ "text-transform": "uppercase", color: "#f02e65" }}>
+//         {props.date}
+//       </h4>
+//       {props.children}
+//     </div>
+//   )
+// }
 
-const ScheduleSection = () => {
-  return (
-    <div>
-      <h2>Schedule</h2>
-      <Days>
-        <Day date="Saturday, March 13 (ET)">
-          <ul>
-            <li>10:00 AM - Coming Soon</li>
-            <li>11:30 AM - Coming Soon</li>
-            <li>2:00 PM - Coming Soon</li>
-            <li>3:30 PM - Coming Soon</li>
-          </ul>
-        </Day>
-        <Day date="Sunday, March 14 (ET)">
-          <ul>
-            <li>10:00 AM - Coming Soon</li>
-            <li>11:30 AM - Coming Soon</li>
-            <li>2:00 PM - Coming Soon</li>
-            <li>3:30 PM - Coming Soon</li>
-          </ul>
-        </Day>
-      </Days>
-    </div>
-  )
-}
+// const ScheduleSection = () => {
+//   return (
+//     <div>
+//       <h2>Schedule</h2>
+//       <Days>
+//         <Day date="Saturday, March 13 (ET)">
+//           <ul>
+//             <li>10:00 AM - Coming Soon</li>
+//             <li>11:30 AM - Coming Soon</li>
+//             <li>2:00 PM - Coming Soon</li>
+//             <li>3:30 PM - Coming Soon</li>
+//           </ul>
+//         </Day>
+//         <Day date="Sunday, March 14 (ET)">
+//           <ul>
+//             <li>10:00 AM - Coming Soon</li>
+//             <li>11:30 AM - Coming Soon</li>
+//             <li>2:00 PM - Coming Soon</li>
+//             <li>3:30 PM - Coming Soon</li>
+//           </ul>
+//         </Day>
+//       </Days>
+//     </div>
+//   )
+// }
 
-const StyledButton = styled(props => <Link {...props} />)`
+const StyledButton = styled.a`
   ${tw`border border-magenta rounded-full text-magenta py-2 px-8 uppercase
   hover:bg-magenta hover:text-white transition text-left`}
   font-size: 18px;
 `
 
 const Speakers = styled.div`
-  ${tw`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8 self-center`}
+  ${tw`grid grid-cols-3 sm:grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-8 self-center`}
 `
 
 const ConferencePage = ({ data }) => (
   <PageContainer>
     <SEO title="IDEA Conference" />
-    <img
-      src={data.ideaLogo.publicURL}
-      alt="Shapes spelling out idea."
-      width="550px"
-    />
+    <img src={data.ideaBanner.publicURL} alt="Shapes spelling out idea." />
     <StyledHeaderDiv>
       <Heading>IDEA Conference</Heading>
       <p>
         A conference on inclusion, diversity, equity, and accessibility (or IDEA
         for short!) from March 13 – 14, 2021 including speakers from Google,
-        IDEO, and more! Speakers will be talking about about creating inclusive
-        and accessible products and processes. Stay tuned as we add the full
+        IDEO, and more! Speakers will be talking about creating inclusive and
+        accessible products and processes. Stay tuned as we add the full
         schedule here and introduce all the speakers on our Instagram!{" "}
         <b>
           Open to students everywhere (register with your .edu email) and
@@ -90,7 +91,7 @@ const ConferencePage = ({ data }) => (
         </b>
       </p>
       <br />
-      <StyledButton to="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">
+      <StyledButton href="https://www.eventbrite.com/e/2021-idea-conference-tickets-143488218123?utm-medium=discovery&utm-campaign=social&utm-content=attendeeshare&aff=escb&utm-source=cp&utm-term=listing">
         Register
       </StyledButton>
     </StyledHeaderDiv>
@@ -104,25 +105,28 @@ const ConferencePage = ({ data }) => (
       <br />
       <Speakers>
         {data.allMarkdownRemark.edges.map(({ node }) => {
-          console.log(node)
           return (
-            <Item
-              key={node.id}
-              title={node.frontmatter.name}
-              subtitle={node.frontmatter.role}
-              blurb={node.frontmatter.bio}
-              src={node.frontmatter.featuredImage.childImageSharp.fixed}
-              altText={node.frontmatter.featuredImageAlt}
-              magenta="true"
-              height="550px"
-            />
+            <div>
+              <Img
+                key={node.frontmatter.name}
+                fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={node.frontmatter.featuredImageAlt}
+                objectFit="contain"
+                objectPosition="center"
+                style={{ height: "373px" }}
+              />
+              <StyledH3>
+                <StyledLink magenta="true">{node.frontmatter.name}</StyledLink>
+              </StyledH3>
+              <p>{node.frontmatter.role}</p>
+            </div>
           )
         })}
       </Speakers>
     </div>
     <div>
-      <h2>Partners</h2>
-      <p>Coming Soon!</p>
+      <h2>Funders</h2>
+      <p>We are proudly funded by A&A and Projects Board.</p>
     </div>
   </PageContainer>
 )
@@ -131,7 +135,7 @@ export default ConferencePage
 
 export const query = graphql`
   query {
-    ideaLogo: file(relativePath: { eq: "idea-logo.svg" }) {
+    ideaBanner: file(relativePath: { eq: "idea-banner.svg" }) {
       publicURL
     }
     allMarkdownRemark(
@@ -146,8 +150,8 @@ export const query = graphql`
             role
             featuredImage {
               childImageSharp {
-                fixed(height: 450) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxHeight: 373) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

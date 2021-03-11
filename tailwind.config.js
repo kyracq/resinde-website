@@ -28,10 +28,9 @@ module.exports = {
       xl: { max: "1279px" },
       lg: { max: "1023px" },
       mobile: { max: "767px" },
-      sm: { max: "639px"}
+      sm: { max: "639px" },
     },
-    extend: {
-    },
+    extend: {},
   },
   variants: {
     extend: {},

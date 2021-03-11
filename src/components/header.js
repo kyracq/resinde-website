@@ -49,11 +49,19 @@ const Header = ({ navLinks }) => {
         <DesktopNav>
           {navLinks.map((item, index) => {
             if (item.name === "Contact Us") {
-              return <ActionLink to="/contact">Contact Us</ActionLink>
+              return (
+                <ActionLink to="/contact" key={item.name}>
+                  Contact Us
+                </ActionLink>
+              )
             } else {
               let linkProps = { to: item.link }
-              linkProps[colors[index % colors.length]] = true
-              return <NavLink {...linkProps}>{item.name}</NavLink>
+              linkProps[colors[index % colors.length]] = "true"
+              return (
+                <NavLink {...linkProps} key={item.name}>
+                  {item.name}
+                </NavLink>
+              )
             }
           })}
         </DesktopNav>
