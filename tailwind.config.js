@@ -23,6 +23,12 @@ module.exports = {
       black: {
         DEFAULT: "#000000",
       },
+      orange: {
+        DEFAULT: "#FD4B3C",
+      },
+      honey: {
+        DEFAULT: "#FEBC36",
+      },
     },
     screens: {
       xl: { max: "1279px" },

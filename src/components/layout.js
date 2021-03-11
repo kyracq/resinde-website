@@ -13,6 +13,8 @@ import { createGlobalStyle } from "styled-components"
 import "fontsource-montserrat/400.css"
 import "fontsource-montserrat/700.css"
 import "fontsource-muli"
+import "fontsource-cabin"
+import "fontsource-cabin/700.css"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -44,6 +46,9 @@ const Global = createGlobalStyle`
   }
   body {
     font-family: "Muli", sans-serif;
+  }
+  .idea-heading {
+    font-family: "Cabin", sans-serif;
   }
   * {
     cursor: none;
