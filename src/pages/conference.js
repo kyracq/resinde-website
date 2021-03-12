@@ -29,7 +29,7 @@ const LogoDiv = tw.div`
 `
 
 const StyledButton = styled.a`
-  ${tw`block border-2 border-honey bg-honey text-white py-2 px-6
+  ${tw`block border-2 border-orange bg-orange text-white py-2 px-6
   hover:bg-white hover:text-orange transition text-center`}
   font-size: 18px;
   border-radius: 0px 25px 25px 0px;
