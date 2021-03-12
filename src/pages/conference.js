@@ -25,7 +25,7 @@ const SectionTitle = tw.h1`
 `
 
 const LogoDiv = tw.div`
-  w-7/12 order-2 xl:order-1 xl:pt-16 mobile:pt-6
+  w-7/12 order-2 xl:order-1 xl:pt-16 mobile:pt-6 mobile:w-full
 `
 
 const StyledButton = styled.a`
@@ -69,7 +69,7 @@ const Schedule = styled.div`
 const EventContainer = styled.div`
   ${tw`relative w-1/2 lg:w-full`}
   padding: 10px 40px;
-  left: ${props => props.left ? "0" : "50%"};
+  left: ${props => (props.left ? "0" : "50%")};
 
   /* Circles on timeline */
   &:after {
@@ -77,15 +77,15 @@ const EventContainer = styled.div`
     content: '';
     width: 30px;
     height: 30px;
-    right: ${props => props.left ? "-15px" : ""};
-    left: ${props => props.left ? "" : "-15px"};
+    right: ${props => (props.left ? "-15px" : "")};
+    left: ${props => (props.left ? "" : "-15px")};
     border-radius: 50%;
   }
 
   @media (max-width: 1023px) {
     padding-left: 70px;
     padding-right: 25px;
-    left: ${props => props.left ? "" : "0%"};
+    left: ${props => (props.left ? "" : "0%")};
 
     &:after {
       left: 15px;
@@ -99,8 +99,9 @@ const EventContainer = styled.div`
 `
 
 const EventContent = styled.div`
-${tw`py-10 px-10 bg-white relative`}
-  border-radius: ${props => props.left ? "15px 0px 15px 15px" : "0px 15px 15px 15px"} ;
+  ${tw`py-10 px-10 bg-white relative`}
+  border-radius: ${props =>
+    props.left ? "15px 0px 15px 15px" : "0px 15px 15px 15px"};
 
   @media (max-width: 1023px) {
     border-radius: 0px 15px 15px 15px;
@@ -118,12 +119,12 @@ const EventSpeaker = styled.a`
   font-weight: 700;
 `
 
-const Event = (props) => {
+const Event = props => {
   return (
     <EventContainer left={props.left}>
       <EventContent left={props.left}>
         <p>{props.time}</p>
-        <EventName className='idea-heading'>{props.eventName}</EventName>
+        <EventName className="idea-heading">{props.eventName}</EventName>
         <p>{props.blurb}</p>
         <EventSpeaker href={props.href}>{props.speaker}</EventSpeaker>
         <p>{props.role}</p>
@@ -169,41 +170,38 @@ const ConferencePage = ({ data }) => (
     <SEO title="IDEA Conference" />
     <HeaderSection>
       <About>
-        <h3 className='idea-heading' style={{ fontWeight:"normal"}}>
+        <h3 className="idea-heading" style={{ fontWeight: "normal" }}>
           MARCH 13-14
         </h3>
-        <SectionTitle 
-          className='idea-heading' 
-          style={{ marginTop: "8px", marginBottom: "14px"}}
+        <SectionTitle
+          className="idea-heading"
+          style={{ marginTop: "8px", marginBottom: "14px" }}
         >
           2021 IDEA Conference
         </SectionTitle>
         <p>
-          IDEA is Princeton ResInDe’s first conference on inclusion, 
-          diversity, equity, and accessibility. Speakers from Google, 
-          IDEO, and more will discuss why it’s necessary to create 
-          inclusive and accessible products and processes as well as how
-          to do it. {" "}
+          IDEA is Princeton ResInDe’s first conference on inclusion, diversity,
+          equity, and accessibility. Speakers from Google, IDEO, and more will
+          discuss why it’s necessary to create inclusive and accessible products
+          and processes as well as how to do it.{" "}
           <b>
-          Open to all university undergraduate and graduate students as 
-          well as Princeton affiliates (faculty, alumni, etc.). 
-          Register with your .edu email.
+            Open to all university undergraduate and graduate students as well
+            as Princeton affiliates (faculty, alumni, etc.). Register with your
+            .edu email.
           </b>
         </p>
-        <StyledButton href="https://bit.ly/resindeidea">
-          Register
-        </StyledButton>
+        <StyledButton href="https://bit.ly/resindeidea">Register</StyledButton>
       </About>
       <LogoDiv>
         <img src={data.IdeaLogo.publicURL} alt="Shapes spelling out idea." />
       </LogoDiv>
     </HeaderSection>
     <ScheduleSection>
-      <SectionTitle className='idea-heading'>Schedule</SectionTitle>
-      <Day className='idea-heading'>Saturday, March 13</Day>
+      <SectionTitle className="idea-heading">Schedule</SectionTitle>
+      <Day className="idea-heading">Saturday, March 13</Day>
       <Schedule>
-        <Event 
-          left="true" 
+        <Event
+          left="true"
           time="10:00 AM - 11:00 AM ET"
           eventName="Design Thinking for Ethics? Or Ethics for Design Thinking?"
           speaker="David Miller"
@@ -211,14 +209,14 @@ const ConferencePage = ({ data }) => (
           role="Director @ Princeton University Faith & Work Initiative, 
               Keller Center for Innovation"
         />
-        <Event 
+        <Event
           time="11:30 AM - 12:30 PM ET"
           eventName="Making Innovation Meaningful"
           speaker="Rob Van Varick"
           href="#rob"
           role="Partner @ Michael Graves Design"
         />
-        <Event 
+        <Event
           left="true"
           time="2:00 PM - 3:00 PM ET"
           eventName="Intro to Accessible Design"
@@ -226,7 +224,7 @@ const ConferencePage = ({ data }) => (
           href="#catherine"
           role="Senior Interaction Designer @ Google"
         />
-        <Event 
+        <Event
           time="3:30 PM - 4:30 PM ET"
           eventName="Design Without Ego"
           speaker="Yicheng 'YC' Sun"
@@ -237,10 +235,12 @@ const ConferencePage = ({ data }) => (
           role2="Design Director @ IDEO"
         />
       </Schedule>
-      <br /><br /><br />
-      <Day className='idea-heading'>Sunday, March 14</Day>
+      <br />
+      <br />
+      <br />
+      <Day className="idea-heading">Sunday, March 14</Day>
       <Schedule>
-        <Event 
+        <Event
           left="true"
           time="10:00 AM - 11:00 PM ET"
           eventName="Augmenting Diversity: LGBTechnology"
@@ -248,14 +248,14 @@ const ConferencePage = ({ data }) => (
           href="#daniel"
           role="Artist & Technologist"
         />
-        <Event 
+        <Event
           time="11:30 AM - 12:30 PM ET"
           eventName="Designing for Inclusion @ Presently: From Product to People"
           speaker="Dalia Katan"
           href="#dalia"
           role="CEO & Founder @ Presently"
         />
-        <Event 
+        <Event
           left="true"
           time="2:00 PM - 3:00 PM ET"
           eventName="Meet & Chat"
@@ -265,7 +265,7 @@ const ConferencePage = ({ data }) => (
           Technology. Join with tea or coffee—this will be a casual way to meet
           other students and chat about your interests!"
         />
-        <Event 
+        <Event
           time="3:30 PM - 4:30 PM ET"
           eventName="A Fireside Chat on Design and Accessibility"
           speaker="Molly Burke"
@@ -275,8 +275,9 @@ const ConferencePage = ({ data }) => (
       </Schedule>
     </ScheduleSection>
     <SpeakersSection>
-      <SectionTitle className='idea-heading' style={{ marginBottom: "60px" }}
->Speakers</SectionTitle>
+      <SectionTitle className="idea-heading" style={{ marginBottom: "60px" }}>
+        Speakers
+      </SectionTitle>
       <SpeakerGrid>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           return (
@@ -297,15 +298,22 @@ const ConferencePage = ({ data }) => (
       </SpeakerGrid>
     </SpeakersSection>
     <FundersSection>
-      <SectionTitle className='idea-heading'>Funders</SectionTitle>
-      <p>We are proudly funded by Princeton's Department of Art & 
-      Archaeology and Princeton Projects Board.</p>
-      <br /><br />
+      <SectionTitle className="idea-heading">Funders</SectionTitle>
+      <p>
+        We are proudly funded by Princeton's Department of Art & Archaeology and
+        Princeton Projects Board.
+      </p>
+      <br />
+      <br />
       <Logos>
-        <Img fixed={data.AALogo.childImageSharp.fixed} 
-          alt="Logo saying Arts and Archeology Department." />
-        <Img fixed={data.ProjectsBoardLogo.childImageSharp.fixed} 
-          alt="Logo saying Projects Board." />
+        <Img
+          fixed={data.AALogo.childImageSharp.fixed}
+          alt="Logo saying Arts and Archeology Department."
+        />
+        <Img
+          fixed={data.ProjectsBoardLogo.childImageSharp.fixed}
+          alt="Logo saying Projects Board."
+        />
       </Logos>
     </FundersSection>
   </PageContainer>
@@ -323,13 +331,17 @@ export const query = graphql`
         fixed(height: 100) {
           ...GatsbyImageSharpFixed
         }
-      }    }
-    ProjectsBoardLogo: file(relativePath: { eq: "logos/projects-board-logo.png" }) {
+      }
+    }
+    ProjectsBoardLogo: file(
+      relativePath: { eq: "logos/projects-board-logo.png" }
+    ) {
       childImageSharp {
         fixed(height: 100) {
           ...GatsbyImageSharpFixed
         }
-      }    }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: fileAbsolutePath, order: ASC }
       filter: { fileAbsolutePath: { regex: "/(speakers)/" } }
