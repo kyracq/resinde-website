@@ -1,0 +1,7 @@
+---
+name: "Molly Burke"
+role: "Motivational Speaker & YouTuber"
+featuredImage: ../../images/speakers/molly.png
+featuredImageAlt: "A brown haired young woman in a gold jacket, black pants, and glitter heels smiling at the camera while sitting on a red armchair. Under her legs sits a black dog with a matching gold handkerchief, dwarfing her and the chair."
+bio: "At just four-years‐old, Molly Burke’s world became a little bit darker: she was diagnosed with Retinitis Pigmentosa, a rare retinal disease causing loss of vision. Despite this, and the ensuing obstacles and hardships she faced, it wasn’t long before she began bringing light into the lives of others. Molly began public speaking at the age of five as an ambassador for The Foundation Fighting Blindness Canada. Since then, she has inspired hundreds of thousands with her story. Alongside her successful career as a motivational speaker she releases weekly YouTube videos to a worldwide audience of over 1.8 million subscribers. Molly openly shares her experiences of overcoming adversity and embracing diversity, connecting with her audiences at a very personal, emotional, and relatable level. Her goal is to educate, motivate and inspire others to find peace, happiness and achieve their goals, even in the darkest days."
+---
