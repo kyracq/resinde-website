@@ -203,7 +203,7 @@ const ConferencePage = ({ data }) => (
         <Event
           left="true"
           time="10:00 AM - 11:00 AM ET"
-          eventName="Design Thinking for Ethics? Or Ethics for Design Thinking?"
+          eventName="Navigating Ethical Decision Making"
           speaker="David Miller"
           href="#david"
           role="Director @ Princeton University Faith & Work Initiative, 
