@@ -230,7 +230,7 @@ const ConferencePage = ({ data }) => (
           speaker="Yicheng 'YC' Sun"
           href="#yc"
           role="Design Lead @ IDEO"
-          speaker2="Zena Barakat"
+          speaker2="Zena Bakarat"
           href2="#zena"
           role2="Design Director @ IDEO"
         />
