@@ -331,7 +331,7 @@ export const query = graphql`
         }
       }    }
     allMarkdownRemark(
-      sort: { fields: fileAbsolutePath, order: DESC }
+      sort: { fields: fileAbsolutePath, order: ASC }
       filter: { fileAbsolutePath: { regex: "/(speakers)/" } }
     ) {
       edges {

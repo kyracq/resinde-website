@@ -1,7 +1,7 @@
 ---
-name: "Yicheng 'YC' Sun"
-role: "Design Lead @ IDEO"
-featuredImage: ../../images/speakers/yc.png
-featuredImageAlt: "A young man wearing a gray cap and matching jacket with a wide smile on his face."
-bio: "Yicheng 'YC' Sun is a design lead at IDEO, with a focus on creative technology and venture design. He guides clients and teams through the product journey, from initial ideation, prototype & pilot, to market launch. He has a soft spot for healthcare technology startups and recent projects include a Parkinson’s wearable platform, oncology research community, COVID-19 telemedicine platform, and sleep digital therapeutics. YC graduated Princeton ELE'17."
+name: "David Miller"
+role: "Director @ Princeton University Faith & Work Initiative, Keller Center for Innovation"
+featuredImage: ../../images/speakers/david.png
+featuredImageAlt: "A gray-haired man at a sporting event wearing a pink button up shirt and looking off to the right while clutching a magazine."
+bio: "David Miller is the Director of the Princeton University Faith & Work Initiative (FWI), a Senior Professional Specialist in Ethics, and a Lecturer. In addition to his research, teaching, and programs, he also serves as an advisor to corporate CEOs and senior executives on ethics, values-based leadership, culture, and the role of faith at work. As a thought leader, many senior executives seek his counsel, and scholars, religious organizations, and the media seek his views. An article in the Wall Street Journal recently featured his work with one global client referring to him as the “on-call ethicist.”"
 ---

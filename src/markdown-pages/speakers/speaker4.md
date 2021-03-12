@@ -1,8 +1,7 @@
 ---
-name: "Catherine Idylle"
-role: "Senior Interaction Designer @ Google"
-featuredImage: ../../images/speakers/catherine.png
-featuredImageAlt: "Black and white close-up of young woman in a white t-shirt. "
-bio: "Catherine Idylle is a Senior Interaction Designer at Google in San Francisco. She focuses on designing for people with disabilities and mainly works on Lookout (an app for people who are blind or have low vision). She has previously spoken at Google I/O and SF Design Week and was featured at Grace Hopper."
+name: "Yicheng 'YC' Sun"
+role: "Design Lead @ IDEO"
+featuredImage: ../../images/speakers/yc.png
+featuredImageAlt: "A young man wearing a gray cap and matching jacket with a wide smile on his face."
+bio: "Yicheng 'YC' Sun is a design lead at IDEO, with a focus on creative technology and venture design. He guides clients and teams through the product journey, from initial ideation, prototype & pilot, to market launch. He has a soft spot for healthcare technology startups and recent projects include a Parkinson’s wearable platform, oncology research community, COVID-19 telemedicine platform, and sleep digital therapeutics. YC graduated Princeton ELE'17."
 ---
-

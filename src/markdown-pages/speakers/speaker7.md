@@ -1,7 +1,7 @@
 ---
-name: "Molly Burke"
-role: "Motivational Speaker & YouTuber"
-featuredImage: ../../images/speakers/molly.png
-featuredImageAlt: "A brown haired young woman in a gold jacket, black pants, and glitter heels smiling at the camera while sitting on a red armchair. Under her legs sits a black dog with a matching gold handkerchief, dwarfing her and the chair."
-bio: "At just four-years‐old, Molly Burke’s world became a little bit darker: she was diagnosed with Retinitis Pigmentosa, a rare retinal disease causing loss of vision. Despite this, and the ensuing obstacles and hardships she faced, it wasn’t long before she began bringing light into the lives of others. Molly began public speaking at the age of five as an ambassador for The Foundation Fighting Blindness Canada. Since then, she has inspired hundreds of thousands with her story. Alongside her successful career as a motivational speaker she releases weekly YouTube videos to a worldwide audience of over 1.8 million subscribers. Molly openly shares her experiences of overcoming adversity and embracing diversity, connecting with her audiences at a very personal, emotional, and relatable level. Her goal is to educate, motivate and inspire others to find peace, happiness and achieve their goals, even in the darkest days."
+name: "Dalia Katan"
+role: "CEO & Founder @ Presently"
+featuredImage: ../../images/speakers/dalia.png
+featuredImageAlt: "Woman with curly hair in a white blouse against a bright yellow backdrop, smiling into the camera."
+bio: "As the CEO and Founder of Presently, Dalia Katan ‘15 is incredibly passionate about helping people connect in more meaningful ways. Presently is a fast-growing social platform centered on group celebration, offering a product suite that helps groups come together for remote-first celebrations. Previously, Dalia was a management consultant for five years, including three years at Deloitte, where she led the innovation practice's West Coast expansion and co-founded Deloitte’s program to educate employers on integrating refugees in the workplace. She was also an innovation fellow at the Center for the Edge and has published works on business growth, inclusion, and the future of work. Prior to Deloitte, Dalia scaled her first venture OSL to 4M users in 2010. She also led marketing and user experience at several tech startups."
 ---
