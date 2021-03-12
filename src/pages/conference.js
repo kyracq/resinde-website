@@ -242,7 +242,7 @@ const ConferencePage = ({ data }) => (
       <Schedule>
         <Event
           left="true"
-          time="10:00 AM - 11:00 PM ET"
+          time="10:00 AM - 11:00 AM ET"
           eventName="Augmenting Diversity: LGBTechnology"
           speaker='Daniel "D" Pillis'
           href="#daniel"
