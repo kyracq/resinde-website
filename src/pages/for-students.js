@@ -229,7 +229,7 @@ export const query = graphql`
     }
     blueBlob: file(relativePath: { eq: "blue-blob-2.png" }) {
       childImageSharp {
-        fixed(width: 1000) {
+        fixed(width: 750) {
           ...GatsbyImageSharpFixed
         }
       }

@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "ResInDe",
   "dependencies": {
+    "@fontsource/montserrat": "^4.2.2",
+    "@fontsource/muli": "^4.1.0",
     "autoprefixer": "^10.2.0",
     "emotion": "^11.0.0",
     "fontsource-cabin": "^4.0.0",
