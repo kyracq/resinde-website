@@ -241,14 +241,6 @@ const ConferencePage = ({ data }) => (
       <Day className="idea-heading">Sunday, March 14</Day>
       <Schedule>
         <Event
-          left="true"
-          time="10:00 AM - 11:00 AM ET"
-          eventName="Augmenting Diversity: LGBTechnology"
-          speaker='Daniel "D" Pillis'
-          href="#daniel"
-          role="Artist & Technologist"
-        />
-        <Event
           time="11:30 AM - 12:30 PM ET"
           eventName="Designing for Inclusion @ Presently: From Product to People"
           speaker="Dalia Katan"
