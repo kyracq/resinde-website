@@ -241,6 +241,7 @@ const ConferencePage = ({ data }) => (
       <Day className="idea-heading">Sunday, March 14</Day>
       <Schedule>
         <Event
+          left="true"
           time="11:30 AM - 12:30 PM ET"
           eventName="Designing for Inclusion @ Presently: From Product to People"
           speaker="Dalia Katan"
@@ -248,7 +249,6 @@ const ConferencePage = ({ data }) => (
           role="CEO & Founder @ Presently"
         />
         <Event
-          left="true"
           time="2:00 PM - 3:00 PM ET"
           eventName="Meet & Chat"
           blurb="Come meet with design and innovative thinkers from across the
@@ -258,6 +258,7 @@ const ConferencePage = ({ data }) => (
           other students and chat about your interests!"
         />
         <Event
+          left="true"
           time="3:30 PM - 4:30 PM ET"
           eventName="A Fireside Chat on Design and Accessibility"
           speaker="Molly Burke"
